@@ -1,0 +1,185 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.14.0.0
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 2 1, 2, LIC=X96Y8-3XUQH-6QT0X-H1MBH-56IJ4-2IQSU
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Standard  Version: 5.14.0.0
+Toolchain Path:  F:\Keil\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.05 update 1 (build 106)
+Assembler:       Armasm.exe V5.05 update 1 (build 106)
+Linker/Locator:  ArmLink.exe V5.05 update 1 (build 106)
+Library Manager: ArmAr.exe V5.05 update 1 (build 106)
+Hex Converter:   FromElf.exe V5.05 update 1 (build 106)
+CPU DLL:         SARMCM3.DLL V5.14.0.0
+Dialog DLL:      DARMSTM.DLL V1.65.0.0
+Target DLL:      Segger\JL2CM3.dll V2.99.13.0
+Dialog DLL:      TARMSTM.DLL V1.64.0.0
+ 
+<h2>Project:</h2>
+E:\工程文件\毕业设计\STM32系统学习\毕业设计项目—项目例程\1：酒店信息显示屏\0：相关程序\STM32_RCT6 射频刷卡系统\USER\test.uvprojx
+Project File Date:  04/03/2018
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling startup_stm32f10x_hd.s...
+compiling test.c...
+compiling delay.c...
+compiling sys.c...
+compiling usart.c...
+compiling TFT.c...
+compiling spi.c...
+compiling flash.c...
+compiling MMC_SD.C...
+compiling touch.c...
+compiling AT24c02.c...
+compiling AT24C02IIC.c...
+compiling adc.c...
+compiling dma.c...
+compiling ds18b20.c...
+compiling lkt.c...
+..\HARDWARE\lkt.c(84): error:  #20: identifier "TIM3_IRQChannel" is undefined
+    MY_NVIC_Init(1,3,TIM3_IRQChannel,2);//抢占1，子优先级3，组2                                                                  
+..\HARDWARE\lkt.c: 0 warnings, 1 error
+compiling mouse.c...
+compiling myiic.c...
+compiling ps2.c...
+..\HARDWARE\ps2.c(241): error:  #20: identifier "EXTI15_10_IRQChannel" is undefined
+        MY_NVIC_Init(1,2,EXTI15_10_IRQChannel,2);//分配到第二组,抢占2,响应3              
+..\HARDWARE\ps2.c: 0 warnings, 1 error
+compiling rtc.c...
+..\HARDWARE\rtc.c(76): error:  #20: identifier "RTC_IRQChannel" is undefined
+        MY_NVIC_Init(0,0,RTC_IRQChannel,2);//RTC,G2,P2,S2.优先级最低     
+..\HARDWARE\rtc.c: 0 warnings, 1 error
+compiling malloc.c...
+compiling exfuns.c...
+compiling fattester.c...
+compiling mycc936.c...
+compiling diskio.c...
+compiling ff.c...
+compiling fontupd.c...
+compiling text.c...
+compiling guitouch.c...
+..\RCC52\guitouch.c(82): error:  #20: identifier "Pen_Point" is undefined
+        if(Pen_Point.Key_Sta==Key_Down)//触摸屏被按下
+..\RCC52\guitouch.c(82): error:  #20: identifier "Key_Down" is undefined
+        if(Pen_Point.Key_Sta==Key_Down)//触摸屏被按下
+..\RCC52\guitouch.c(84): warning:  #223-D: function "Pen_Int_Set" declared implicitly
+                Pen_Int_Set(0);//关闭中断
+..\RCC52\guitouch.c(86): warning:  #223-D: function "Convert_Pos" declared implicitly
+                        Convert_Pos();//转换结果，根据触摸屏的校准参数来决定转换后的结果,保存在X0,Y0中
+..\RCC52\guitouch.c(87): error:  #20: identifier "Key_Up" is undefined
+                        Pen_Point.Key_Sta=Key_Up;
+..\RCC52\guitouch.c(337): warning:  #223-D: function "Touch_Init" declared implicitly
+        Touch_Init();    //初始化 
+..\RCC52\guitouch.c(419): error:  #20: identifier "LED0" is undefined
+                        LED0=!LED0;
+..\RCC52\guitouch.c: 3 warnings, 4 errors
+compiling mygui.c...
+..\RCC52\mygui.c(57): error:  #167: argument of type "char *" is incompatible with parameter of type "u16"
+        Show_Str(0,0,"请输入：",16,0);
+..\RCC52\mygui.c(57): error:  #165: too few arguments in function call
+        Show_Str(0,0,"请输入：",16,0);
+..\RCC52\mygui.c(58): error:  #167: argument of type "char *" is incompatible with parameter of type "u16"
+        Show_Str(10,49,"删除",16,0);
+..\RCC52\mygui.c(58): error:  #165: too few arguments in function call
+        Show_Str(10,49,"删除",16,0);
+..\RCC52\mygui.c(59): error:  #167: argument of type "char *" is incompatible with parameter of type "u16"
+        Show_Str(195,49,"确定",16,0);
+..\RCC52\mygui.c(59): error:  #165: too few arguments in function call
+        Show_Str(195,49,"确定",16,0);
+..\RCC52\mygui.c(101): error:  #20: identifier "Pen_Point" is undefined
+                if(Pen_Point.Key_Sta==Key_Down)//触摸屏被按下
+..\RCC52\mygui.c(101): error:  #20: identifier "Key_Down" is undefined
+                if(Pen_Point.Key_Sta==Key_Down)//触摸屏被按下
+..\RCC52\mygui.c(103): warning:  #223-D: function "Pen_Int_Set" declared implicitly
+                        Pen_Int_Set(0);//关闭中断
+..\RCC52\mygui.c(105): warning:  #223-D: function "Convert_Pos" declared implicitly
+                                Convert_Pos();//转换结果，根据触摸屏的校准参数来决定转换后的结果,保存在X0,Y0中
+..\RCC52\mygui.c(106): error:  #20: identifier "Key_Up" is undefined
+                                Pen_Point.Key_Sta=Key_Up;
+..\RCC52\mygui.c(308): error:  #20: identifier "LED1" is undefined
+                                        LED1=!LED1;                                                                                                                                              //确定
+..\RCC52\mygui.c(325): error:  #20: identifier "LED0" is undefined
+                        LED0=!LED0;
+..\RCC52\mygui.c(343): warning:  #223-D: function "RTC_Init" declared implicitly
+        RTC_Init();
+..\RCC52\mygui.c(349): error:  #167: argument of type "char *" is incompatible with parameter of type "u16"
+        LCD_ShowString(60,50,"Mini STM32");     
+..\RCC52\mygui.c(349): error:  #165: too few arguments in function call
+        LCD_ShowString(60,50,"Mini STM32");     
+..\RCC52\mygui.c(350): error:  #167: argument of type "char *" is incompatible with parameter of type "u16"
+        LCD_ShowString(60,70,"RTC TEST");       
+..\RCC52\mygui.c(350): error:  #165: too few arguments in function call
+        LCD_ShowString(60,70,"RTC TEST");       
+..\RCC52\mygui.c(351): error:  #167: argument of type "char *" is incompatible with parameter of type "u16"
+        LCD_ShowString(60,90,"ATOM@ALIENTEK");
+..\RCC52\mygui.c(351): error:  #165: too few arguments in function call
+        LCD_ShowString(60,90,"ATOM@ALIENTEK");
+..\RCC52\mygui.c(352): error:  #167: argument of type "char *" is incompatible with parameter of type "u16"
+        LCD_ShowString(60,110,"2010/12/30");
+..\RCC52\mygui.c(352): error:  #165: too few arguments in function call
+        LCD_ShowString(60,110,"2010/12/30");
+..\RCC52\mygui.c(356): error:  #167: argument of type "char *" is incompatible with parameter of type "u16"
+        LCD_ShowString(60,130,"    -  -  ");       
+..\RCC52\mygui.c(356): error:  #165: too few arguments in function call
+        LCD_ShowString(60,130,"    -  -  ");       
+..\RCC52\mygui.c(357): error:  #167: argument of type "char *" is incompatible with parameter of type "u16"
+        LCD_ShowString(60,162,"  :  :  ");                  
+..\RCC52\mygui.c(357): error:  #165: too few arguments in function call
+        LCD_ShowString(60,162,"  :  :  ");                  
+..\RCC52\mygui.c(361): error:  #20: identifier "Pen_Point" is undefined
+                if(Pen_Point.Key_Sta==Key_Down)//触摸屏被按下
+..\RCC52\mygui.c(361): error:  #20: identifier "Key_Down" is undefined
+                if(Pen_Point.Key_Sta==Key_Down)//触摸屏被按下
+..\RCC52\mygui.c(363): warning:  #223-D: function "Pen_Int_Set" declared implicitly
+                        Pen_Int_Set(0);//关闭中断
+..\RCC52\mygui.c(365): warning:  #223-D: function "Convert_Pos" declared implicitly
+                                Convert_Pos();//转换结果，根据触摸屏的校准参数来决定转换后的结果,保存在X0,Y0中
+..\RCC52\mygui.c(366): error:  #20: identifier "Key_Up" is undefined
+                                Pen_Point.Key_Sta=Key_Up;
+..\RCC52\mygui.c(385): error:  #20: identifier "timer" is undefined
+                if(t!=timer.sec)
+..\RCC52\mygui.c(394): error:  #167: argument of type "char *" is incompatible with parameter of type "u16"
+                                        LCD_ShowString(60,148,"Sunday   ");
+..\RCC52\mygui.c(394): error:  #165: too few arguments in function call
+                                        LCD_ShowString(60,148,"Sunday   ");
+..\RCC52\mygui.c(397): error:  #167: argument of type "char *" is incompatible with parameter of type "u16"
+                                        LCD_ShowString(60,148,"Monday   ");
+..\RCC52\mygui.c: 5 warnings, 30 errors
+compiling rcc52.c...
+..\RCC52\rcc52.c(293): warning:  #550-D: variable "status" was set but never used
+      u8   status;
+..\RCC52\rcc52.c: 1 warning, 0 errors
+compiling rcc52add.c...
+..\RCC52\rcc52add.c(63): error:  #20: identifier "LED0" is undefined
+    LED0=1;//LED0灭
+..\RCC52\rcc52add.c(167): error:  #20: identifier "LED0" is undefined
+                LED0=0;//LED0亮                 
+..\RCC52\rcc52add.c(188): error:  #20: identifier "LED0" is undefined
+                LED0=0;//LED0亮                 
+..\RCC52\rcc52add.c(206): error:  #20: identifier "LED0" is undefined
+                LED0=0;//LED0亮         
+..\RCC52\rcc52add.c(227): error:  #20: identifier "LED0" is undefined
+                LED0=0;//LED0亮                 
+..\RCC52\rcc52add.c(371): error:  #167: argument of type "char *" is incompatible with parameter of type "u16"
+        LCD_ShowString(x,y,"The Card ID is:");  
+..\RCC52\rcc52add.c(371): error:  #165: too few arguments in function call
+        LCD_ShowString(x,y,"The Card ID is:");  
+..\RCC52\rcc52add.c: 0 warnings, 7 errors
+compiling fat.c...
+"..\OBJ\test.axf" - 44 Error(s), 9 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  E:\工程文件\毕业设计\STM32系统学习\毕业设计项目—项目例程\1：酒店信息显示屏\0：相关程序\STM32_RCT6 射频刷卡系统\USER\RTE
+  F:\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+Target not created.
+</pre>
+</body>
+</html>

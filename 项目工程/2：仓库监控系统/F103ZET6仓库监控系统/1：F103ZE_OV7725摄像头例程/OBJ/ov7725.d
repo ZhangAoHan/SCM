@@ -1,0 +1,14 @@
+..\obj\ov7725.o: ..\HARDWARE\OV7725\ov7725.c
+..\obj\ov7725.o: ..\SYSTEM\sys\sys.h
+..\obj\ov7725.o: ..\SYSTEM\sys\stm32f10x.h
+..\obj\ov7725.o: ..\SYSTEM\sys\core_cm3.h
+..\obj\ov7725.o: E:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\ov7725.o: ..\SYSTEM\sys\system_stm32f10x.h
+..\obj\ov7725.o: ..\HARDWARE\OV7725\ov7725.h
+..\obj\ov7725.o: ..\HARDWARE\OV7725\sccb.h
+..\obj\ov7725.o: ..\HARDWARE\OV7725\ov7725cfg.h
+..\obj\ov7725.o: ..\HARDWARE\TIMER\timer.h
+..\obj\ov7725.o: ..\SYSTEM\delay\delay.h
+..\obj\ov7725.o: ..\SYSTEM\usart\usart.h
+..\obj\ov7725.o: E:\keil\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\ov7725.o: ..\HARDWARE\EXTI\exti.h

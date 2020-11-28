@@ -1,0 +1,10 @@
+..\obj\display.o: ..\HARDWARE\display.c
+..\obj\display.o: ..\HARDWARE\display.h
+..\obj\display.o: ..\SYSTEM\sys\sys.h
+..\obj\display.o: ..\SYSTEM\sys\stm32f10x.h
+..\obj\display.o: ..\SYSTEM\sys\core_cm3.h
+..\obj\display.o: E:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\display.o: ..\SYSTEM\sys\system_stm32f10x.h
+..\obj\display.o: ..\HARDWARE\lcd.h
+..\obj\display.o: E:\keil\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\display.o: ..\HARDWARE\text.h

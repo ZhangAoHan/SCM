@@ -1,0 +1,155 @@
+C51 COMPILER V8.18   SHUMAGUAN                                                             07/22/2009 19:04:18 PAGE 1   
+
+
+C51 COMPILER V8.18, COMPILATION OF MODULE SHUMAGUAN
+OBJECT MODULE PLACED IN shumaguan.OBJ
+COMPILER INVOKED BY: d:\Keil\C51\BIN\C51.EXE shumaguan.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /**********************************************************
+   2          *文件名称：shumaguan.c
+   3          *文件功能：数码管显示驱动函数
+   4          *版本：    V0.0.0
+   5          *作者：    yd
+   6          *时间：    09.07.22
+   7          *说明：本数码管数据口采用七段译码芯片74LS47，片选口采用
+   8                 译码芯片7445    
+   9          **********************************************************/
+  10          #include <AT89X52.h>
+  11          #include <absacc.h>
+  12          #define uchar unsigned char
+  13          #define uint  unsigned int
+  14          enum PORT8255 { PA8255 =0x01,PB8255 =0x02,PC8255 =0x03};  //8255操作端口模式选择
+  15          #define  PORT8255  P0                                           //8255数据端口
+  16          #define  CS8255()  {P2_5 =0;P2_6 =1;P2_7 =0;}   //片选8255   
+  17          #define  PAADDRESS  0x00                    //8255PA口操作地址
+  18          #define  PBADDRESS  0x01                                        //8255PB口操作地址
+  19          #define  PCADDRESS  0x02                                        //8255PC口操作地址
+  20          #define  CONADDRESS 0x03                    //8255控制寄存器地址
+  21          /******************************************************
+  22          *此处数码管数据及控制口为8255扩展的端口
+  23          //---------------定义数码管数据及控制端口----------
+  24          #define LED_DATA_A   PB0   
+  25          #define LED_DATA_B       PB1
+  26          #define LED_DATA_C       PB2
+  27          #define LED_DATA_D       PB3
+  28          //A-D为0001时显示1
+  29          #define LED_CS_A         PB4
+  30          #define LED_CS_B         PB5
+  31          #define LED_CS_C         PB6
+  32          #define LED_CS_D         PB7
+  33          ******************************************************/
+  34          /******************************************************
+  35          *函数名称：write8255(uchar portMode,uchar c)
+  36          *函数功能：向8255某个端口写数据
+  37          *入口参数：portMode，端口选择;c，要写的数据
+  38          *出口参数：无
+  39          ******************************************************/
+  40          void write8255(uchar portMode,uchar c)
+  41          {
+  42   1        switch(portMode)
+  43   1        {
+  44   2          CS8255();
+  45   2          case  PA8255:   //向PA口写数据
+  46   2              {
+  47   3                XBYTE[CONADDRESS] =0x80;   //8255的PA口工作在方式0，输出状态
+  48   3                XBYTE[PAADDRESS]  =c;     //端口PA写数据
+  49   3                break;
+  50   3              }
+  51   2              case  PB8255:  //向PB口写数据
+  52   2              {
+  53   3                XBYTE[CONADDRESS] =0x00;   //8255的PB口工作在方式0，输出状态
+  54   3                XBYTE[PBADDRESS]  =c;     //端口PB写数据
+  55   3                break;
+C51 COMPILER V8.18   SHUMAGUAN                                                             07/22/2009 19:04:18 PAGE 2   
+
+  56   3              }
+  57   2              case  PC8255:  //向PC口写数据
+  58   2              {
+  59   3                XBYTE[CONADDRESS] =0x00;   //8255的PC口工作在方式0，输出状态
+  60   3                XBYTE[PCADDRESS]  =c;     //端口PC写数据
+  61   3                break;
+  62   3              }
+  63   2              default:
+  64   2                break;
+  65   2        }
+  66   1      }
+  67          /******************************************************
+  68          *函数名称：read8255(uchar portMode)
+  69          *函数功能：从8255某个端口读取数据
+  70          *入口参数：portMode，端口选择
+  71          *出口参数：返回端口读取的数据
+  72          ******************************************************/
+  73          uchar read8255(uchar portMode)
+  74          {
+  75   1        uchar c;
+  76   1        switch(portMode)
+  77   1        {
+  78   2          CS8255();
+  79   2          case  PA8255:   //向PA口写数据
+  80   2              {
+  81   3                XBYTE[CONADDRESS] =0xa0;   //8255的PA口工作在方式0，输出状态
+  82   3                c =XBYTE[PAADDRESS];     //端口PA写数据
+  83   3                break;
+  84   3              }
+  85   2              case  PB8255:  //向PB口写数据
+  86   2              {
+  87   3                XBYTE[CONADDRESS] =0x02;   //8255的PB口工作在方式0，输出状态
+  88   3                c =XBYTE[PBADDRESS];      //端口PB写数据
+  89   3                break;
+  90   3              }
+  91   2              case  PC8255:  //向PC口写数据
+  92   2              {
+  93   3                XBYTE[CONADDRESS] =0x11;   //8255的PC口工作在方式0，输出状态
+  94   3                c =XBYTE[PCADDRESS];     //端口PC写数据
+  95   3                break;
+  96   3              }
+  97   2              default:
+  98   2                break;
+  99   2        }
+ 100   1        return c;
+ 101   1      }
+ 102          /******************************************************
+ 103          *函数名称：writeLed(uchar cs,uchar data)
+ 104          *函数功能：向数码管输出数据c
+ 105          *入口参数：c，要输出的数据
+ 106          *出口参数：无
+ 107          ******************************************************/
+ 108          void writeLed(uchar cs,uchar display)
+ 109          {
+ 110   1        uchar c;
+ 111   1        c =cs;
+ 112   1        c =c<<4;
+ 113   1        c =c&0xf0;
+ 114   1        display =display&0x0f;
+ 115   1        c =display|c;
+ 116   1        write8255(PB8255,c);  //将片选和要显示的数据输出到8255的PB口
+ 117   1      }
+C51 COMPILER V8.18   SHUMAGUAN                                                             07/22/2009 19:04:18 PAGE 3   
+
+ 118          void main()
+ 119          {
+ 120   1        uchar i;
+ 121   1        while(1)
+ 122   1        {
+ 123   2          for(i=0;i<8;i++)
+ 124   2              {
+ 125   3                writeLed(i,0x01);
+ 126   3              }
+ 127   2        }
+ 128   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    136    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

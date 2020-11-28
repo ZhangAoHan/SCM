@@ -1,0 +1,134 @@
+C51 COMPILER V8.18   LEDMAIN                                                               07/22/2009 22:36:47 PAGE 1   
+
+
+C51 COMPILER V8.18, COMPILATION OF MODULE LEDMAIN
+OBJECT MODULE PLACED IN ledMain.OBJ
+COMPILER INVOKED BY: d:\Keil\C51\BIN\C51.EXE ledMain.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /******************************************************
+   2          *文件名称：ledMain.c
+   3          *文件功能：led显示函数
+   4          *版本：    V0.0.0
+   5          *作者：    yd
+   6          *时间：    09.07.22
+   7          *说明：led跑马灯方式显示，数据口通过8255扩展
+   8          ******************************************************/
+   9          #include <AT89X51.h>
+  10          #include <absacc.h>
+  11          #define uchar unsigned char
+  12          #define uint  unsigned int
+  13          #define sei() (EA=1)    //开总中断
+  14          #define cli() (EA=0)    //关总中断
+  15          enum PORT8255 { PA8255 =0x01,PB8255 =0x02,PC8255 =0x03};  //8255操作端口模式选择
+  16          #define  PORT8255  P0                                                                     //8255数据端口
+  17          #define  CS8255()  {P2_5 =0;P2_6 =1;P2_7 =0;}                 //片选8255   
+  18          #define  PAADDRESS  0x00                                      //8255PA口操作地址
+  19          #define  PBADDRESS  0x01                                                              //8255PB口操作地址
+  20          #define  PCADDRESS  0x02                                                              //8255PC口操作地址
+  21          #define  CONADDRESS 0x03                                      //8255控制寄存器地址
+  22          uchar  loopVar;          //循环变量
+  23          uchar  timer0Count;          //定时器0溢出中断
+  24          /******************************************************
+  25          *函数名称：write8255(uchar portMode,uchar c)
+  26          *函数功能：向8255某个端口写数据
+  27          *入口参数：portMode，端口选择;c，要写的数据
+  28          *出口参数：无
+  29          ******************************************************/
+  30          void write8255(uchar portMode,uchar c)
+  31          {
+  32   1        switch(portMode)
+  33   1        {
+  34   2          CS8255();
+  35   2          case  PA8255:   //向PA口写数据
+  36   2              {
+  37   3                XBYTE[CONADDRESS] =0x80;   //8255的PA口工作在方式0，输出状态
+  38   3                XBYTE[PAADDRESS]  =c;     //端口PA写数据
+  39   3                break;
+  40   3              }
+  41   2              case  PB8255:  //向PB口写数据
+  42   2              {
+  43   3                XBYTE[CONADDRESS] =0x00;   //8255的PB口工作在方式0，输出状态
+  44   3                XBYTE[PBADDRESS]  =c;     //端口PB写数据
+  45   3                break;
+  46   3              }
+  47   2              case  PC8255:  //向PC口写数据
+  48   2              {
+  49   3                XBYTE[CONADDRESS] =0x00;   //8255的PC口工作在方式0，输出状态
+  50   3                XBYTE[PCADDRESS]  =c;     //端口PC写数据
+  51   3                break;
+  52   3              }
+  53   2              default:
+  54   2                break;
+  55   2        }
+C51 COMPILER V8.18   LEDMAIN                                                               07/22/2009 22:36:47 PAGE 2   
+
+  56   1      }
+  57          /**************************************
+  58          *函数名称：timer0Init(void)
+  59          *函数功能：定时器0初始化,定时10ms
+  60          *入口参数：无
+  61          *出口参数：无
+  62          **************************************/
+  63          void timer0Init(void)
+  64          {
+  65   1         TMOD |= 0x01;                        //GATE=0,TR=1运行;C/T=1,counter,0,timer;01十六进制  
+  66   1         TH0 = 0xdc;
+  67   1         TL0 = 0x00;
+  68   1         TR0 = 1;                                 //timer0 控制位，为1时启动timer0
+  69   1         ET0 = 1;                             //timer0 中断使能 
+  70   1      }
+  71          void main()
+  72          {
+  73   1        timer0Init();              //定时器0初始化，定时10ms
+  74   1        loopVar=0xfe;
+  75   1        timer0Count=0x00;
+  76   1        write8255(PA8255,loopVar); //通过8255输出，led显示
+  77   1        sei();
+  78   1        while(1);
+  79   1      }
+  80          /********************************************************************************************
+  81          * 函数名称：定时器0中断函数
+  82          * 功    能：定时器0溢出中断入口处,定时10ms
+  83          * 入口参数：无
+  84          * 出口参数：无
+  85          *********************************************************************************************/
+  86          void timer0_overflow(void) interrupt 1 
+  87          {
+  88   1         TH0 = 0xdc;
+  89   1         TL0 = 0x00;
+  90   1         if(timer0Count<50)   //定时0.5秒
+  91   1           timer0Count++;
+  92   1         else
+  93   1         {
+  94   2           timer0Count =0x00;
+  95   2               if(loopVar&0x80)                   //是否移到最高位
+  96   2               {
+  97   3                      loopVar =loopVar <<1;
+  98   3                  loopVar =loopVar &0x01;
+  99   3               }
+ 100   2               else
+ 101   2               {
+ 102   3                      loopVar=0xfe;
+ 103   3               }
+ 104   2               write8255( PA8255,loopVar);    //数码管循环移位显示
+ 105   2         }
+ 106   1         sei();
+ 107   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    154    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+C51 COMPILER V8.18   LEDMAIN                                                               07/22/2009 22:36:47 PAGE 3   
+
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

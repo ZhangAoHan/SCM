@@ -1,0 +1,57 @@
+C51 COMPILER V8.18   JIDIANQI                                                              07/22/2009 14:05:47 PAGE 1   
+
+
+C51 COMPILER V8.18, COMPILATION OF MODULE JIDIANQI
+OBJECT MODULE PLACED IN jidianqi.OBJ
+COMPILER INVOKED BY: d:\Keil\C51\BIN\C51.EXE jidianqi.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /**************************************************
+   2          *文件名称：继电器测试程序文件
+   3          *文件功能：测试实验系统中的继电器
+   4          *版本：V0.0.0
+   5          *作者：yd
+   6          *时间：09.07.22
+   7          **************************************************/
+   8          #include <AT89X52.h>
+   9          #define uchar unsigned char
+  10          #define uint  unsigned int
+  11          //-----------定义固态继电器端口------------
+  12          #define RELAY_OUT  P3_5
+  13          //-----------------------------------------
+  14          void delay(uchar i)
+  15          {
+  16   1         uchar a,b;
+  17   1         for(a =0;a <i;i++)
+  18   1         {
+  19   2           b=100;
+  20   2           while(b)
+  21   2               {
+  22   3                 b--;
+  23   3               }
+  24   2         }
+  25   1      }
+  26          void main( )
+  27          {
+  28   1         while(1)
+  29   1        {
+  30   2           RELAY_OUT =1;  //打开固态继电器
+  31   2               delay(100);  
+  32   2               RELAY_OUT =0;  //关闭固态继电器 
+  33   2        } 
+  34   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     26    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

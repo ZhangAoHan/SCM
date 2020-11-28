@@ -1,0 +1,14 @@
+<html>
+<body>
+<pre>
+<h1>礦ision3 Build Log</h1>
+<h2>Project:</h2>
+F:\work\第五章\完成\基于ISP技术的单片机系统\试验代码\ad\DAC0809.uv2
+Project File Date:  07/23/2009
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling DAC0809.c...
+linking...
+Program Size: data=10.0 xdata=0 code=48
+"DAC0809" - 0 Error(s), 0 Warning(s).

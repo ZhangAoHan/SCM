@@ -1,0 +1,150 @@
+BL51 BANKED LINKER/LOCATER V6.20                                                        07/23/2009  20:06:45  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.20, INVOKED BY:
+D:\KEIL\C51\BIN\BL51.EXE serialTest.obj TO chuankou RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  serialTest.obj (SERIALTEST)
+  D:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  chuankou (SERIALTEST)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0001H     UNIT         _DATA_GROUP_
+            IDATA   0009H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     001AH     UNIT         ?PR?USART_INITIAL?SERIALTEST
+            CODE    001DH     0016H     UNIT         ?PR?_DELAY?SERIALTEST
+            CODE    0033H     0016H     UNIT         ?PR?MAIN?SERIALTEST
+            CODE    0049H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0055H     000AH     UNIT         ?PR?_SEND_CHAR?SERIALTEST
+            CODE    005FH     000AH     UNIT         ?PR?GET_CHAR?SERIALTEST
+
+
+
+OVERLAY MAP OF MODULE:   chuankou (SERIALTEST)
+
+
+SEGMENT                                DATA_GROUP 
+  +--> CALLED SEGMENT                START    LENGTH
+----------------------------------------------------
+?C_C51STARTUP                        -----    -----
+  +--> ?PR?MAIN?SERIALTEST
+
+?PR?MAIN?SERIALTEST                  0008H    0001H
+  +--> ?PR?USART_INITIAL?SERIALTEST
+  +--> ?PR?_SEND_CHAR?SERIALTEST
+  +--> ?PR?_DELAY?SERIALTEST
+  +--> ?PR?GET_CHAR?SERIALTEST
+
+
+
+SYMBOL TABLE OF MODULE:  chuankou (SERIALTEST)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        SERIALTEST
+  C:0000H         SYMBOL        _ICE_DUMMY_
+BL51 BANKED LINKER/LOCATER V6.20                                                      07/23/2009  20:06:45  PAGE 2
+
+
+  B:00A8H.4       PUBLIC        ES
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  C:0033H         PUBLIC        main
+  C:0055H         PUBLIC        _send_char
+  D:0099H         PUBLIC        SBUF
+  D:0087H         PUBLIC        PCON
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  C:005FH         PUBLIC        get_char
+  B:00A8H.3       PUBLIC        ET1
+  D:008DH         PUBLIC        TH1
+  D:008BH         PUBLIC        TL1
+  B:0088H.6       PUBLIC        TR1
+  C:0003H         PUBLIC        usart_Initial
+  C:001DH         PUBLIC        _Delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        a
+  -------         DO            
+  D:0005H         SYMBOL        i
+  -------         ENDDO         
+  C:001DH         LINE#         21
+  C:001DH         LINE#         22
+  C:001DH         LINE#         24
+  C:0027H         LINE#         25
+  C:0032H         LINE#         26
+  -------         ENDPROC       _DELAY
+  -------         PROC          USART_INITIAL
+  C:0003H         LINE#         33
+  C:0003H         LINE#         34
+  C:0003H         LINE#         36
+  C:0006H         LINE#         37
+  C:0008H         LINE#         38
+  C:000AH         LINE#         39
+  C:000DH         LINE#         40
+  C:0010H         LINE#         41
+  C:0013H         LINE#         42
+  C:0016H         LINE#         43
+  C:0018H         LINE#         44
+  C:001AH         LINE#         45
+  C:001CH         LINE#         46
+  -------         ENDPROC       USART_INITIAL
+  -------         PROC          _SEND_CHAR
+  D:0007H         SYMBOL        txd
+  C:0055H         LINE#         53
+  C:0055H         LINE#         54
+  C:0055H         LINE#         55
+  C:0057H         LINE#         56
+  C:0059H         LINE#         57
+  C:005CH         LINE#         58
+  C:005EH         LINE#         59
+  -------         ENDPROC       _SEND_CHAR
+  -------         PROC          GET_CHAR
+  -------         DO            
+  D:0007H         SYMBOL        temp
+  -------         ENDDO         
+  C:005FH         LINE#         66
+BL51 BANKED LINKER/LOCATER V6.20                                                      07/23/2009  20:06:45  PAGE 3
+
+
+  C:005FH         LINE#         67
+  C:005FH         LINE#         69
+  C:0061H         LINE#         70
+  C:0064H         LINE#         71
+  C:0066H         LINE#         72
+  C:0068H         LINE#         73
+  C:0068H         LINE#         74
+  -------         ENDPROC       GET_CHAR
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        temp
+  -------         ENDDO         
+  C:0033H         LINE#         75
+  C:0033H         LINE#         76
+  C:0033H         LINE#         78
+  C:0036H         LINE#         79
+  C:0036H         LINE#         80
+  C:0036H         LINE#         81
+  C:003BH         LINE#         82
+  C:0042H         LINE#         83
+  C:0047H         LINE#         84
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        SERIALTEST
+
+Program Size: data=10.0 xdata=0 code=105
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

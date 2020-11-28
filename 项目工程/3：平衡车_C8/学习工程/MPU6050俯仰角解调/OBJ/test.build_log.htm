@@ -1,0 +1,141 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.12.0.0
+Copyright (C) 2014 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: zah Microsoft, Microsoft, LIC=X9645-GGG2X-BRSXT-RXUVG-J6CJ7-FXQR2
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Standard  Version: 5.12.0.0
+Toolchain Path:  E:\keil\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.05 (build 41)
+Assembler:       Armasm.exe V5.05 (build 41)
+Linker/Locator:  ArmLink.exe V5.05 (build 41)
+Library Manager: ArmAr.exe V5.05 (build 41)
+Hex Converter:   FromElf.exe V5.05 (build 41)
+CPU DLL:         SARMCM3.DLL V5.12.0.0
+Dialog DLL:      DCM.DLL V1.13.0.0
+    Target DLL: Segger\JL2CM3.dll
+Dialog DLL:      TCM.DLL V1.14.2.0
+ 
+<h2>Project:</h2>
+D:\单片机学习文档\单片机工程总地址\学习工程\MPU6050俯仰角解调\USER\test.uvprojx
+Project File Date:  06/16/2017
+
+<h2>Output:</h2>
+Rebuild target 'Target 1'
+assembling startup_stm32f10x_hd.s...
+compiling test.c...
+compiling delay.c...
+compiling sys.c...
+compiling usart.c...
+compiling inv_mpu.c...
+compiling inv_mpu_dmp_motion_driver.c...
+compiling IOI2C.c...
+compiling MPU6050.c...
+linking...
+Program Size: Code=24640 RO-data=3976 RW-data=116 ZI-data=1852  
+FromELF: creating hex file...
+"..\OBJ\test.axf" - 0 Error(s), 0 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  D:\单片机学习文档\单片机工程总地址\学习工程\MPU6050俯仰角解调\USER\RTE
+  E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+Load "..\\OBJ\\test.axf" 
+Set JLink Project File to "D:\单片机学习文档\单片机工程总地址\学习工程\MPU6050俯仰角解调\USER\JLinkSettings.ini"
+* JLink Info: Device "STM32F103C8" selected (64 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.91b, compiled Sep 15 2014 09:17:56
+Firmware: J-Link ARM V8 compiled Jan 31 2018 18:34:52
+Hardware: V8.00
+S/N : 20080643 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: TPIU fitted.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103C8
+VTarget = 3.280V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 1000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+</pre>
+</body>
+</html>
+cture.GPIO_Pin =  GPIO_Pin_6 | GPIO_Pin_7;
+..\HARDWARE\LCD_IIC\OLED_I2C.c(67): error:  #20: identifier "GPIO_Pin_7" is undefined
+        GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_6 | GPIO_Pin_7;
+..\HARDWARE\LCD_IIC\OLED_I2C.c(68): error:  #20: identifier "GPIO_Speed_50MHz" is undefined
+        GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+..\HARDWARE\LCD_IIC\OLED_I2C.c(69): error:  #20: identifier "GPIO_Mode_AF_OD" is undefined
+        GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_OD;//I2C必须开漏输出
+..\HARDWARE\LCD_IIC\OLED_I2C.c(70): warning:  #223-D: function "GPIO_Init" declared implicitly
+        GPIO_Init(GPIOB, &GPIO_InitStructure);
+..\HARDWARE\LCD_IIC\OLED_I2C.c(72): warning:  #223-D: function "I2C_DeInit" declared implicitly
+        I2C_DeInit(I2C1);//使用I2C1
+..\HARDWARE\LCD_IIC\OLED_I2C.c(73): error:  #20: identifier "I2C_Mode_I2C" is undefined
+        I2C_InitStructure.I2C_Mode = I2C_Mode_I2C;
+..\HARDWARE\LCD_IIC\OLED_I2C.c(74): error:  #20: identifier "I2C_DutyCycle_2" is undefined
+        I2C_InitStructure.I2C_DutyCycle = I2C_DutyCycle_2;
+..\HARDWARE\LCD_IIC\OLED_I2C.c(76): error:  #20: identifier "I2C_Ack_Enable" is undefined
+        I2C_InitStructure.I2C_Ack = I2C_Ack_Enable;
+..\HARDWARE\LCD_IIC\OLED_I2C.c(77): error:  #20: identifier "I2C_AcknowledgedAddress_7bit" is undefined
+        I2C_InitStructure.I2C_AcknowledgedAddress = I2C_AcknowledgedAddress_7bit;
+..\HARDWARE\LCD_IIC\OLED_I2C.c(80): warning:  #223-D: function "I2C_Cmd" declared implicitly
+        I2C_Cmd(I2C1, ENABLE);
+..\HARDWARE\LCD_IIC\OLED_I2C.c(81): warning:  #223-D: function "I2C_Init" declared implicitly
+        I2C_Init(I2C1, &I2C_InitStructure);
+..\HARDWARE\LCD_IIC\OLED_I2C.c(86): warning:  #223-D: function "I2C_GetFlagStatus" declared implicitly
+    while(I2C_GetFlagStatus(I2C1, I2C_FLAG_BUSY));
+..\HARDWARE\LCD_IIC\OLED_I2C.c(86): error:  #20: identifier "I2C_FLAG_BUSY" is undefined
+    while(I2C_GetFlagStatus(I2C1, I2C_FLAG_BUSY));
+..\HARDWARE\LCD_IIC\OLED_I2C.c(88): warning:  #223-D: function "I2C_GenerateSTART" declared implicitly
+        I2C_GenerateSTART(I2C1, ENABLE);//开启I2C1
+..\HARDWARE\LCD_IIC\OLED_I2C.c(89): warning:  #223-D: function "I2C_CheckEvent" declared implicitly
+        while(!I2C_CheckEvent(I2C1, I2C_EVENT_MASTER_MODE_SELECT));/*EV5,主模式*/
+..\HARDWARE\LCD_IIC\OLED_I2C.c(89): error:  #20: identifier "I2C_EVENT_MASTER_MODE_SELECT" is undefined
+        while(!I2C_CheckEvent(I2C1, I2C_EVENT_MASTER_MODE_SELECT));/*EV5,主模式*/
+..\HARDWARE\LCD_IIC\OLED_I2C.c(91): warning:  #223-D: function "I2C_Send7bitAddress" declared implicitly
+        I2C_Send7bitAddress(I2C1, OLED_ADDRESS, I2C_Direction_Transmitter);//器件地址 -- 默认0x78
+..\HARDWARE\LCD_IIC\OLED_I2C.c(91): error:  #20: identifier "I2C_Direction_Transmitter" is undefined
+        I2C_Send7bitAddress(I2C1, OLED_ADDRESS, I2C_Direction_Transmitter);//器件地址 -- 默认0x78
+..\HARDWARE\LCD_IIC\OLED_I2C.c(92): error:  #20: identifier "I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED" is undefined
+        while(!I2C_CheckEvent(I2C1, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED));
+..\HARDWARE\LCD_IIC\OLED_I2C.c(94): warning:  #223-D: function "I2C_SendData" declared implicitly
+        I2C_SendData(I2C1, addr);//寄存器地址
+..\HARDWARE\LCD_IIC\OLED_I2C.c(95): error:  #20: identifier "I2C_EVENT_MASTER_BYTE_TRANSMITTED" is undefined
+        while (!I2C_CheckEvent(I2C1, I2C_EVENT_MASTER_BYTE_TRANSMITTED));
+..\HARDWARE\LCD_IIC\OLED_I2C.c(100): warning:  #223-D: function "I2C_GenerateSTOP" declared implicitly
+        I2C_GenerateSTOP(I2C1, ENABLE);//关闭I2C1总线
+..\HARDWARE\LCD_IIC\OLED_I2C.c: 13 warnings, 18 errors
+compiling stm32f10x_it.c...
+"..\OBJ\test.axf" - 18 Error(s), 13 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  D:\单片机学习文档\单片机工程总地址\学习工程\MPU6050俯仰角解调\USER\RTE
+  E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+Target not created.
+Load "..\\OBJ\\test.axf" 
+Error: Flash Download failed  -  Target DLL has been cancelled

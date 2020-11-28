@@ -1,0 +1,15 @@
+..\obj\csb.o: ..\HARDWARE\csb.c
+..\obj\csb.o: ..\HARDWARE\csb.h
+..\obj\csb.o: ..\SYSTEM\sys\sys.h
+..\obj\csb.o: ..\SYSTEM\sys\stm32f10x.h
+..\obj\csb.o: ..\SYSTEM\sys\core_cm3.h
+..\obj\csb.o: E:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\csb.o: ..\SYSTEM\sys\system_stm32f10x.h
+..\obj\csb.o: ..\HARDWARE\lcd.h
+..\obj\csb.o: E:\keil\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\csb.o: ..\HARDWARE\control.h
+..\obj\csb.o: ..\HARDWARE\text.h
+..\obj\csb.o: ..\HARDWARE\csb.h
+..\obj\csb.o: ..\SYSTEM\delay\delay.h
+..\obj\csb.o: ..\SYSTEM\usart\usart.h
+..\obj\csb.o: E:\keil\ARM\ARMCC\Bin\..\include\stdio.h

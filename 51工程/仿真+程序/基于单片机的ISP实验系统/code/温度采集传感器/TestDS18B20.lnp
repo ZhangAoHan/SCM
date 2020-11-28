@@ -1,0 +1,3 @@
+"TestDS18B20.obj" 
+TO "TestDS18B20" 
+RAMSIZE(256) 

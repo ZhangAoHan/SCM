@@ -1,0 +1,117 @@
+C51 COMPILER V8.18   KEYMAIN                                                               07/23/2009 16:28:31 PAGE 1   
+
+
+C51 COMPILER V8.18, COMPILATION OF MODULE KEYMAIN
+OBJECT MODULE PLACED IN keyMain.OBJ
+COMPILER INVOKED BY: d:\Keil\C51\BIN\C51.EXE keyMain.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /*****************************************************
+   2          *文件名称：keyMain.c
+   3          *文件功能：实验板键盘扫描测试
+   4          *版本：    V0.0.1
+   5          *作者：    yd
+   6          *时间：    09.07.22
+   7          *说明：键盘采用中断法，即当有键按下时将触发外部中断0
+   8          ******************************************************/
+   9          #include <AT89X52.h>
+  10          #include <absacc.h>
+  11          #include "8255.h"
+  12          #define uchar unsigned char
+  13          #define uint  unsigned int
+  14          #define sei() (EA=1)
+  15          #define cli() (EA=0)
+  16          //-----------------键盘模式选择----------------
+  17          #define KEY_MODE  1       //模式选择，1代表使用编码键盘;0代表使用矩阵键盘
+  18          uchar keyCurrentValue;
+  19          /*************************************************
+  20          *函数名称：extern0Init(void) 
+  21          *函数功能：外部中断0初始化
+  22          *入口参数：无
+  23          *出口参数：无
+  24          *************************************************/
+  25          void extern0Init(void) 
+  26          {
+  27   1          EX0 = 1;     //外部中断0使能
+  28   1          IT0 = 1;     //外部中断0跳变中断
+  29   1      }
+  30          /************************************************
+  31          *函数名称：get_key_value(void)
+  32          *函数功能：获取键值
+  33          *入口参数：无
+  34          *出口参数：返回键值1~16
+  35          ************************************************/
+  36          uchar get_key_value(void)
+  37          {
+  38   1         register uchar i;
+  39   1         uchar line,keyTemp,temp;
+  40   1         CHOOSE8255();
+  41   1      //   XBYTE[COMMAND_ADDRESS] =0x81; //PC0~3输入方式，PC4~7输出方式
+  42   1         temp=0xef;     //1110
+  43   1         for(i=0;i<4;i++)
+  44   1         {
+  45   2           XBYTE[COMMAND_ADDRESS] =0x80; //PC0~3输出方式，PC4~7输出方式
+  46   2           XBYTE[PC_ADDRESS] =temp;   //1110 
+  47   2           XBYTE[COMMAND_ADDRESS] =0x81; //PC0~3输入方式，PC4~7输出方式
+  48   2           line =XBYTE[PC_ADDRESS];     //读取行
+  49   2               if((line&0x0f)!=0x0f)        //检测到行
+  50   2               {
+  51   3                 for(line=0;line<4;line++)
+  52   3                 {
+  53   4                    if((line &0x01)==0x00)
+  54   4                        {
+  55   5                              break;
+C51 COMPILER V8.18   KEYMAIN                                                               07/23/2009 16:28:31 PAGE 2   
+
+  56   5                        }
+  57   4                        else
+  58   4                        {
+  59   5                          line=line>>1;
+  60   5                        }
+  61   4                 }
+  62   3                 keyTemp=i+1+line*4;
+  63   3                 return keyTemp;
+  64   3               }
+  65   2               temp =temp<<1;
+  66   2               temp =temp |0x01;
+  67   2         }
+  68   1         return keyTemp;
+  69   1      }
+  70          void main()
+  71          {
+  72   1        keyCurrentValue=0x00;
+  73   1        extern0Init(); //外部中断0初始化
+  74   1        sei();
+  75   1        while(1);
+  76   1      }
+  77          /***********************************************
+  78          *函数功能：外部中断0中断处理函数
+  79          ************************************************/
+  80          void init0() interrupt 0 
+  81          {
+  82   1        #if KEY_MODE    //采用编码盘方式
+  83   1          CHOOSE8255(); //选中8255
+  84   1              XBYTE[COMMAND_ADDRESS] =0x81; //PC0~3输入方式,方式0
+  85   1              keyCurrentValue =XBYTE[PC_ADDRESS];
+  86   1              keyCurrentValue =keyCurrentValue &0x0f;
+  87   1        #else                   //采用矩阵键盘式
+                  uchar line;
+                      uchar row;
+                      keyCurrentValue=get_key();
+                #endif
+  92   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    126    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,9 @@
+..\obj\at24c02.o: ..\HARDWARE\AT24c02.c
+..\obj\at24c02.o: ..\HARDWARE\AT24c02.h
+..\obj\at24c02.o: ..\HARDWARE\AT24C02IIC.h
+..\obj\at24c02.o: ..\SYSTEM\sys\sys.h
+..\obj\at24c02.o: ..\SYSTEM\sys\stm32f10x.h
+..\obj\at24c02.o: ..\SYSTEM\sys\core_cm3.h
+..\obj\at24c02.o: E:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\at24c02.o: ..\SYSTEM\sys\system_stm32f10x.h
+..\obj\at24c02.o: ..\SYSTEM\delay\delay.h

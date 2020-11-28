@@ -1,0 +1,155 @@
+C51 COMPILER V8.18   STEPMOTERMAIN                                                         07/23/2009 19:46:49 PAGE 1   
+
+
+C51 COMPILER V8.18, COMPILATION OF MODULE STEPMOTERMAIN
+OBJECT MODULE PLACED IN stepMoterMain.OBJ
+COMPILER INVOKED BY: d:\Keil\C51\BIN\C51.EXE stepMoterMain.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /******************************************************
+   2          *文件名称：stepMoterMain.c
+   3          *文件功能：实验板中步进电机部分测试程序
+   4          *版本：    V0.0.1
+   5          *作者：    yd
+   6          *时间：    09.07.22
+   7          *说明：此处电机采用L298驱动，此测试程序分八步驱动四个相
+   8          极的步进电机
+   9          ******************************************************/
+  10          #include <AT89X52.h>
+  11          #include <absacc.h>
+  12          #include "8255.h"       
+  13          #define uchar unsigned char
+  14          #define uint  unsigned int
+  15          /********************************************************************************************
+  16          * 函数名称：Delay(uint a)
+  17          * 功    能：延迟时间=a*1ms
+  18          * 入口参数：
+  19          * 出口参数：无
+  20          *********************************************************************************************/
+  21          void Delay(uint a)
+  22          {
+  23   1         uchar  i;
+  24   1         while(a--)
+  25   1         for(i=0;i<125;i++);
+  26   1      }
+  27          /*******************************************************
+  28          *函数名称：ground(step)
+  29          *函数功能：给电机的四个相极送信号
+  30          *函数入口：step,电机相位的第几步
+  31          *函数出口：无
+  32          *说明：步进电机转步数，分八步
+  33          *******************************************************/
+  34          void ground(step) 
+  35          {
+  36   1        CHOOSE8255();
+  37   1        XBYTE[COMMAND_ADDRESS] =0x00; //PA工作在方式0，输出方式
+  38   1        switch(step)
+  39   1        {
+  40   2          case 0x00:
+  41   2              {
+  42   3                //MOTER_M1= 1; 
+  43   3                //MOTER_M2= 0;
+  44   3                //MOTER_M3= 0;
+  45   3                //MOTER_M4= 0;
+  46   3                XBYTE[PA_ADDRESS] =0x0b; //0/0/M4/M3/1/M2/M1/1
+  47   3                break;
+  48   3              }
+  49   2              case 0x01:
+  50   2              {
+  51   3            //MOTER_M1= 1;
+  52   3                //MOTER_M2= 1;
+  53   3                //MOTER_M3= 0;
+  54   3                //MOTER_M4= 0;
+  55   3                XBYTE[PA_ADDRESS] =0x0f; //0/0/M4/M3/1/M2/M1/1
+C51 COMPILER V8.18   STEPMOTERMAIN                                                         07/23/2009 19:46:49 PAGE 2   
+
+  56   3                break;          
+  57   3              }
+  58   2              case 0x02:
+  59   2              {
+  60   3                //MOTER_M1= 0;
+  61   3                //MOTER_M2= 1;
+  62   3                //MOTER_M3= 0;
+  63   3                //MOTER_M4= 0;
+  64   3                XBYTE[PA_ADDRESS] =0x0d; //0/0/M4/M3/1/M2/M1/1
+  65   3                break;
+  66   3              }
+  67   2              case 0x03:
+  68   2              {
+  69   3                //MOTER_M1= 0;
+  70   3                //MOTER_M2= 1;
+  71   3                //MOTER_M3= 1;
+  72   3                //MOTER_M4= 0;
+  73   3                break;
+  74   3              }
+  75   2              case 0x04:
+  76   2              { 
+  77   3                //MOTER_M1= 0;
+  78   3                //MOTER_M2= 0;
+  79   3                //MOTER_M3= 1;
+  80   3                //MOTER_M4= 0;
+  81   3                XBYTE[PA_ADDRESS] =0x19; //0/0/M4/M3/1/M2/M1/1
+  82   3                break; 
+  83   3              }
+  84   2              case 0x05:
+  85   2              {
+  86   3                //MOTER_M1= 0;
+  87   3               // MOTER_M2= 0;
+  88   3               // MOTER_M3= 1;
+  89   3               // MOTER_M4= 1;
+  90   3                XBYTE[PA_ADDRESS] =0x39; //0/0/M4/M3/1/M2/M1/1
+  91   3                break;
+  92   3              }
+  93   2              case 0x06:
+  94   2              { 
+  95   3                //MOTER_M1= 0;
+  96   3                //MOTER_M2= 0;
+  97   3                //MOTER_M3= 0;
+  98   3                //MOTER_M4= 1;
+  99   3                XBYTE[PA_ADDRESS] =0x29; //0/0/M4/M3/1/M2/M1/1
+ 100   3                break;
+ 101   3              }
+ 102   2              case 0x07:
+ 103   2              {
+ 104   3                //MOTER_M1= 0;
+ 105   3                //MOTER_M2= 0;
+ 106   3                //MOTER_M3= 0;
+ 107   3                //MOTER_M4= 0;
+ 108   3                XBYTE[PA_ADDRESS] =0x09; //0/0/M4/M3/1/M2/M1/1
+ 109   3                break;
+ 110   3              }
+ 111   2              default:
+ 112   2                 break;
+ 113   2        }
+ 114   1      }
+ 115          void main()
+ 116          {
+ 117   1        uchar moterTemp;
+C51 COMPILER V8.18   STEPMOTERMAIN                                                         07/23/2009 19:46:49 PAGE 3   
+
+ 118   1        moterTemp=0x00;
+ 119   1        while(1)
+ 120   1        {
+ 121   2          ground(moterTemp);
+ 122   2              Delay(800);
+ 123   2              if(moterTemp <0x07)
+ 124   2                moterTemp++;
+ 125   2              else
+ 126   2                moterTemp =0x00;
+ 127   2        } 
+ 128   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    151    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

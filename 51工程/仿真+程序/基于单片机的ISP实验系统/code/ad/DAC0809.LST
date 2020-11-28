@@ -1,0 +1,61 @@
+C51 COMPILER V8.18   DAC0809                                                               07/23/2009 21:31:09 PAGE 1   
+
+
+C51 COMPILER V8.18, COMPILATION OF MODULE DAC0809
+OBJECT MODULE PLACED IN DAC0809.OBJ
+COMPILER INVOKED BY: d:\Keil\C51\BIN\C51.EXE DAC0809.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /************************************************
+   2          *文件名称：ADC0809.c
+   3          *文件功能：实验板上ad转换芯片0809测试程序
+   4          *版本：    V0.0.1
+   5          *作者：    yd
+   6          *时间：    09.07.22
+   7          ************************************************/
+   8          #include <AT89X52.h>
+   9          #include <absacc.h>
+  10          #define uchar unsigned char
+  11          #define uint  unsigned int
+  12          //-------------adc0809端口定义--------------------
+  13          #define CHOOSE0809()  {P2_5=0;P2_6=1;P2_7=1;} //定义0809片选端
+  14          #define PORT_ADC0809  P0                      //0809数据端口
+  15          //------------------------------------------------
+  16          /****************************************************
+  17          *函数名称：channelChoose(uchar channel)
+  18          *函数功能：0809转换通道选择
+  19          *入口参数：channel,通道选择
+  20          *出口参数：返回通道采样数据 
+  21          ****************************************************/
+  22          uchar channelChoose(uchar channel)
+  23          {
+  24   1        uchar temp;
+  25   1        CHOOSE0809();
+  26   1        XBYTE[channel-1] =0x00;  //选择通道，等待转换
+  27   1        while(P3_3==1);  //等待转换
+  28   1        temp =P0;
+  29   1        return temp;
+  30   1      }
+  31          void main()
+  32          {
+  33   1        uchar temp;
+  34   1        while(1)
+  35   1        { 
+  36   2          temp =channelChoose(0x01);  //读取通道1
+  37   2        }
+  38   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     33    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

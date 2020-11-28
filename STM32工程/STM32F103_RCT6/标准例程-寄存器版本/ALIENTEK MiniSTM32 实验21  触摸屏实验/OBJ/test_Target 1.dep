@@ -1,0 +1,155 @@
+Dependencies for Project 'test', Target 'Target 1': (DO NOT MODIFY !)
+F (.\startup_stm32f10x_hd.s)(0x532BB241)(--cpu Cortex-M3 -g --apcs=interwork -I "H:\有用\单片机工程总地址\STM32\ALIENTEK MiniSTM32 V3.0开发板资料\4，程序源码\1，标准例程-寄存器版本\ALIENTEK MiniSTM32 实验21  触摸屏实验\USER\RTE"-I E:\Keil\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\Keil\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 514" --pd "STM32F10X_HD SETA 1"--list ..\obj\startup_stm32f10x_hd.lst --xref -o ..\obj\startup_stm32f10x_hd.o --depend ..\obj\startup_stm32f10x_hd.d)
+F (.\test.c)(0x54798AD0)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LED -I..\HARDWARE\KEY -I..\HARDWARE\EXTI -I..\HARDWARE\WDG -I..\HARDWARE\TIMER -I..\HARDWARE\OLED -I..\HARDWARE\LCD -I..\USMART -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH-I "H:\有用\单片机工程总地址\STM32\ALIENTEK MiniSTM32 V3.0开发板资料\4，程序源码\1，标准例程-寄存器版本\ALIENTEK MiniSTM32 实验21  触摸屏实验\USER\RTE"-I E:\Keil\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\test.o --omf_browse ..\obj\test.crf --depend ..\obj\test.d)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\Keil\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\usart\usart.h)(0x550EB9F1)
+I (E:\Keil\ARM\ARMCC\include\stdio.h)(0x5475F300)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (..\HARDWARE\LED\led.h)(0x5317183E)
+I (..\HARDWARE\LCD\lcd.h)(0x553B60B3)
+I (E:\Keil\ARM\ARMCC\include\stdlib.h)(0x5475F300)
+I (..\HARDWARE\KEY\key.h)(0x5317E8E7)
+I (..\HARDWARE\24CXX\24cxx.h)(0x531C6D4F)
+I (..\HARDWARE\24CXX\myiic.h)(0x531C6CD7)
+I (..\HARDWARE\TOUCH\touch.h)(0x553B875B)
+I (..\HARDWARE\TOUCH\ott2001a.h)(0x544F9325)
+I (..\HARDWARE\TOUCH\gt9147.h)(0x544F934F)
+I (..\HARDWARE\TOUCH\ft5206.h)(0x553B883C)
+F (..\SYSTEM\delay\delay.c)(0x555AC5E1)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LED -I..\HARDWARE\KEY -I..\HARDWARE\EXTI -I..\HARDWARE\WDG -I..\HARDWARE\TIMER -I..\HARDWARE\OLED -I..\HARDWARE\LCD -I..\USMART -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH-I "H:\有用\单片机工程总地址\STM32\ALIENTEK MiniSTM32 V3.0开发板资料\4，程序源码\1，标准例程-寄存器版本\ALIENTEK MiniSTM32 实验21  触摸屏实验\USER\RTE"-I E:\Keil\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\delay.o --omf_browse ..\obj\delay.crf --depend ..\obj\delay.d)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\Keil\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\SYSTEM\sys\sys.c)(0x550EB960)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LED -I..\HARDWARE\KEY -I..\HARDWARE\EXTI -I..\HARDWARE\WDG -I..\HARDWARE\TIMER -I..\HARDWARE\OLED -I..\HARDWARE\LCD -I..\USMART -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH-I "H:\有用\单片机工程总地址\STM32\ALIENTEK MiniSTM32 V3.0开发板资料\4，程序源码\1，标准例程-寄存器版本\ALIENTEK MiniSTM32 实验21  触摸屏实验\USER\RTE"-I E:\Keil\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\sys.o --omf_browse ..\obj\sys.crf --depend ..\obj\sys.d)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\Keil\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\SYSTEM\usart\usart.c)(0x550EB9F1)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LED -I..\HARDWARE\KEY -I..\HARDWARE\EXTI -I..\HARDWARE\WDG -I..\HARDWARE\TIMER -I..\HARDWARE\OLED -I..\HARDWARE\LCD -I..\USMART -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH-I "H:\有用\单片机工程总地址\STM32\ALIENTEK MiniSTM32 V3.0开发板资料\4，程序源码\1，标准例程-寄存器版本\ALIENTEK MiniSTM32 实验21  触摸屏实验\USER\RTE"-I E:\Keil\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\usart.o --omf_browse ..\obj\usart.crf --depend ..\obj\usart.d)
+I (..\SYSTEM\usart\usart.h)(0x550EB9F1)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\Keil\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (E:\Keil\ARM\ARMCC\include\stdio.h)(0x5475F300)
+F (..\HARDWARE\LED\led.c)(0x5317183E)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LED -I..\HARDWARE\KEY -I..\HARDWARE\EXTI -I..\HARDWARE\WDG -I..\HARDWARE\TIMER -I..\HARDWARE\OLED -I..\HARDWARE\LCD -I..\USMART -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH-I "H:\有用\单片机工程总地址\STM32\ALIENTEK MiniSTM32 V3.0开发板资料\4，程序源码\1，标准例程-寄存器版本\ALIENTEK MiniSTM32 实验21  触摸屏实验\USER\RTE"-I E:\Keil\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\led.o --omf_browse ..\obj\led.crf --depend ..\obj\led.d)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\Keil\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\HARDWARE\LED\led.h)(0x5317183E)
+F (..\HARDWARE\LCD\ILI93xx.c)(0x55CAF4D6)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LED -I..\HARDWARE\KEY -I..\HARDWARE\EXTI -I..\HARDWARE\WDG -I..\HARDWARE\TIMER -I..\HARDWARE\OLED -I..\HARDWARE\LCD -I..\USMART -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH-I "H:\有用\单片机工程总地址\STM32\ALIENTEK MiniSTM32 V3.0开发板资料\4，程序源码\1，标准例程-寄存器版本\ALIENTEK MiniSTM32 实验21  触摸屏实验\USER\RTE"-I E:\Keil\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\ili93xx.o --omf_browse ..\obj\ili93xx.crf --depend ..\obj\ili93xx.d)
+I (..\HARDWARE\LCD\lcd.h)(0x553B60B3)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\Keil\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (E:\Keil\ARM\ARMCC\include\stdlib.h)(0x5475F300)
+I (..\HARDWARE\LCD\font.h)(0x52C52FE7)
+I (..\SYSTEM\usart\usart.h)(0x550EB9F1)
+I (E:\Keil\ARM\ARMCC\include\stdio.h)(0x5475F300)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+F (..\HARDWARE\KEY\key.c)(0x53182265)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LED -I..\HARDWARE\KEY -I..\HARDWARE\EXTI -I..\HARDWARE\WDG -I..\HARDWARE\TIMER -I..\HARDWARE\OLED -I..\HARDWARE\LCD -I..\USMART -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH-I "H:\有用\单片机工程总地址\STM32\ALIENTEK MiniSTM32 V3.0开发板资料\4，程序源码\1，标准例程-寄存器版本\ALIENTEK MiniSTM32 实验21  触摸屏实验\USER\RTE"-I E:\Keil\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\key.o --omf_browse ..\obj\key.crf --depend ..\obj\key.d)
+I (..\HARDWARE\KEY\key.h)(0x5317E8E7)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\Keil\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+F (..\HARDWARE\24CXX\myiic.c)(0x531C7917)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LED -I..\HARDWARE\KEY -I..\HARDWARE\EXTI -I..\HARDWARE\WDG -I..\HARDWARE\TIMER -I..\HARDWARE\OLED -I..\HARDWARE\LCD -I..\USMART -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH-I "H:\有用\单片机工程总地址\STM32\ALIENTEK MiniSTM32 V3.0开发板资料\4，程序源码\1，标准例程-寄存器版本\ALIENTEK MiniSTM32 实验21  触摸屏实验\USER\RTE"-I E:\Keil\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\myiic.o --omf_browse ..\obj\myiic.crf --depend ..\obj\myiic.d)
+I (..\HARDWARE\24CXX\myiic.h)(0x531C6CD7)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\Keil\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+F (..\HARDWARE\24CXX\24cxx.c)(0x531C712B)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LED -I..\HARDWARE\KEY -I..\HARDWARE\EXTI -I..\HARDWARE\WDG -I..\HARDWARE\TIMER -I..\HARDWARE\OLED -I..\HARDWARE\LCD -I..\USMART -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH-I "H:\有用\单片机工程总地址\STM32\ALIENTEK MiniSTM32 V3.0开发板资料\4，程序源码\1，标准例程-寄存器版本\ALIENTEK MiniSTM32 实验21  触摸屏实验\USER\RTE"-I E:\Keil\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\24cxx.o --omf_browse ..\obj\24cxx.crf --depend ..\obj\24cxx.d)
+I (..\HARDWARE\24CXX\24cxx.h)(0x531C6D4F)
+I (..\HARDWARE\24CXX\myiic.h)(0x531C6CD7)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\Keil\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+F (..\HARDWARE\TOUCH\ctiic.c)(0x553B883C)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LED -I..\HARDWARE\KEY -I..\HARDWARE\EXTI -I..\HARDWARE\WDG -I..\HARDWARE\TIMER -I..\HARDWARE\OLED -I..\HARDWARE\LCD -I..\USMART -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH-I "H:\有用\单片机工程总地址\STM32\ALIENTEK MiniSTM32 V3.0开发板资料\4，程序源码\1，标准例程-寄存器版本\ALIENTEK MiniSTM32 实验21  触摸屏实验\USER\RTE"-I E:\Keil\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\ctiic.o --omf_browse ..\obj\ctiic.crf --depend ..\obj\ctiic.d)
+I (..\HARDWARE\TOUCH\ctiic.h)(0x553B883C)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\Keil\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+F (..\HARDWARE\TOUCH\ott2001a.c)(0x544F9325)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LED -I..\HARDWARE\KEY -I..\HARDWARE\EXTI -I..\HARDWARE\WDG -I..\HARDWARE\TIMER -I..\HARDWARE\OLED -I..\HARDWARE\LCD -I..\USMART -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH-I "H:\有用\单片机工程总地址\STM32\ALIENTEK MiniSTM32 V3.0开发板资料\4，程序源码\1，标准例程-寄存器版本\ALIENTEK MiniSTM32 实验21  触摸屏实验\USER\RTE"-I E:\Keil\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\ott2001a.o --omf_browse ..\obj\ott2001a.crf --depend ..\obj\ott2001a.d)
+I (..\HARDWARE\TOUCH\ott2001a.h)(0x544F9325)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\Keil\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\HARDWARE\TOUCH\touch.h)(0x553B875B)
+I (..\HARDWARE\TOUCH\gt9147.h)(0x544F934F)
+I (..\HARDWARE\TOUCH\ft5206.h)(0x553B883C)
+I (..\HARDWARE\TOUCH\ctiic.h)(0x553B883C)
+I (..\SYSTEM\usart\usart.h)(0x550EB9F1)
+I (E:\Keil\ARM\ARMCC\include\stdio.h)(0x5475F300)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+F (..\HARDWARE\TOUCH\touch.c)(0x553B875B)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LED -I..\HARDWARE\KEY -I..\HARDWARE\EXTI -I..\HARDWARE\WDG -I..\HARDWARE\TIMER -I..\HARDWARE\OLED -I..\HARDWARE\LCD -I..\USMART -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH-I "H:\有用\单片机工程总地址\STM32\ALIENTEK MiniSTM32 V3.0开发板资料\4，程序源码\1，标准例程-寄存器版本\ALIENTEK MiniSTM32 实验21  触摸屏实验\USER\RTE"-I E:\Keil\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\touch.o --omf_browse ..\obj\touch.crf --depend ..\obj\touch.d)
+I (..\HARDWARE\TOUCH\touch.h)(0x553B875B)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\Keil\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\HARDWARE\TOUCH\ott2001a.h)(0x544F9325)
+I (..\HARDWARE\TOUCH\gt9147.h)(0x544F934F)
+I (..\HARDWARE\TOUCH\ft5206.h)(0x553B883C)
+I (..\HARDWARE\LCD\lcd.h)(0x553B60B3)
+I (E:\Keil\ARM\ARMCC\include\stdlib.h)(0x5475F300)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (E:\Keil\ARM\ARMCC\include\math.h)(0x5475F2FE)
+I (..\HARDWARE\24CXX\24cxx.h)(0x531C6D4F)
+I (..\HARDWARE\24CXX\myiic.h)(0x531C6CD7)
+F (..\HARDWARE\TOUCH\gt9147.c)(0x544FAADA)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LED -I..\HARDWARE\KEY -I..\HARDWARE\EXTI -I..\HARDWARE\WDG -I..\HARDWARE\TIMER -I..\HARDWARE\OLED -I..\HARDWARE\LCD -I..\USMART -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH-I "H:\有用\单片机工程总地址\STM32\ALIENTEK MiniSTM32 V3.0开发板资料\4，程序源码\1，标准例程-寄存器版本\ALIENTEK MiniSTM32 实验21  触摸屏实验\USER\RTE"-I E:\Keil\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\gt9147.o --omf_browse ..\obj\gt9147.crf --depend ..\obj\gt9147.d)
+I (..\HARDWARE\TOUCH\gt9147.h)(0x544F934F)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\Keil\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\HARDWARE\TOUCH\touch.h)(0x553B875B)
+I (..\HARDWARE\TOUCH\ott2001a.h)(0x544F9325)
+I (..\HARDWARE\TOUCH\ft5206.h)(0x553B883C)
+I (..\HARDWARE\TOUCH\ctiic.h)(0x553B883C)
+I (..\SYSTEM\usart\usart.h)(0x550EB9F1)
+I (E:\Keil\ARM\ARMCC\include\stdio.h)(0x5475F300)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (E:\Keil\ARM\ARMCC\include\string.h)(0x5475F300)
+F (..\HARDWARE\TOUCH\ft5206.c)(0x553B883C)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LED -I..\HARDWARE\KEY -I..\HARDWARE\EXTI -I..\HARDWARE\WDG -I..\HARDWARE\TIMER -I..\HARDWARE\OLED -I..\HARDWARE\LCD -I..\USMART -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH-I "H:\有用\单片机工程总地址\STM32\ALIENTEK MiniSTM32 V3.0开发板资料\4，程序源码\1，标准例程-寄存器版本\ALIENTEK MiniSTM32 实验21  触摸屏实验\USER\RTE"-I E:\Keil\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\ft5206.o --omf_browse ..\obj\ft5206.crf --depend ..\obj\ft5206.d)
+I (..\HARDWARE\TOUCH\ft5206.h)(0x553B883C)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\Keil\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\HARDWARE\TOUCH\touch.h)(0x553B875B)
+I (..\HARDWARE\TOUCH\ott2001a.h)(0x544F9325)
+I (..\HARDWARE\TOUCH\gt9147.h)(0x544F934F)
+I (..\HARDWARE\TOUCH\ctiic.h)(0x553B883C)
+I (..\SYSTEM\usart\usart.h)(0x550EB9F1)
+I (E:\Keil\ARM\ARMCC\include\stdio.h)(0x5475F300)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (E:\Keil\ARM\ARMCC\include\string.h)(0x5475F300)
+F (..\README.TXT)(0x55C44253)()

@@ -1,0 +1,197 @@
+C51 COMPILER V8.18   TESTDS18B20                                                           07/22/2009 17:15:47 PAGE 1   
+
+
+C51 COMPILER V8.18, COMPILATION OF MODULE TESTDS18B20
+OBJECT MODULE PLACED IN TestDS18B20.OBJ
+COMPILER INVOKED BY: d:\Keil\C51\BIN\C51.EXE TestDS18B20.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /*************************************************
+   2          *文件名称：温度传感器DS18B20测试函数文件
+   3          *名称功能：测试实验系统中DS18B20
+   4          *版本：    V0.0.0
+   5          *作者：    yd
+   6          *时间：    09.07.22
+   7          *************************************************/
+   8          #include <AT89X51.h>
+   9          #include <intrins.h>
+  10          #define uchar unsigned char
+  11          #define uint  unsigned int
+  12          //--------定义温度传感器端口-----------
+  13          #define    DQ   P3_4
+  14          //-------------------------------------
+  15          /*************************************************
+  16          *函数名称：delay_50us(uint t)
+  17          *函数功能：12M，单循环软件延时50us
+  18          *入口参数：t,延时周期数
+  19          *出口参数：无
+  20          *************************************************/
+  21          void delay_50us(uint t)
+  22          {
+  23   1      
+  24   1        while( --t );
+  25   1      
+  26   1      }
+  27          /*************************************************************
+  28          *函数名称：delay60us(void)
+  29          *函数功能：延时60us
+  30          *入口参数：无
+  31          *出口参数：无                                                                           
+  32          *************************************************************/
+  33          void delay60us(void)
+  34          {
+  35   1              uchar i;
+  36   1              for(i=0;i<20;i++);
+  37   1      }
+  38          /*************************************************
+  39          *函数名称：ds18b20_reset()
+  40          *函数功能：ds18b20 复位
+  41          *入口参数：无
+  42          *出口参数：返回ds18b20当前数据口状态
+  43          *************************************************/
+  44          bit  ds18b20_reset( ) 
+  45          {
+  46   1          DQ=0;
+  47   1              delay_50us(10);                         //延时500us
+  48   1              DQ=1;
+  49   1              delay_50us(2);                      // 延时100us
+  50   1              return(DQ);                                 //读取数据口状态
+  51   1      }
+  52          /*************************************************************
+  53          *函数名称：ds18b20_init(void)
+  54          *函数功能：ds18b20的初始化
+  55          *入口参数：无
+C51 COMPILER V8.18   TESTDS18B20                                                           07/22/2009 17:15:47 PAGE 2   
+
+  56          *出口参数：无                                                                                           
+  57          *************************************************************/
+  58          void ds18b20_init(void)
+  59          {
+  60   1              while(1)
+  61   1              {
+  62   2                      if(!ds18b20_reset())        //收到ds18b20的应答信号
+  63   2                      {       
+  64   3                              DQ=1;
+  65   3                              delay60us();                    //延时60us
+  66   3                              break;          
+  67   3                      }
+  68   2                      else
+  69   2                              ds18b20_reset();                //否则再发复位信号
+  70   2              }
+  71   1      }
+  72          /*************************************************************
+  73          *函数名称：ds18b20_writecommand(uchar command)
+  74          *函数功能：向ds18b20写命令
+  75          *入口参数：command，命令参数
+  76          *出口参数：无                                   
+  77          *************************************************************/
+  78          void ds18b20_writecommand(uchar command)
+  79          {       
+  80   1      
+  81   1              uchar   i;
+  82   1              for(i=0;i<8;i++)
+  83   1              {
+  84   2                      if((command & 0x01)==0)
+  85   2                      {
+  86   3                              DQ =0;                                  //写0
+  87   3                              delay60us();                    //延时60us
+  88   3                              _nop_();
+  89   3                              _nop_();
+  90   3                              _nop_();
+  91   3                              _nop_();
+  92   3                              _nop_();
+  93   3                              _nop_();
+  94   3                              DQ =1;                          
+  95   3                              _nop_();
+  96   3                              _nop_();
+  97   3      
+  98   3                      }
+  99   2                      else                                            //写1
+ 100   2                      {
+ 101   3                              DQ =0;
+ 102   3                              _nop_();
+ 103   3                              _nop_();                                //延时2us
+ 104   3                              DQ =1;
+ 105   3                              delay60us();                    //延时60us
+ 106   3                              _nop_();
+ 107   3                              _nop_();
+ 108   3                              _nop_();
+ 109   3                              _nop_();
+ 110   3                      }
+ 111   2                      command=_cror_(command,1); // 右移1位
+ 112   2               }
+ 113   1      }
+ 114          
+ 115          /*************************************************************
+ 116          *函数名称：ds18b20_readdata(void)
+ 117          *函数功能：读ds18b20数据
+C51 COMPILER V8.18   TESTDS18B20                                                           07/22/2009 17:15:47 PAGE 3   
+
+ 118          *入口参数：无
+ 119          *出口参数：返回读到的数据
+ 120          *************************************************************/
+ 121          uchar ds18b20_readdata(void)
+ 122          {
+ 123   1              uchar readdata;
+ 124   1              uchar i;
+ 125   1              for(i=0;i<8;i++)
+ 126   1              {
+ 127   2                      DQ=0;
+ 128   2                      _nop_();
+ 129   2                      _nop_();
+ 130   2                      _nop_();
+ 131   2                      DQ=1;              //释放总线
+ 132   2                      if(DQ==0)          //如果读到的是0
+ 133   2                      {
+ 134   3                              readdata=readdata&0x7f;
+ 135   3                              delay60us();
+ 136   3                      }
+ 137   2                      else                    //读到的是1
+ 138   2                      {
+ 139   3                              readdata=readdata|0x80;
+ 140   3                              delay60us();
+ 141   3                      }
+ 142   2                      if(i<7)
+ 143   2                      
+ 144   2                      readdata=_cror_(readdata,1);
+ 145   2              }
+ 146   1              return readdata;
+ 147   1      }
+ 148          
+ 149          void main()
+ 150          {
+ 151   1        uchar temputreTemp[2];         //当前温度变量寄存数组
+ 152   1        uchar i;
+ 153   1        while(1)
+ 154   1        {
+ 155   2          ds18b20_init();                  //数字温度计初始化 
+ 156   2              ds18b20_writecommand(0xcc);      //单机模式下，跳过ROM
+ 157   2              ds18b20_writecommand(0x44);      //开始转换
+ 158   2              delay_50us(10);              //延时500us
+ 159   2              ds18b20_writecommand(0xcc);      //跳过ROM
+ 160   2              ds18b20_writecommand(0xbe);      //读寄存器
+ 161   2              for(i=0;i<2;i++)
+ 162   2              {       
+ 163   3                 temputreTemp[i]=ds18b20_readdata();  //将温度数据的高位和地位存到数组中，temp[0]高位，temp[1]低位    
+ 164   3              }
+ 165   2      
+ 166   2        }
+ 167   1        
+ 168   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    203    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+C51 COMPILER V8.18   TESTDS18B20                                                           07/22/2009 17:15:47 PAGE 4   
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

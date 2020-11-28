@@ -1,0 +1,10 @@
+..\obj\exit.o: ..\HARDWARE\exit.c
+..\obj\exit.o: ..\HARDWARE\exit.h
+..\obj\exit.o: ..\SYSTEM\sys\sys.h
+..\obj\exit.o: ..\SYSTEM\sys\stm32f10x.h
+..\obj\exit.o: ..\SYSTEM\sys\core_cm3.h
+..\obj\exit.o: E:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\exit.o: ..\SYSTEM\sys\system_stm32f10x.h
+..\obj\exit.o: ..\SYSTEM\delay\delay.h
+..\obj\exit.o: ..\HARDWARE\ov7670.h
+..\obj\exit.o: ..\HARDWARE\sccb.h

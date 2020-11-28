@@ -1,0 +1,22 @@
+#ifndef __TEXT_H__
+#define __TEXT_H__	 
+#include <stm32f10x.h>
+ 
+ 	 __packed typedef struct 
+{
+	u8 fontok;				//字库存在标志，0XAA，字库正常；其他，字库不存在
+	u32 ugbkaddr; 			//unigbk的地址
+	u32 ugbksize;			//unigbk的大小	 
+	u32 f12addr;			//gbk12地址	
+	u32 gbk12size;			//gbk12的大小	 
+	u32 f16addr;			//gbk16地址
+	u32 gbk16size;			//gbk16的大小		 
+	u32 f24addr;			//gbk24地址
+	u32 gkb24size;			//gbk24的大小 
+}_font_info; 				     
+void Get_HzMat(unsigned char *code,unsigned char *mat,u8 size);			//得到汉字的点阵码
+void Show_Font(u16 x,u16 y,u8 *font,u8 size,u8 mode);					//在指定位置显示一个汉字
+void Show_Str(u16 x,u16 y,u16 width,u16 height,u8*str,u8 size,u8 mode);	//在指定位置显示一个字符串 
+void Show_Str_Mid(u16 x,u16 y,u8*str,u8 size,u8 len);
+u8 font_init(void);
+#endif

@@ -1,0 +1,23 @@
+
+T2714 009:289 SEGGER J-Link V4.91b (beta) Log File (0001ms, 9125ms total)
+T2714 009:289 DLL Compiled: Sep 15 2014 09:17:56 (0001ms, 9125ms total)
+T2714 009:289 Logging started @ 2018-03-16 21:04 (0001ms, 9125ms total)
+T2714 009:290 JLINK_SetWarnOutHandler(...) (0000ms, 9125ms total)
+T2714 009:290 JLINK_OpenEx(...)
+Firmware: J-Link ARM V8 compiled Jul 17 2014 12:31:18
+Hardware: V0.00
+S/N: 304423265
+Feature(s): RDI,FlashDL,FlashBP,JFlash,GDBFULL  returns O.K. (0272ms, 9397ms total)
+T2714 009:562 JLINK_SetErrorOutHandler(...) (0000ms, 9397ms total)
+T2714 009:562 JLINK_ExecCommand("ProjectFile = "D:\单片机学习文档\单片机工程总地址\学生工程\毕设\TFT屏相关程序\STM32_RCT6 TFT触摸及汉字显示工程实验\USER\JLinkSettings.ini"", ...)  returns 0x00 (0037ms, 9434ms total)
+T2714 009:599 JLINK_ExecCommand("Device = STM32F103RC", ...)Device "STM32F103RC" selected (256 KB flash, 48 KB RAM).  returns 0x00 (0012ms, 9446ms total)
+T2714 009:611 JLINK_ExecCommand("DisableConnectionTimeout", ...)  returns 0x01 (0000ms, 9446ms total)
+T2714 009:611 JLINK_GetHardwareVersion()  returns 0x00 (0000ms, 9446ms total)
+T2714 009:611 JLINK_GetDLLVersion()  returns 49102 (0000ms, 9446ms total)
+T2714 009:611 JLINK_GetCompileDateTime() (0000ms, 9446ms total)
+T2714 009:611 JLINK_GetFirmwareString(...) (0000ms, 9446ms total)
+T2714 009:611 JLINK_GetHardwareVersion()  returns 0x00 (0000ms, 9446ms total)
+T2714 009:611 JLINK_TIF_Select(JLINKARM_TIF_JTAG)  returns 0x00 (0002ms, 9448ms total)
+T2714 009:613 JLINK_SetSpeed(1000) (0000ms, 9448ms total)
+T2714 009:613 JLINK_SetResetType(JLINKARM_RESET_TYPE_NORMAL)  returns JLINKARM_RESET_TYPE_NORMAL (0000ms, 9448ms total)
+T2714 009:613 JLINK_Reset()

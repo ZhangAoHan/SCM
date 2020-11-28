@@ -1,0 +1,13 @@
+..\obj\olcd.o: ..\HARDWARE\OLED\olcd.c
+..\obj\olcd.o: ..\HARDWARE\OLED\olcd.h
+..\obj\olcd.o: ..\SYSTEM\sys\sys.h
+..\obj\olcd.o: ..\SYSTEM\sys\stm32f10x.h
+..\obj\olcd.o: ..\SYSTEM\sys\core_cm3.h
+..\obj\olcd.o: E:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\olcd.o: ..\SYSTEM\sys\system_stm32f10x.h
+..\obj\olcd.o: ..\SYSTEM\delay\delay.h
+..\obj\olcd.o: ..\SYSTEM\sys\sys.h
+..\obj\olcd.o: ..\SYSTEM\usart\usart.h
+..\obj\olcd.o: E:\keil\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\olcd.o: E:\keil\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\olcd.o: ..\HARDWARE\OLED\olcd_display.h

@@ -1,0 +1,11 @@
+..\obj\control.o: ..\HARDWARE\control.c
+..\obj\control.o: ..\HARDWARE\control.h
+..\obj\control.o: ..\SYSTEM\sys\sys.h
+..\obj\control.o: ..\SYSTEM\sys\stm32f10x.h
+..\obj\control.o: ..\SYSTEM\sys\core_cm3.h
+..\obj\control.o: E:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\control.o: ..\SYSTEM\sys\system_stm32f10x.h
+..\obj\control.o: ..\HARDWARE\lcd.h
+..\obj\control.o: E:\keil\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\control.o: ..\HARDWARE\text.h
+..\obj\control.o: ..\HARDWARE\fdc2214.h

@@ -1,0 +1,12 @@
+..\obj\rcc52add.o: ..\RCC52\rcc52add.c
+..\obj\rcc52add.o: ..\SYSTEM\sys\stm32f10x.h
+..\obj\rcc52add.o: ..\SYSTEM\sys\core_cm3.h
+..\obj\rcc52add.o: F:\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\rcc52add.o: ..\SYSTEM\sys\system_stm32f10x.h
+..\obj\rcc52add.o: ..\SYSTEM\sys\sys.h
+..\obj\rcc52add.o: ..\HARDWARE\TFT.h
+..\obj\rcc52add.o: F:\Keil\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\rcc52add.o: ..\RCC52\rcc52.h
+..\obj\rcc52add.o: ..\RCC52\rcc52add.h
+..\obj\rcc52add.o: F:\Keil\ARM\ARMCC\Bin\..\include\string.h
+..\obj\rcc52add.o: F:\Keil\ARM\ARMCC\Bin\..\include\stdio.h

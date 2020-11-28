@@ -1,0 +1,10 @@
+..\obj\ps2.o: ..\HARDWARE\ps2.c
+..\obj\ps2.o: ..\HARDWARE\ps2.h
+..\obj\ps2.o: ..\SYSTEM\delay\delay.h
+..\obj\ps2.o: ..\SYSTEM\sys\sys.h
+..\obj\ps2.o: ..\SYSTEM\sys\stm32f10x.h
+..\obj\ps2.o: ..\SYSTEM\sys\core_cm3.h
+..\obj\ps2.o: F:\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\ps2.o: ..\SYSTEM\sys\system_stm32f10x.h
+..\obj\ps2.o: ..\SYSTEM\usart\usart.h
+..\obj\ps2.o: F:\Keil\ARM\ARMCC\Bin\..\include\stdio.h

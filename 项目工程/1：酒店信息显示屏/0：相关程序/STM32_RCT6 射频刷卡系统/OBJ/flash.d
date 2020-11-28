@@ -1,0 +1,10 @@
+..\obj\flash.o: ..\HARDWARE\flash.c
+..\obj\flash.o: ..\HARDWARE\flash.h
+..\obj\flash.o: ..\SYSTEM\sys\sys.h
+..\obj\flash.o: ..\SYSTEM\sys\stm32f10x.h
+..\obj\flash.o: ..\SYSTEM\sys\core_cm3.h
+..\obj\flash.o: F:\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\flash.o: ..\SYSTEM\sys\system_stm32f10x.h
+..\obj\flash.o: ..\HARDWARE\spi.h
+..\obj\flash.o: ..\SYSTEM\delay\delay.h
+..\obj\flash.o: ..\MALLOC\malloc.h

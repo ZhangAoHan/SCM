@@ -1,0 +1,11 @@
+..\obj\fat.o: ..\FAT\fat.c
+..\obj\fat.o: ..\FAT\FAT.h
+..\obj\fat.o: ..\SYSTEM\sys\stm32f10x.h
+..\obj\fat.o: ..\SYSTEM\sys\core_cm3.h
+..\obj\fat.o: F:\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\fat.o: ..\SYSTEM\sys\system_stm32f10x.h
+..\obj\fat.o: ..\HARDWARE\mmc_sd.h
+..\obj\fat.o: ..\SYSTEM\sys\sys.h
+..\obj\fat.o: F:\Keil\ARM\ARMCC\Bin\..\include\string.h
+..\obj\fat.o: ..\SYSTEM\usart\usart.h
+..\obj\fat.o: F:\Keil\ARM\ARMCC\Bin\..\include\stdio.h

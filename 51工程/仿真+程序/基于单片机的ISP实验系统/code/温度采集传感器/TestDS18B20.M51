@@ -1,0 +1,224 @@
+BL51 BANKED LINKER/LOCATER V6.20                                                        07/22/2009  17:15:47  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.20, INVOKED BY:
+D:\KEIL\C51\BIN\BL51.EXE TestDS18B20.obj TO TestDS18B20 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  TestDS18B20.obj (TESTDS18B20)
+  D:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  TestDS18B20 (TESTDS18B20)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         _DATA_GROUP_
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0037H     UNIT         ?PR?_DS18B20_WRITECOMMAND?TESTDS18B20
+            CODE    003AH     0030H     UNIT         ?PR?DS18B20_READDATA?TESTDS18B20
+            CODE    006AH     002FH     UNIT         ?PR?MAIN?TESTDS18B20
+            CODE    0099H     0015H     UNIT         ?PR?DS18B20_RESET?TESTDS18B20
+            CODE    00AEH     000FH     UNIT         ?PR?DS18B20_INIT?TESTDS18B20
+            CODE    00BDH     000CH     UNIT         ?C_C51STARTUP
+            CODE    00C9H     000AH     UNIT         ?PR?_DELAY_50US?TESTDS18B20
+            CODE    00D3H     0007H     UNIT         ?PR?DELAY60US?TESTDS18B20
+
+
+
+OVERLAY MAP OF MODULE:   TestDS18B20 (TESTDS18B20)
+
+
+SEGMENT                                         DATA_GROUP 
+  +--> CALLED SEGMENT                         START    LENGTH
+-------------------------------------------------------------
+?C_C51STARTUP                                 -----    -----
+  +--> ?PR?MAIN?TESTDS18B20
+
+?PR?MAIN?TESTDS18B20                          0008H    0002H
+  +--> ?PR?DS18B20_INIT?TESTDS18B20
+  +--> ?PR?_DS18B20_WRITECOMMAND?TESTDS18B20
+  +--> ?PR?_DELAY_50US?TESTDS18B20
+  +--> ?PR?DS18B20_READDATA?TESTDS18B20
+
+?PR?DS18B20_INIT?TESTDS18B20                  -----    -----
+  +--> ?PR?DS18B20_RESET?TESTDS18B20
+  +--> ?PR?DELAY60US?TESTDS18B20
+
+?PR?DS18B20_RESET?TESTDS18B20                 -----    -----
+  +--> ?PR?_DELAY_50US?TESTDS18B20
+
+BL51 BANKED LINKER/LOCATER V6.20                                                      07/22/2009  17:15:47  PAGE 2
+
+
+?PR?_DS18B20_WRITECOMMAND?TESTDS18B20         -----    -----
+  +--> ?PR?DELAY60US?TESTDS18B20
+
+?PR?DS18B20_READDATA?TESTDS18B20              -----    -----
+  +--> ?PR?DELAY60US?TESTDS18B20
+
+
+
+SYMBOL TABLE OF MODULE:  TestDS18B20 (TESTDS18B20)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        TESTDS18B20
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0099H         PUBLIC        ds18b20_reset
+  B:00B0H.4       PUBLIC        P3_4
+  C:00AEH         PUBLIC        ds18b20_init
+  C:003AH         PUBLIC        ds18b20_readdata
+  C:006AH         PUBLIC        main
+  C:00C9H         PUBLIC        _delay_50us
+  C:00D3H         PUBLIC        delay60us
+  C:0003H         PUBLIC        _ds18b20_writecommand
+  -------         PROC          _DELAY_50US
+  D:0006H         SYMBOL        t
+  C:00C9H         LINE#         21
+  C:00C9H         LINE#         22
+  C:00C9H         LINE#         24
+  C:00D2H         LINE#         26
+  -------         ENDPROC       _DELAY_50US
+  -------         PROC          DELAY60US
+  -------         DO            
+  D:0007H         SYMBOL        i
+  -------         ENDDO         
+  C:00D3H         LINE#         33
+  C:00D3H         LINE#         34
+  C:00D3H         LINE#         36
+  C:00D9H         LINE#         37
+  -------         ENDPROC       DELAY60US
+  -------         PROC          DS18B20_RESET
+  C:0099H         LINE#         44
+  C:0099H         LINE#         45
+  C:0099H         LINE#         46
+  C:009BH         LINE#         47
+  C:00A2H         LINE#         48
+  C:00A4H         LINE#         49
+  C:00ABH         LINE#         50
+  C:00ADH         LINE#         51
+  -------         ENDPROC       DS18B20_RESET
+  -------         PROC          DS18B20_INIT
+  C:00AEH         LINE#         58
+  C:00AEH         LINE#         59
+  C:00AEH         LINE#         60
+  C:00AEH         LINE#         61
+  C:00AEH         LINE#         62
+  C:00B3H         LINE#         63
+  C:00B3H         LINE#         64
+BL51 BANKED LINKER/LOCATER V6.20                                                      07/22/2009  17:15:47  PAGE 3
+
+
+  C:00B5H         LINE#         65
+  C:00B8H         LINE#         66
+  C:00B8H         LINE#         67
+  C:00B8H         LINE#         69
+  C:00BBH         LINE#         70
+  -------         ENDPROC       DS18B20_INIT
+  -------         PROC          _DS18B20_WRITECOMMAND
+  D:0006H         SYMBOL        command
+  -------         DO            
+  D:0005H         SYMBOL        i
+  -------         ENDDO         
+  C:0003H         LINE#         78
+  C:0005H         LINE#         79
+  C:0005H         LINE#         82
+  C:0007H         LINE#         83
+  C:0007H         LINE#         84
+  C:000BH         LINE#         85
+  C:000BH         LINE#         86
+  C:000DH         LINE#         87
+  C:0010H         LINE#         88
+  C:0011H         LINE#         89
+  C:0012H         LINE#         90
+  C:0013H         LINE#         91
+  C:0014H         LINE#         92
+  C:0015H         LINE#         93
+  C:0016H         LINE#         94
+  C:0018H         LINE#         95
+  C:0019H         LINE#         96
+  C:001AH         LINE#         98
+  C:001CH         LINE#         100
+  C:001CH         LINE#         101
+  C:001EH         LINE#         102
+  C:001FH         LINE#         103
+  C:0020H         LINE#         104
+  C:0022H         LINE#         105
+  C:0025H         LINE#         106
+  C:0026H         LINE#         107
+  C:0027H         LINE#         108
+  C:0028H         LINE#         109
+  C:0029H         LINE#         110
+  C:0029H         LINE#         111
+  C:0035H         LINE#         112
+  C:0039H         LINE#         113
+  -------         ENDPROC       _DS18B20_WRITECOMMAND
+  -------         PROC          DS18B20_READDATA
+  -------         DO            
+  D:0006H         SYMBOL        readdata
+  D:0005H         SYMBOL        i
+  -------         ENDDO         
+  C:003AH         LINE#         121
+  C:003AH         LINE#         122
+  C:003AH         LINE#         125
+  C:003CH         LINE#         126
+  C:003CH         LINE#         127
+  C:003EH         LINE#         128
+  C:003FH         LINE#         129
+  C:0040H         LINE#         130
+BL51 BANKED LINKER/LOCATER V6.20                                                      07/22/2009  17:15:47  PAGE 4
+
+
+  C:0041H         LINE#         131
+  C:0043H         LINE#         132
+  C:0046H         LINE#         133
+  C:0046H         LINE#         134
+  C:0049H         LINE#         135
+  C:0049H         LINE#         136
+  C:004BH         LINE#         138
+  C:004BH         LINE#         139
+  C:004EH         LINE#         140
+  C:0051H         LINE#         141
+  C:0051H         LINE#         142
+  C:0057H         LINE#         144
+  C:0063H         LINE#         145
+  C:0067H         LINE#         146
+  C:0069H         LINE#         147
+  -------         ENDPROC       DS18B20_READDATA
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        temputreTemp
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:006AH         LINE#         149
+  C:006AH         LINE#         150
+  C:006AH         LINE#         153
+  C:006AH         LINE#         154
+  C:006AH         LINE#         155
+  C:006DH         LINE#         156
+  C:0072H         LINE#         157
+  C:0077H         LINE#         158
+  C:007EH         LINE#         159
+  C:0083H         LINE#         160
+  C:0088H         LINE#         161
+  C:008AH         LINE#         162
+  C:008AH         LINE#         163
+  C:0093H         LINE#         164
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        TESTDS18B20
+
+Program Size: data=11.0 xdata=0 code=218
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

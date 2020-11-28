@@ -1,0 +1,14 @@
+..\obj\7670.o: ..\HARDWARE\7670.c
+..\obj\7670.o: ..\SYSTEM\sys\sys.h
+..\obj\7670.o: ..\SYSTEM\sys\stm32f10x.h
+..\obj\7670.o: ..\SYSTEM\sys\core_cm3.h
+..\obj\7670.o: E:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\7670.o: ..\SYSTEM\sys\system_stm32f10x.h
+..\obj\7670.o: ..\HARDWARE\7670.h
+..\obj\7670.o: ..\HARDWARE\sccb.h
+..\obj\7670.o: ..\HARDWARE\ov7670config.h
+..\obj\7670.o: ..\HARDWARE\timer.h
+..\obj\7670.o: ..\SYSTEM\delay\delay.h
+..\obj\7670.o: ..\SYSTEM\usart\usart.h
+..\obj\7670.o: E:\keil\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\7670.o: ..\HARDWARE\exit.h
