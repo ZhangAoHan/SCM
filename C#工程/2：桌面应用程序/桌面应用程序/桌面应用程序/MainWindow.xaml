@@ -1,0 +1,20 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="桌面应用程序.MainWindow"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Button x:Name="张奥涵" Content="张奥涵" RenderTransformOrigin="0.5,0.5" Margin="82,175,367,72" Click="Button_Click_1" FontFamily="Franklin Gothic Medium">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="6.588"/>
+                    <RotateTransform Angle="-356.42"/>
+                    <TranslateTransform X="-4.171" Y="-0.58"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="1233" HorizontalAlignment="Left" Margin="243,92,0,0" VerticalAlignment="Top" Width="75" Height="45" Click="Button_Click_2"/>
+
+    </Grid>
+</Window>

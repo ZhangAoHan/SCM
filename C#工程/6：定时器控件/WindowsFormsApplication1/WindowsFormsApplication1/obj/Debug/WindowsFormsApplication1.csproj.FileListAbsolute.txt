@@ -1,0 +1,8 @@
+D:\单片机学习文档\单片机工程总地址\上位机工程\6：定时器控件\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+D:\单片机学习文档\单片机工程总地址\上位机工程\6：定时器控件\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+D:\单片机学习文档\单片机工程总地址\上位机工程\6：定时器控件\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+D:\单片机学习文档\单片机工程总地址\上位机工程\6：定时器控件\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\单片机学习文档\单片机工程总地址\上位机工程\6：定时器控件\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+D:\单片机学习文档\单片机工程总地址\上位机工程\6：定时器控件\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+D:\单片机学习文档\单片机工程总地址\上位机工程\6：定时器控件\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+D:\单片机学习文档\单片机工程总地址\上位机工程\6：定时器控件\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache

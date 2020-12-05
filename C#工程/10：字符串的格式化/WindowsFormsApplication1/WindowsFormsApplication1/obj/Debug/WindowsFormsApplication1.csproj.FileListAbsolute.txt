@@ -1,0 +1,9 @@
+D:\单片机学习文档\单片机工程总地址\上位机工程\10：字符串的格式化\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+D:\单片机学习文档\单片机工程总地址\上位机工程\10：字符串的格式化\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+D:\单片机学习文档\单片机工程总地址\上位机工程\10：字符串的格式化\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+D:\单片机学习文档\单片机工程总地址\上位机工程\10：字符串的格式化\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+D:\单片机学习文档\单片机工程总地址\上位机工程\10：字符串的格式化\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+D:\单片机学习文档\单片机工程总地址\上位机工程\10：字符串的格式化\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\单片机学习文档\单片机工程总地址\上位机工程\10：字符串的格式化\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+D:\单片机学习文档\单片机工程总地址\上位机工程\10：字符串的格式化\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+D:\单片机学习文档\单片机工程总地址\上位机工程\10：字符串的格式化\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
