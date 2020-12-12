@@ -1,0 +1,86 @@
+A51 MACRO ASSEMBLER  MAIN                                                                 02/14/2015 09:56:53 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN main.OBJ
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE main.a51 SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ;*************  功能说明        **************
+                       2     
+                       3     ;程序使用P4.7 P4.6 来显示0~3的计手?
+                       4     
+                       5     ;******************************************
+                       6     ;******************************************
+                       7     ;定义P4端口的地址
+  00C0                 8     P4        DATA 0C0H
+                       9     ;******************************************
+                      10             
+                      11             my_prog  SEGMENT CODE
+----                  12                         RSEG my_prog
+0000 020000   F       13                  LJMP main
+0003                  14                  ORG 0x0003
+0003 020000   F       15                  LJMP count
+0100                  16                  ORG 0x100          
+0100                  17     Main:
+                      18                 USING   0
+0100 758140           19                 MOV SP, #40H
+0103 D288             20                 SETB IT0
+0105 D2A8             21                 SETB EX0
+0107 D2AF             22                 SETB EA
+0109 7400             23                 MOV  A,#0
+010B 020000   F       24     loop:   ljmp loop
+                      25     ;********************************
+                      26     
+                      27     ;//==============================
+                      28     ;// 函? count
+                      29     ;// 描述: 中断服务子程序
+                      30     ;//==============================
+010E                  31     count:  
+010E C083             32             PUSH DPH
+0110 C002             33             PUSH 02H
+0112 20E004           34             JB   ACC.0, SETP41
+0115 D2C7             35             SETB P4.7
+0117 8002             36             JMP  CON
+0119 C2C7             37     SETP41: CLR  P4.7
+011B 20E104           38     CON:    JB   ACC.1,SETP42
+011E D2C6             39             SETB P4.6
+0120 8002             40             JMP  CON1
+0122 C2C6             41     SETP42: CLR  P4.6
+0124 04               42     CON1:   INC  A
+0125 D083             43             POP  DPH
+0127 D002             44             POP  02H
+0129 32               45             RETI
+                      46     END
+                             
+                             
+A51 MACRO ASSEMBLER  MAIN                                                                 02/14/2015 09:56:53 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+ACC. . . . . . . .  D ADDR   00E0H   A   
+CON. . . . . . . .  C ADDR   011BH   R   SEG=MY_PROG
+CON1 . . . . . . .  C ADDR   0124H   R   SEG=MY_PROG
+COUNT. . . . . . .  C ADDR   010EH   R   SEG=MY_PROG
+DPH. . . . . . . .  D ADDR   0083H   A   
+EA . . . . . . . .  B ADDR   00A8H.7 A   
+EX0. . . . . . . .  B ADDR   00A8H.0 A   
+IT0. . . . . . . .  B ADDR   0088H.0 A   
+LOOP . . . . . . .  C ADDR   010BH   R   SEG=MY_PROG
+MAIN . . . . . . .  C ADDR   0100H   R   SEG=MY_PROG
+MY_PROG. . . . . .  C SEG    012AH       REL=UNIT
+P4 . . . . . . . .  D ADDR   00C0H   A   
+SETP41 . . . . . .  C ADDR   0119H   R   SEG=MY_PROG
+SETP42 . . . . . .  C ADDR   0122H   R   SEG=MY_PROG
+SP . . . . . . . .  D ADDR   0081H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,4 @@
+"main.obj",
+"12864.obj" 
+TO "top" 
+RAMSIZE(256) 

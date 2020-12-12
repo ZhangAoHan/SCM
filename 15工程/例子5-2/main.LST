@@ -1,0 +1,51 @@
+A51 MACRO ASSEMBLER  MAIN                                                                 02/13/2015 22:48:52 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN main.OBJ
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE main.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     mybits SEGMENT BIT                
+----                   2                RSEG    mybits
+0000                   3     FLAG:       DBIT    1              
+  0090                 4     P11         DATA    90H           
+  0092                 5     GREEN_LED  BIT     P1.2         
+                       6                  
+                       7     myprog SEGMENT CODE               
+----                   8                RSEG    myprog
+0000 020000   F        9                        LJMP    main
+0100                  10                        ORG     100H
+0100 D292             11     main:      SETB    GREEN_LED       
+0102 200004   F       12                JB      FLAG, is_on      
+0105 D200     F       13                SETB    FLAG
+0107 C2E5             14                CLR     ACC.5          
+0109 C200     F       15     is_on:     CLR     FLAG
+010B C292             16                CLR     GREEN_LED      
+                      17     END
+                             
+                             
+A51 MACRO ASSEMBLER  MAIN                                                                 02/13/2015 22:48:52 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+ACC. . . . . . . .  D ADDR   00E0H   A   
+FLAG . . . . . . .  B ADDR   0000H.0 R   SEG=MYBITS
+GREEN_LED. . . . .  B ADDR   0090H.2 A   
+IS_ON. . . . . . .  C ADDR   0109H   R   SEG=MYPROG
+MAIN . . . . . . .  C ADDR   0100H   R   SEG=MYPROG
+MYBITS . . . . . .  B SEG    0001H       REL=UNIT
+MYPROG . . . . . .  C SEG    010DH       REL=UNIT
+P1 . . . . . . . .  D ADDR   0090H   A   
+P11. . . . . . . .  D ADDR   0090H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,50 @@
+C51 COMPILER V9.53.0.0   MAIN                                                              01/18/2015 14:05:34 PAGE 1   
+
+
+C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include "stdio.h"
+   2          #include "reg51.h"
+   3          void main()
+   4          {
+   5   1        int a=100,b=10,t=0;
+   6   1        int *p1,*p2,*p3;
+   7   1        SCON= 0x52;
+   8   1        TMOD = 0x20; 
+   9   1        TCON = 0x69; 
+  10   1        TH1 = 0xF3; 
+  11   1        printf("a=%d,b=%d\n",a,b);
+  12   1        p1=&a;
+  13   1        p2=&b;
+  14   1        p3=p1;
+  15   1        p1=p2;
+  16   1        p2=p3;
+  17   1        printf("*p1=%d,*p2=%d\n",*p1,*p2);
+  18   1        printf("a=%d,b=%d\n",a,b);
+  19   1        p1=&a;
+  20   1        p2=&b;
+  21   1        t=*p1;
+  22   1        *p1=*p2;
+  23   1        *p2=t;
+  24   1        printf("*p1=%d,*p2=%d\n",*p1,*p2);
+  25   1        printf("a=%d,b=%d\n",a,b);
+  26   1        while(1);
+  27   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    276    ----
+   CONSTANT SIZE    =     26    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      13
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

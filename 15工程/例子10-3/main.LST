@@ -1,0 +1,172 @@
+C51 COMPILER V9.56.0.0   MAIN                                                              03/12/2017 14:34:42 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: D:\keil\C51\BIN\C51.EXE main.c OPTIMIZE(9,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include "reg51.h"
+   2          #include "intrins.h"
+   3          #define FOSC  6000000L
+   4          #define BAUD 115200
+   5          #define S2RI 0x01
+   6          #define S2TI 0x02
+   7          sfr AUXR  =0x8E;
+   8          sfr AUXR1 =0xA2;
+   9          sfr AUXR2 =0x8F;
+  10          sfr TH2   =0xD6;
+  11          sfr TL2   =0xD7;
+  12          sfr S2CON =0x9A;
+  13          sfr S2BUF =0x9B;
+  14          sfr P3M1  =0xB1;
+  15          sfr P3M0  =0xB2;
+  16          sfr P_SW2 =0xBA;
+  17          sfr IE2   =0xAF;
+  18          sbit P36  =P3^6;
+  19          bit busy=0;
+  20          unsigned char irdata[4]={0,0,0,0};  
+  21          bit flag=0;
+  22          void SendData(unsigned char dat)
+  23          {
+  24   1        while(busy);
+  25   1        S2BUF=dat;
+  26   1        busy=1;
+  27   1      }
+  28          void SendString(char *s)
+  29          {
+  30   1        while(*s!='\0')
+  31   1          SendData(*s++);
+  32   1      }
+  33          
+  34          unsigned int high_level_time()
+  35          {
+  36   1        TL0=0;
+  37   1        TH0=0;
+  38   1        TR0=1;
+  39   1        while(P36==1)
+  40   1        {
+  41   2          if(TH0>=0xEE)
+  42   2             break;
+  43   2        }
+  44   1        TR0=0;
+  45   1        return(TH0*256+TL0);
+  46   1      }
+  47          unsigned int low_level_time()
+  48          {
+  49   1        TL0=0;
+  50   1        TH0=0;
+  51   1        TR0=1;
+  52   1        while(P36==0)
+  53   1        {
+  54   2          if(TH0>=0xEE)
+  55   2             break;
+C51 COMPILER V9.56.0.0   MAIN                                                              03/12/2017 14:34:42 PAGE 2   
+
+  56   2        }
+  57   1        TR0=0;
+  58   1        return(TH0*256+TL0);
+  59   1      }
+  60          void int2() interrupt 10
+  61          {
+  62   1        unsigned char i,j;
+  63   1        unsigned int count=0;
+  64   1        unsigned char dat=0;
+  65   1        
+  66   1        AUXR2&=0x00;
+  67   1        count=low_level_time();
+  68   1        
+  69   1        if(count<4000 || count>5000)
+  70   1        {
+  71   2           return;
+  72   2        }
+  73   1        count=high_level_time();
+  74   1        if(count<2000 || count>2500)
+  75   1        {
+  76   2           return;
+  77   2        }
+  78   1        
+  79   1        for(i=0;i<4;i++)
+  80   1        { 
+  81   2         P36=1;
+  82   2          dat=0;
+  83   2           for(j=0;j<8;j++)
+  84   2            {
+  85   3               count=low_level_time();
+  86   3               if(count<250 || count>300) 
+  87   3                  return;
+  88   3               count=high_level_time(); 
+  89   3               if(count>250 && count<300)
+  90   3                  dat>>=1;
+  91   3               else if(count>800 && count<1000)
+  92   3               {
+  93   4                 dat>>=1;
+  94   4                 dat|=0x80;
+  95   4               }
+  96   3               else return;
+  97   3              
+  98   3               
+  99   3             }
+ 100   2             irdata[i]=dat;   
+ 101   2         }
+ 102   1          flag=1;   
+ 103   1         AUXR2|=0x10;
+ 104   1      }
+ 105          
+ 106          void uart2() interrupt 8
+ 107          {
+ 108   1        if(S2CON & S2RI)
+ 109   1          S2CON&=~S2RI;
+ 110   1        if(S2CON & S2TI)
+ 111   1        {
+ 112   2          S2CON&=~S2TI;
+ 113   2          busy=0;
+ 114   2        }
+ 115   1      }
+ 116              
+ 117          void main()
+C51 COMPILER V9.56.0.0   MAIN                                                              03/12/2017 14:34:42 PAGE 3   
+
+ 118          {
+ 119   1        unsigned char k;
+ 120   1        P36=1;
+ 121   1        P3M1=0x00;
+ 122   1        P3M0=0x00;
+ 123   1        TMOD=0x00;
+ 124   1        S2CON=0x50;
+ 125   1        AUXR=0x14;
+ 126   1        P_SW2|=0x01;
+ 127   1        TL2=(65536-((FOSC/4)/BAUD));
+ 128   1        TH2=(65536-((FOSC/4)/BAUD))>>8;
+ 129   1        IE2|=0x01;
+ 130   1        AUXR2|=0x10;
+ 131   1        EA=1;
+ 132   1        SendString("\r\n--begin-----\r\n");
+ 133   1         while(1)
+ 134   1          {
+ 135   2           if(flag==1)
+ 136   2           {
+ 137   3             flag=0;
+ 138   3                SendString("\r\n--Received IR data is-----\r\n");
+ 139   3             for(k=0;k<4;k++)
+ 140   3               SendData(irdata[k]);
+ 141   3               SendString("\r\n");
+ 142   3             AUXR2|=0x10;
+ 143   3            }
+ 144   2         }
+ 145   1       }  
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    404    ----
+   CONSTANT SIZE    =     51    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4       3
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      2    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

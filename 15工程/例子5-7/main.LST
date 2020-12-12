@@ -1,0 +1,100 @@
+A51 MACRO ASSEMBLER  MAIN                                                                 02/14/2015 10:04:05 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN main.OBJ
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE main.a51 SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     
+                       2     ;*************  ¹¦ÄÜËµÃ÷        **************
+                       3     
+                       4     ;³ÌÐòÊ¹ÓÃP4.7 P4.6 À´ÏÔÊ¾0~3µÄ¼ÆÊÖµ
+                       5     
+                       6     ;******************************************
+                       7     ;******************************************
+                       8     ;¶¨ÒåP4¶Ë¿ÚµÄµØÖ·
+  00C0                 9     P4        DATA 0C0H
+                      10     ;******************************************
+----                  11         CSEG AT  0x0000
+0000 020000   F       12             LJMP main
+                      13             my_prog  SEGMENT CODE
+----                  14                          RSEG my_prog
+0100                  15                  ORG 0x100          
+0100                  16     Main:
+                      17             USING   0
+0100                  18     Loop1:
+0100 7400             19             MOV     A,#0
+0102                  20     Loop2:
+0102 20E004           21             JB   ACC.0, SETP41
+0105 D2C7             22             SETB P4.7
+0107 8002             23             JMP  CON
+0109                  24     SETP41:
+0109 C2C7             25             CLR  P4.7
+010B                  26     CON:
+010B 20E104           27             JB   ACC.1,SETP42
+010E D2C6             28             SETB P4.6
+0110 8002             29             JMP  CON1
+0112                  30     SETP42:
+0112 C2C6             31             CLR  P4.6
+0114                  32     CON1:
+0114 7814             33         MOV  R0,#20
+0116                  34     dly:
+0116 1100     F       35             ACALL   delay
+0118 18               36             DEC R0
+0119 B800FA           37         CJNE    R0,#0,dly
+011C 04               38         INC     A
+011D B404E2           39         CJNE    A,#4,Loop2
+0120 80DE             40         JMP    Loop1        
+                      41     ;********************************
+                      42     
+                      43     ;//==============================
+                      44     ;// º¯Ê: delay
+                      45     ;// ÃèÊö: ÑÓÊ±×Ó³ÌÐò¡£
+                      46     ;//==============================
+0122                  47     delay:
+0122 7BFF             48         MOV         R3, #0FFH
+0124                  49     delay_1:        
+0124 7CFF             50        MOV          R4, #0FFH
+                      51              
+0126                  52     delay_2:
+0126 1C               53             DEC             R4                              ;
+0127 BC00FC           54             CJNE    R4,#0,delay_2   ;
+012A 1B               55             DEC             R3
+012B BB00F6           56             CJNE    R3,#0,delay_1   ;
+012E 22               57             RET
+                      58             
+A51 MACRO ASSEMBLER  MAIN                                                                 02/14/2015 10:04:05 PAGE     2
+
+                      59             END
+                             
+                             
+A51 MACRO ASSEMBLER  MAIN                                                                 02/14/2015 10:04:05 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+ACC. . . . . . . .  D ADDR   00E0H   A   
+CON. . . . . . . .  C ADDR   010BH   R   SEG=MY_PROG
+CON1 . . . . . . .  C ADDR   0114H   R   SEG=MY_PROG
+DELAY. . . . . . .  C ADDR   0122H   R   SEG=MY_PROG
+DELAY_1. . . . . .  C ADDR   0124H   R   SEG=MY_PROG
+DELAY_2. . . . . .  C ADDR   0126H   R   SEG=MY_PROG
+DLY. . . . . . . .  C ADDR   0116H   R   SEG=MY_PROG
+LOOP1. . . . . . .  C ADDR   0100H   R   SEG=MY_PROG
+LOOP2. . . . . . .  C ADDR   0102H   R   SEG=MY_PROG
+MAIN . . . . . . .  C ADDR   0100H   R   SEG=MY_PROG
+MY_PROG. . . . . .  C SEG    012FH       REL=UNIT
+P4 . . . . . . . .  D ADDR   00C0H   A   
+SETP41 . . . . . .  C ADDR   0109H   R   SEG=MY_PROG
+SETP42 . . . . . .  C ADDR   0112H   R   SEG=MY_PROG
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,64 @@
+A51 MACRO ASSEMBLER  MAIN                                                                 01/10/2015 13:27:42 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN main.OBJ
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE main.a51 SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     NAME main
+                       2     idata_seg  SEGMENT CODE 
+----                   3                       RSEG idata_seg
+0000 04D2              4         i:  DW     1234 
+0002 1A85              5             j:      DW     6789 
+                       6     xdata_seg  SEGMENT XDATA
+----                   7                   RSEG xdata_seg
+0000                   8         k:    DS  2
+                       9     
+----                  10                   CSEG  AT 0x0000
+0000 020100           11                       LJMP  main
+0100                  12                   ORG   0x0100 
+                      13                                       
+0100 900000   F       14      main:        MOV     DPTR,#i             
+0103 7401             15                               MOV     A,#1
+0105 93               16                               MOVC    A,@A+DPTR             
+0106 F8               17                               MOV     R0,A
+0107 900000   F       18                   MOV     DPTR,#j
+010A 7401             19                               MOV     A,#1
+010C 93               20                               MOVC    A,@A+DPTR
+010D 28               21                   ADD     A,R0
+010E 900000   F       22                               MOV     DPTR,#k
+0111 A3               23                               INC     DPTR
+0112 F0               24                               MOVX    @DPTR,A
+0113 900000   F       25                               MOV     DPTR,#i             
+0116 7400             26                               MOV     A,#0
+0118 93               27                               MOVC    A,@A+DPTR             
+0119 F8               28                               MOV     R0,A
+011A 900000   F       29                   MOV     DPTR,#j
+011D 7400             30                               MOV     A,#0
+011F 93               31                               MOVC    A,@A+DPTR
+0120 38               32                   ADDC    A,R0                 
+0121 900000   F       33                               MOV     DPTR,#K
+0124 F0               34                               MOVX    @DPTR,A
+                      35     END
+A51 MACRO ASSEMBLER  MAIN                                                                 01/10/2015 13:27:42 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+I. . . . . . . . .  C ADDR   0000H   R   SEG=IDATA_SEG
+IDATA_SEG. . . . .  C SEG    0004H       REL=UNIT
+J. . . . . . . . .  C ADDR   0002H   R   SEG=IDATA_SEG
+K. . . . . . . . .  X ADDR   0000H   R   SEG=XDATA_SEG
+MAIN . . . . . . .  C ADDR   0100H   A   
+XDATA_SEG. . . . .  X SEG    0002H       REL=UNIT
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

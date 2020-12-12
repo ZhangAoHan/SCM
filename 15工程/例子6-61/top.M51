@@ -1,0 +1,206 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        01/21/2015  00:05:22  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE main.obj, C:\Keil_v5\C51\LIB\C51S.LIB TO top RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  C:\Keil_v5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\Keil_v5\C51\LIB\C51S.LIB (PRINTF)
+  C:\Keil_v5\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\Keil_v5\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\Keil_v5\C51\LIB\C51S.LIB (?C?CSTPTR)
+  C:\Keil_v5\C51\LIB\C51S.LIB (?C?PLDIIDATA)
+  C:\Keil_v5\C51\LIB\C51S.LIB (?C?CCASE)
+  C:\Keil_v5\C51\LIB\C51S.LIB (PUTCHAR)
+
+
+LINK MAP OF MODULE:  top (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0014H     UNIT         ?DT?PRINTF?PRINTF
+                    001CH     0004H                  *** GAP ***
+            BIT     0020H.0   0001H.1   UNIT         ?BI?PRINTF?PRINTF
+                    0021H.1   0000H.7                *** GAP ***
+            IDATA   0022H     0001H     ABSOLUTE     
+                    0023H     0001H                  *** GAP ***
+            IDATA   0024H     0001H     ABSOLUTE     
+                    0025H     0001H                  *** GAP ***
+            IDATA   0026H     0001H     ABSOLUTE     
+                    0027H     0001H                  *** GAP ***
+            IDATA   0028H     0002H     ABSOLUTE     
+            IDATA   002AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     035CH     UNIT         ?PR?PRINTF?PRINTF
+            CODE    035FH     008EH     UNIT         ?C?LIB_CODE
+            CODE    03EDH     0039H     UNIT         ?PR?MAIN?MAIN
+            CODE    0426H     0027H     UNIT         ?PR?PUTCHAR?PUTCHAR
+            CODE    044DH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0459H     0004H     UNIT         ?CO?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  top (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:03EDH         SEGMENT       ?PR?MAIN?MAIN
+  C:0459H         SEGMENT       ?CO?MAIN
+  I:0024H         PUBLIC        B1
+  I:0022H         PUBLIC        C1
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/21/2015  00:05:22  PAGE 2
+
+
+  I:0026H         PUBLIC        D1
+  I:0028H         PUBLIC        E
+  C:03EDH         PUBLIC        MAIN
+  C:0424H         SYMBOL        ?C0001
+  C:0459H         SYMBOL        ?SC_0
+  B:00D0H.6       SYMBOL        AC
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  B:00D0H.7       SYMBOL        CY
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  B:00A8H.7       SYMBOL        EA
+  B:00A8H.4       SYMBOL        ES
+  B:00A8H.1       SYMBOL        ET0
+  B:00A8H.3       SYMBOL        ET1
+  B:00A8H.0       SYMBOL        EX0
+  B:00A8H.2       SYMBOL        EX1
+  B:00D0H.5       SYMBOL        F0
+  D:00A8H         SYMBOL        IE
+  B:0088H.1       SYMBOL        IE0
+  B:0088H.3       SYMBOL        IE1
+  B:00B0H.2       SYMBOL        INT0
+  B:00B0H.3       SYMBOL        INT1
+  D:00B8H         SYMBOL        IP
+  B:0088H.0       SYMBOL        IT0
+  B:0088H.2       SYMBOL        IT1
+  B:00D0H.2       SYMBOL        OV
+  B:00D0H.0       SYMBOL        P
+  D:0080H         SYMBOL        P0
+  D:0090H         SYMBOL        P1
+  D:00A0H         SYMBOL        P2
+  D:00B0H         SYMBOL        P3
+  D:0087H         SYMBOL        PCON
+  B:00B8H.4       SYMBOL        PS
+  D:00D0H         SYMBOL        PSW
+  B:00B8H.1       SYMBOL        PT0
+  B:00B8H.3       SYMBOL        PT1
+  B:00B8H.0       SYMBOL        PX0
+  B:00B8H.2       SYMBOL        PX1
+  B:0098H.2       SYMBOL        RB8
+  B:00B0H.7       SYMBOL        RD
+  B:0098H.4       SYMBOL        REN
+  B:0098H.0       SYMBOL        RI
+  B:00D0H.3       SYMBOL        RS0
+  B:00D0H.4       SYMBOL        RS1
+  B:00B0H.0       SYMBOL        RXD
+  D:0099H         SYMBOL        SBUF
+  D:0098H         SYMBOL        SCON
+  B:0098H.7       SYMBOL        SM0
+  B:0098H.6       SYMBOL        SM1
+  B:0098H.5       SYMBOL        SM2
+  D:0081H         SYMBOL        SP
+  B:00B0H.4       SYMBOL        T0
+  B:00B0H.5       SYMBOL        T1
+  B:0098H.3       SYMBOL        TB8
+  D:0088H         SYMBOL        TCON
+  B:0088H.5       SYMBOL        TF0
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/21/2015  00:05:22  PAGE 3
+
+
+  B:0088H.7       SYMBOL        TF1
+  D:008CH         SYMBOL        TH0
+  D:008DH         SYMBOL        TH1
+  B:0098H.1       SYMBOL        TI
+  D:008AH         SYMBOL        TL0
+  D:008BH         SYMBOL        TL1
+  D:0089H         SYMBOL        TMOD
+  B:0088H.4       SYMBOL        TR0
+  B:0088H.6       SYMBOL        TR1
+  B:00B0H.1       SYMBOL        TXD
+  B:00B0H.6       SYMBOL        WR
+  C:03EDH         LINE#         115
+  C:03EFH         LINE#         116
+  C:03F1H         LINE#         119
+  C:03F3H         LINE#         120
+  C:03F5H         LINE#         123
+  C:03F8H         LINE#         126
+  C:03FBH         LINE#         129
+  C:03FEH         LINE#         132
+  C:0401H         LINE#         135
+  C:0403H         LINE#         137
+  C:0406H         LINE#         139
+  C:0408H         LINE#         141
+  C:040AH         LINE#         145
+  C:040CH         LINE#         146
+  C:040DH         LINE#         147
+  C:040EH         LINE#         148
+  C:0410H         LINE#         149
+  C:0412H         LINE#         150
+  C:0413H         LINE#         151
+  C:0414H         LINE#         152
+  C:0415H         LINE#         153
+  C:0416H         LINE#         154
+  C:0417H         LINE#         157
+  C:0419H         LINE#         158
+  C:041BH         LINE#         159
+  C:041DH         LINE#         160
+  C:041FH         LINE#         161
+  C:0421H         LINE#         162
+  C:0424H         LINE#         166
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        PRINTF
+  D:0008H         PUBLIC        ?_PRINTF517?BYTE
+  D:0008H         PUBLIC        ?_PRINTF?BYTE
+  D:0008H         PUBLIC        ?_SPRINTF517?BYTE
+  D:0008H         PUBLIC        ?_SPRINTF?BYTE
+  C:0065H         PUBLIC        _PRINTF
+  C:0065H         PUBLIC        _PRINTF517
+  C:005FH         PUBLIC        _SPRINTF
+  C:005FH         PUBLIC        _SPRINTF517
+  -------         ENDMOD        PRINTF
+
+  -------         MODULE        ?C?CLDPTR
+  C:035FH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/21/2015  00:05:22  PAGE 4
+
+
+  -------         MODULE        ?C?CLDOPTR
+  C:0378H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?CSTPTR
+  C:03A5H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+  -------         MODULE        ?C?PLDIIDATA
+  C:03B7H         PUBLIC        ?C?PLDIIDATA
+  -------         ENDMOD        ?C?PLDIIDATA
+
+  -------         MODULE        ?C?CCASE
+  C:03C7H         PUBLIC        ?C?CCASE
+  -------         ENDMOD        ?C?CCASE
+
+  -------         MODULE        PUTCHAR
+  C:0426H         PUBLIC        _PUTCHAR
+  -------         ENDMOD        PUTCHAR
+
+Program Size: data=35.1 xdata=0 code=1117
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

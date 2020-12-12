@@ -1,0 +1,81 @@
+C51 COMPILER V9.53.0.0   MAIN                                                              01/17/2015 16:39:36 PAGE 1   
+
+
+C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include "stdio.h"
+   2          #include "reg51.h"
+   3          #define  row_a 4
+   4          #define  col_a 3
+   5          #define  row_b 3
+   6          #define  col_b 2
+   7          void main()
+   8          {
+   9   1         int a[row_a][col_a];
+  10   1         int b[row_b][col_b];
+  11   1         int c[row_a][col_b]; 
+  12   1         int i,j,k;
+  13   1         int m,n,o,p; 
+  14   1         SCON= 0x52;                     
+  15   1         TMOD = 0x20;   
+  16   1         TCON = 0x69;    
+  17   1         TH1 = 0xF3;                  
+  18   1         m=row_a;
+  19   1         n=col_a;
+  20   1         o=row_b;
+  21   1         p=col_b;
+  22   1         printf("please input data of a[%d][%d]\n",m,n);
+  23   1         for(i=0;i<row_a;i++)                  
+  24   1        {
+  25   2             for(j=0;j<col_a;j++)               
+  26   2               scanf("%d,",&a[i][j]);        
+  27   2        }
+  28   1        putchar('\n');   
+  29   1        
+  30   1         printf("please input data of b[%d][%d]\n",o,p);
+  31   1         for(i=0;i<row_b;i++)                  
+  32   1        {
+  33   2             for(j=0;j<col_b;j++)               
+  34   2               scanf("%d,",&b[i][j]);        
+  35   2        }
+  36   1        putchar('\n');      
+  37   1        for (i=0;i<row_a;i++)
+  38   1        {
+  39   2           for (j=0;j<col_b;j++)
+  40   2            {
+  41   3             c[i][j]=0;     
+  42   3               for (k=0;k<col_a;k++)
+  43   3              {
+  44   4                 c[i][j]+=a[i][k]*b[k][j];
+  45   4              }
+  46   3            }
+  47   2        }                   
+  48   1        printf("\n array c[%d][%d] is following\n",m,p);
+  49   1         for(i=0;i<row_a;i++)
+  50   1        {
+  51   2             for(j=0;j<col_b;j++)
+  52   2               printf("%5d,",c[i][j]); 
+  53   2               putchar('\n');                
+  54   2        }                  
+  55   1      while(1);
+C51 COMPILER V9.53.0.0   MAIN                                                              01/17/2015 16:39:36 PAGE 2   
+
+  56   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    496    ----
+   CONSTANT SIZE    =    105    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      62
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

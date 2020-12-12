@@ -1,0 +1,162 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        01/27/2015  17:42:54  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE main.obj TO top RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  top (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0003H     UNIT         _DATA_GROUP_
+                    000BH     0015H                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         ?BI?MAIN
+                    0020H.1   0000H.7                *** GAP ***
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *  X D A T A   M E M O R Y  * * * * * * *
+            XDATA   0000H     009BH     UNIT         ?XD?MAIN
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0019H     UNIT         ?C?LIB_CODE
+                    001CH     0007H                  *** GAP ***
+            CODE    0023H     0003H     ABSOLUTE     
+            CODE    0026H     00A2H     UNIT         ?C_INITSEG
+            CODE    00C8H     008CH     UNIT         ?C_C51STARTUP
+            CODE    0154H     003EH     UNIT         ?PR?MAIN?MAIN
+            CODE    0192H     0025H     UNIT         ?PR?_SENDSTRING?MAIN
+            CODE    01B7H     0010H     UNIT         ?CO?MAIN
+            CODE    01C7H     000DH     UNIT         ?PR?UART1?MAIN
+            CODE    01D4H     0008H     UNIT         ?PR?_SENDDATA?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   top (MAIN)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN                  -----    -----
+  +--> ?PR?_SENDSTRING?MAIN
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/27/2015  17:42:54  PAGE 2
+
+
+  +--> ?CO?MAIN
+
+?PR?_SENDSTRING?MAIN           0008H    0003H
+  +--> ?PR?_SENDDATA?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  top (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:00A8H.7       PUBLIC        EA
+  C:0192H         PUBLIC        _SendString
+  C:01D4H         PUBLIC        _SendData
+  B:00A8H.4       PUBLIC        ES
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  C:0154H         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  X:0000H         PUBLIC        menu
+  B:00C0H.6       PUBLIC        P46
+  B:00C0H.7       PUBLIC        P47
+  D:008EH         PUBLIC        AUXR
+  B:0020H.0       PUBLIC        busy
+  D:00D6H         PUBLIC        TH2
+  D:00D7H         PUBLIC        TL2
+  C:01C7H         PUBLIC        uart1
+  -------         PROC          _SENDDATA
+  D:0007H         SYMBOL        dat
+  C:01D4H         LINE#         15
+  C:01D4H         LINE#         16
+  C:01D4H         LINE#         17
+  C:01D7H         LINE#         18
+  C:01D9H         LINE#         19
+  C:01DBH         LINE#         20
+  -------         ENDPROC       _SENDDATA
+  -------         PROC          _SENDSTRING
+  D:0008H         SYMBOL        s
+  C:0192H         LINE#         21
+  C:0198H         LINE#         22
+  C:0198H         LINE#         23
+  C:01A3H         LINE#         24
+  C:01B6H         LINE#         25
+  -------         ENDPROC       _SENDSTRING
+  -------         PROC          UART1
+  C:01C7H         LINE#         26
+  C:01C7H         LINE#         28
+  C:01CAH         LINE#         29
+  C:01CCH         LINE#         30
+  C:01CFH         LINE#         31
+  C:01D1H         LINE#         32
+  C:01D3H         LINE#         33
+  -------         ENDPROC       UART1
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/27/2015  17:42:54  PAGE 3
+
+
+  -------         PROC          MAIN
+  -------         DO            
+  D:0006H         SYMBOL        c
+  -------         ENDDO         
+  C:0154H         LINE#         35
+  C:0154H         LINE#         36
+  C:0154H         LINE#         38
+  C:0156H         LINE#         39
+  C:0158H         LINE#         40
+  C:015BH         LINE#         41
+  C:015EH         LINE#         42
+  C:0161H         LINE#         43
+  C:0164H         LINE#         44
+  C:0167H         LINE#         45
+  C:0169H         LINE#         46
+  C:016BH         LINE#         47
+  C:0174H         LINE#         48
+  C:0174H         LINE#         49
+  C:0177H         LINE#         50
+  C:0177H         LINE#         51
+  C:0179H         LINE#         52
+  C:017CH         LINE#         53
+  C:0180H         LINE#         54
+  C:0183H         LINE#         55
+  C:0187H         LINE#         57
+  C:0187H         LINE#         58
+  C:0190H         LINE#         59
+  C:0190H         LINE#         60
+  C:0190H         LINE#         61
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        ?C?CLDPTR
+  C:0003H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+Program Size: data=12.1 xdata=155 code=469
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

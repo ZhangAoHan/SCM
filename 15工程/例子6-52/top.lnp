@@ -1,0 +1,4 @@
+"main.obj",
+"max.obj" 
+TO "top" 
+RAMSIZE(256) 

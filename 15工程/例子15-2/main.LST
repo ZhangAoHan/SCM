@@ -1,0 +1,46 @@
+C51 COMPILER V9.53.0.0   MAIN                                                              02/07/2015 17:09:40 PAGE 1   
+
+
+C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include <rtx51tny.h>
+   2          #include "reg51.h"
+   3          unsigned char counter0;
+   4          unsigned char counter1;
+   5          void job0(void) _task_ 0 
+   6          {
+   7   1        os_create_task(1);
+   8   1        while (1) 
+   9   1        { 
+  10   2         counter0++; 
+  11   2          os_wait(K_TMO,3,0);
+  12   2        }
+  13   1      }
+  14          
+  15          void job1(void) _task_ 1 
+  16          {
+  17   1        while (1)
+  18   1        { 
+  19   2          counter1++; 
+  20   2          os_wait(K_TMO,5,0);
+  21   2        }
+  22   1      }
+  23             
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     33    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

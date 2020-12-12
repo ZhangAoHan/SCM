@@ -1,0 +1,145 @@
+C51 COMPILER V9.53.0.0   MAIN                                                              01/28/2015 11:24:55 PAGE 1   
+
+
+C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include "reg51.h"
+   2          #define FOSC  18432000L
+   3          #define BAUD 115200
+   4          sfr AUXR  =0x8E;
+   5          bit busy=0;
+   6          xdata char menu[]={"\r\n--Display Press buttons information--\r\n"};
+   7          void IO_KeyDelay(void)
+   8          {
+   9   1        unsigned char i;
+  10   1        i = 60;
+  11   1        while(--i)  ;
+  12   1      }
+  13          
+  14          void SendData(unsigned char dat)
+  15          {
+  16   1        while(busy);
+  17   1        SBUF=dat;
+  18   1        busy=1;
+  19   1      }
+  20          void SendString(char *s)
+  21          {
+  22   1        while(*s!='\0')
+  23   1          SendData(*s++);
+  24   1      }
+  25          void uart1() interrupt 4
+  26          {
+  27   1        if(RI)
+  28   1          RI=0;
+  29   1        if(TI)
+  30   1          TI=0;
+  31   1          busy=0;
+  32   1      }
+  33              
+  34          void main()
+  35          {
+  36   1        unsigned char c1_new,c1_old=0,c1;
+  37   1        SCON=0x50;
+  38   1        AUXR=0x40;
+  39   1        TL1=(65536-((FOSC/4)/BAUD));
+  40   1        TH1=(65536-((FOSC/4)/BAUD))>>8;
+  41   1        TR1=1;
+  42   1        ES=1;
+  43   1        EA=1;
+  44   1         SendString(&menu);
+  45   1         while(1){
+  46   2           P0=0xF0;
+  47   2           IO_KeyDelay();
+  48   2           c1_new=P0&0xF0;  
+  49   2          if(c1_new!=c1_old)
+  50   2            {
+  51   3              c1_old=c1_new;
+  52   3             if(c1_new!=0xF0)
+  53   3              {
+  54   4                P0=0xFE;
+  55   4                IO_KeyDelay();
+C51 COMPILER V9.53.0.0   MAIN                                                              01/28/2015 11:24:55 PAGE 2   
+
+  56   4                c1_new=P0;   
+  57   4                switch (c1_new)
+  58   4                 {
+  59   5                 case 0xee: c1=0;  break;
+  60   5                 case 0xde:  c1=4;  break;
+  61   5                 case 0xbe:  c1=8;  break;
+  62   5                 case 0x7e:  c1=12;  break;
+  63   5                 default  : ; 
+  64   5                 }
+  65   4                P0=0xFD;
+  66   4                IO_KeyDelay();
+  67   4                c1_new=P0;   
+  68   4                switch (c1_new)
+  69   4                 {
+  70   5                 case 0xed: c1=1; break;
+  71   5                 case 0xdd: c1=5; break;
+  72   5                 case 0xbd: c1=9; break;
+  73   5                 case 0x7d: c1=13; break;
+  74   5                 default  : ; 
+  75   5                 }
+  76   4                P0=0xFB;
+  77   4                IO_KeyDelay();
+  78   4                c1_new=P0;   
+  79   4                switch (c1_new)
+  80   4               {
+  81   5                case 0xeb: c1=2; break;
+  82   5                case 0xdb: c1=6; break;
+  83   5                case 0xbb: c1=10; break;
+  84   5                case 0x7b: c1=14; break;
+  85   5                default  : ; 
+  86   5               }
+  87   4               P0=0xF7;
+  88   4               IO_KeyDelay();
+  89   4               c1_new=P0;  
+  90   4               switch (c1_new)
+  91   4               {
+  92   5                 case 0xe7: c1=3; break;
+  93   5                 case 0xd7: c1=7; break;
+  94   5                 case 0xb7: c1=11;break;
+  95   5                 case 0x77: c1=15; break;
+  96   5                 default  : ; 
+  97   5               }
+  98   4               SendString("\r\n press #");
+  99   4               if(c1<10) 
+ 100   4                  SendData(c1+0x30);
+ 101   4               else if(c1==10)
+ 102   4                  SendString("10");
+ 103   4               else if(c1==11)
+ 104   4                  SendString("11");
+ 105   4               else if(c1==12)
+ 106   4                  SendString("12");
+ 107   4               else if(c1==13)
+ 108   4                  SendString("13");
+ 109   4                else if(c1==14)
+ 110   4                  SendString("14"); 
+ 111   4                else if(c1==15)
+ 112   4                  SendString("15");
+ 113   4               SendString(" button\r\n");
+ 114   4            }
+ 115   3          }
+ 116   2        }
+ 117   1      }
+C51 COMPILER V9.53.0.0   MAIN                                                              01/28/2015 11:24:55 PAGE 3   
+
+ 118            
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    415    ----
+   CONSTANT SIZE    =     39    ----
+   XDATA SIZE       =     42    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       6
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

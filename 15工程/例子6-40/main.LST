@@ -1,0 +1,76 @@
+C51 COMPILER V9.53.0.0   MAIN                                                              01/18/2015 18:09:17 PAGE 1   
+
+
+C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include "stdio.h"
+   2          #include "reg51.h"
+   3          void main()
+   4          {
+   5   1        int a=10,*p1;
+   6   1        int i;
+   7   1        char b[40],*s;
+   8   1        xdata char c[50],*s1="STC hello";
+   9   1        xdata int d[4]={1,2,3,4},*p2;
+  10   1        SCON= 0x52;
+  11   1        TMOD = 0x20; 
+  12   1        TCON = 0x69; 
+  13   1        TH1 = 0xF3;
+  14   1        p1=&a;
+  15   1        s=&b;
+  16   1        s1=&c;
+  17   1        p2=&d;
+  18   1        printf("please input int value of pointer p1\n");
+  19   1        scanf("%d",p1);
+  20   1        printf("please input string value of pointer s\n");
+  21   1        scanf("%s",s);
+  22   1        printf("please input string value of pointer s1\n");
+  23   1        scanf("%s",s1);
+  24   1        printf("please input int value of pointer p2\n");
+  25   1        for(i=0;i<4;i++)
+  26   1         {     
+  27   2            scanf("%d",p2);
+  28   2                 p2++;
+  29   2      }
+  30   1        printf("the address of p1= %p\n",p1);
+  31   1        printf("the value of p1(p1)=%d\n",*p1);
+  32   1        printf("the value of a=%d\n",a);
+  33   1        printf("the address of s=%p\n",s);
+  34   1        printf("the value of s1=\"%s\"\n",s);
+  35   1        printf("the value of b[40]=\"%s\"\n",b);
+  36   1        printf("the address of s1=%p\n",s1);
+  37   1        printf("the value of s1=\"%s\"\n",s1);
+  38   1        printf("the value of c[50]=\"%s\"\n",c);
+  39   1        p2=&d;
+  40   1        for(i=0;i<4;i++)
+  41   1         {     
+  42   2            printf("P2[%d]=%d,",i,*p2);
+  43   2            p2++;
+  44   2      }
+  45   1          putchar('\n');
+  46   1      for(i=0;i<4;i++)
+  47   1         {     
+  48   2            printf("d[%d]=%d,",i,d[i]);
+  49   2      }
+  50   1        while(1);
+  51   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    585    ----
+C51 COMPILER V9.53.0.0   MAIN                                                              01/18/2015 18:09:17 PAGE 2   
+
+   CONSTANT SIZE    =    383    ----
+   XDATA SIZE       =   ----      64
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      50
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

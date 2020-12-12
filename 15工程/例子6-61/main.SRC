@@ -1,0 +1,169 @@
+; .\main.SRC generated from: main.c
+; COMPILER INVOKED BY:
+;        C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2) SRC(.\main.SRC)
+
+$NOMOD51
+
+NAME	MAIN
+
+P0	DATA	080H
+P1	DATA	090H
+P2	DATA	0A0H
+P3	DATA	0B0H
+T0	BIT	0B0H.4
+AC	BIT	0D0H.6
+T1	BIT	0B0H.5
+EA	BIT	0A8H.7
+IE	DATA	0A8H
+RD	BIT	0B0H.7
+ES	BIT	0A8H.4
+IP	DATA	0B8H
+RI	BIT	098H.0
+INT0	BIT	0B0H.2
+CY	BIT	0D0H.7
+TI	BIT	098H.1
+INT1	BIT	0B0H.3
+PS	BIT	0B8H.4
+SP	DATA	081H
+OV	BIT	0D0H.2
+WR	BIT	0B0H.6
+SBUF	DATA	099H
+PCON	DATA	087H
+SCON	DATA	098H
+TMOD	DATA	089H
+TCON	DATA	088H
+IE0	BIT	088H.1
+IE1	BIT	088H.3
+B	DATA	0F0H
+ACC	DATA	0E0H
+ET0	BIT	0A8H.1
+ET1	BIT	0A8H.3
+TF0	BIT	088H.5
+TF1	BIT	088H.7
+RB8	BIT	098H.2
+TH0	DATA	08CH
+EX0	BIT	0A8H.0
+IT0	BIT	088H.0
+TH1	DATA	08DH
+TB8	BIT	098H.3
+EX1	BIT	0A8H.2
+IT1	BIT	088H.2
+P	BIT	0D0H.0
+SM0	BIT	098H.7
+TL0	DATA	08AH
+SM1	BIT	098H.6
+TL1	DATA	08BH
+SM2	BIT	098H.5
+PT0	BIT	0B8H.1
+PT1	BIT	0B8H.3
+RS0	BIT	0D0H.3
+TR0	BIT	088H.4
+RS1	BIT	0D0H.4
+TR1	BIT	088H.6
+PX0	BIT	0B8H.0
+PX1	BIT	0B8H.2
+DPH	DATA	083H
+DPL	DATA	082H
+REN	BIT	098H.4
+RXD	BIT	0B0H.0
+TXD	BIT	0B0H.1
+F0	BIT	0D0H.5
+PSW	DATA	0D0H
+?PR?main?MAIN        SEGMENT CODE 
+?CO?MAIN             SEGMENT CODE 
+	EXTRN	CODE (_printf)
+	EXTRN	DATA (?_printf?BYTE)
+	EXTRN	CODE (?C_STARTUP)
+	PUBLIC	D1
+	PUBLIC	C1
+	PUBLIC	B1
+	PUBLIC	e
+	PUBLIC	main
+
+	ISEG  AT  028H
+              e:   DS   2
+
+	ISEG  AT  024H
+             B1:   DS   1
+
+	ISEG  AT  022H
+             C1:   DS   1
+
+	ISEG  AT  026H
+             D1:   DS   1
+
+	RSEG  ?CO?MAIN
+?SC_0:
+	DB  '%' ,'d' ,00AH,000H
+
+; #include "stdio.h"
+; #include "reg51.h"
+;   idata unsigned char C1 _at_ 0x22;
+; 	idata unsigned char B1 _at_ 0x24;
+;   idata unsigned char D1 _at_ 0x26;
+; 	idata unsigned int e  _at_ 0x28;
+; void main()
+
+	RSEG  ?PR?main?MAIN
+main:
+	USING	0
+			; SOURCE LINE # 7
+; {
+			; SOURCE LINE # 8
+; 	C1=100;
+			; SOURCE LINE # 9
+	MOV  	R0,#LOW (C1)
+	MOV  	@R0,#064H
+; 	B1=90;
+			; SOURCE LINE # 10
+	MOV  	R0,#LOW (B1)
+	MOV  	@R0,#05AH
+; 	SCON= 0x52;
+			; SOURCE LINE # 11
+	MOV  	SCON,#052H
+;   TMOD = 0x20;
+			; SOURCE LINE # 12
+	MOV  	TMOD,#020H
+;   TCON = 0x69;
+			; SOURCE LINE # 13
+	MOV  	TCON,#069H
+;   TH1 = 0xF3;
+			; SOURCE LINE # 14
+	MOV  	TH1,#0F3H
+; 	#pragma asm
+; 	 MOV A,0x22
+	  MOV A,0x22
+; 	 MOV B,0x24
+	  MOV B,0x24
+;    ADD A,B
+	  ADD A,B
+;    MOV 0x26,A
+	  MOV 0x26,A
+;  #pragma endasm
+; 	e=D1;
+			; SOURCE LINE # 21
+	MOV  	R0,#LOW (D1)
+	MOV  	A,@R0
+	MOV  	R7,A
+	MOV  	R6,#00H
+	MOV  	R0,#LOW (e)
+	MOV  	A,R6
+	MOV  	@R0,A
+	INC  	R0
+	MOV  	A,R7
+	MOV  	@R0,A
+; 	printf("%d\n",e);
+			; SOURCE LINE # 22
+	MOV  	R3,#0FFH
+	MOV  	R2,#HIGH (?SC_0)
+	MOV  	R1,#LOW (?SC_0)
+	MOV  	?_printf?BYTE+03H,R6
+	MOV  	?_printf?BYTE+04H,A
+	LCALL	_printf
+?C0001:
+; 	while(1);
+			; SOURCE LINE # 23
+	SJMP 	?C0001
+; END OF main
+
+	END

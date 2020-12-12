@@ -1,0 +1,48 @@
+A51 MACRO ASSEMBLER  MAIN                                                                 02/13/2015 22:56:45 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN main.OBJ
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE main.asm SET(COMPACT) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     myvar  SEGMENT DATA           ; ¶¨ÒåÊ¾Ý¶Î
+----                   2                RSEG    myvar
+0000                   3     VALUE:     DS      1          ; ÔÚDATA¿Õ¼ä±£´æÒ»¸ö×Ö½Ú 
+                       4     
+  00A0                 5     IO_PORT2   DATA    0A0H        ; ÌØÊâ¹¦ÄÜ¼Ä´æÆ÷
+  0020                 6     VALUE2     DATA    20H         ; ´æ´¢Æ÷µÄ¾ø¶ÔµØÖ·
+                       7          
+                       8     myprog SEGMENT CODE            ; ¶¨ÒåCODE¶Î
+----                   9                RSEG    myprog
+0000 020000   F       10                        LJMP    main
+0100                  11                        ORG     100H
+0100 E5A0             12     main:      MOV     A,IO_PORT2   ; Ö±½Ó·ÃÎÊDATA
+0102 2500     F       13                ADD     A,VALUE
+0104 F520             14                MOV     VALUE2,A
+0106 7900     F       15                MOV     R1,#VALUE    ; ¼ÓÔØVALUEµÄÖµR1
+0108 27               16                ADD     A,@R1        ; ¼ä½Ó·ÃÎÊVALUE
+                      17     END
+                             
+                             
+A51 MACRO ASSEMBLER  MAIN                                                                 02/13/2015 22:56:45 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+IO_PORT2 . . . . .  D ADDR   00A0H   A   
+MAIN . . . . . . .  C ADDR   0100H   R   SEG=MYPROG
+MYPROG . . . . . .  C SEG    0109H       REL=UNIT
+MYVAR. . . . . . .  D SEG    0001H       REL=UNIT
+VALUE. . . . . . .  D ADDR   0000H   R   SEG=MYVAR
+VALUE2 . . . . . .  D ADDR   0020H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

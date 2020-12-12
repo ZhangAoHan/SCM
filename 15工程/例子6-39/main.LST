@@ -1,0 +1,44 @@
+C51 COMPILER V9.53.0.0   MAIN                                                              01/18/2015 16:07:08 PAGE 1   
+
+
+C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include "stdio.h"
+   2          #include "reg51.h"
+   3          void main()
+   4          {
+   5   1        int a[4]={0x01,0x10,0x100,0x1000};
+   6   1        int *b[4]={&a[0],&a[1],&a[2],&a[3]};
+   7   1        int **p2;
+   8   1        int i;
+   9   1        SCON= 0x52;
+  10   1        TMOD = 0x20; 
+  11   1        TCON = 0x69; 
+  12   1        TH1 = 0xF3;
+  13   1        p2=b;
+  14   1        for(i=0;i<4;i++)  
+  15   1        printf("a[%d]=%d,",i,a[i]);
+  16   1        putchar('\n');
+  17   1        for(i=0;i<4;i++)  
+  18   1        printf("a[%d]=%d,",i,**(p2++));
+  19   1        putchar('\n');
+  20   1        while(1);
+  21   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    190    ----
+   CONSTANT SIZE    =     30    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      25
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

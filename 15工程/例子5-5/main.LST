@@ -1,0 +1,45 @@
+A51 MACRO ASSEMBLER  MAIN                                                                 02/13/2015 23:02:09 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN main.OBJ
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE main.asm SET(COMPACT) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     my_seg SEGMENT XDATA                        ; 定义XDATA段
+----                   2                RSEG    my_seg
+0000                   3     XBUFFER:   DS      2                        ; 保留两个字节的存储空间
+----                   4        CSEG AT 0
+                       5      
+                       6     myprog SEGMENT CODE                         ;  定义CODE段
+----                   7                RSEG    myprog
+0000 020000   F        8                        LJMP    main
+0100                   9                        ORG     100H
+0100 900000   F       10     main:      MOV     DPTR,#XBUFFER     ;  XBUFFER的地址送给DPTR寄存器
+0103 E4               11                CLR      A                ;  累加器清零
+0104 F0               12                MOVX    @DPTR,A           ;  将累加器A的内容送给DPTR指向的XBUFFER区域
+0105 A3               13                INC      DPTR             ;  寄存器DPTR的内容加1
+0106 E4               14                CLR      A                ;  累加器A清零
+0107 F0               15                MOVX    @DPTR,A           ;  累加器A的内容送给DPTR指向的XBUFFER区域
+                      16     END
+                             
+                             
+A51 MACRO ASSEMBLER  MAIN                                                                 02/13/2015 23:02:09 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+MAIN . . . . . . .  C ADDR   0100H   R   SEG=MYPROG
+MYPROG . . . . . .  C SEG    0108H       REL=UNIT
+MY_SEG . . . . . .  X SEG    0002H       REL=UNIT
+XBUFFER. . . . . .  X ADDR   0000H   R   SEG=MY_SEG
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

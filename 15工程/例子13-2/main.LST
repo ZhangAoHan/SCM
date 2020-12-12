@@ -1,0 +1,80 @@
+C51 COMPILER V9.53.0.0   MAIN                                                              02/06/2015 15:06:09 PAGE 1   
+
+
+C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include "reg51.h"
+   2          sfr P_SW2    =0xBA;
+   3          sfr PWMCFG   =0xF1;
+   4          sfr PWMCR    =0xF5;
+   5          sfr P2M0     =0x96;
+   6          sfr P2M1     =0X95;
+   7          unsigned char xdata *PWMCKS;
+   8          unsigned char xdata *PWMCH;
+   9          unsigned char xdata *PWMCL;
+  10          unsigned char xdata *PWM4T1H;
+  11          unsigned char xdata *PWM4T1L;
+  12          unsigned char xdata *PWM4T2H;
+  13          unsigned char xdata *PWM4T2L;
+  14          unsigned char xdata *PWM4CR;
+  15          unsigned char xdata *PWM5T1H;
+  16          unsigned char xdata *PWM5T1L;
+  17          unsigned char xdata *PWM5T2H;
+  18          unsigned char xdata *PWM5T2L;
+  19          unsigned char xdata *PWM5CR;
+  20          void main()
+  21          {
+  22   1         P2M0=0;
+  23   1         P2M1=0;
+  24   1         P_SW2|=0x80;
+  25   1         PWMCFG&=0xFB;
+  26   1         PWMCFG|=0x08;
+  27   1         PWMCKS=0xFFF2;
+  28   1         *PWMCKS=0x03;
+  29   1         PWMCH=0xFFF0;
+  30   1         PWMCL=0xFFF1;
+  31   1         *PWMCH=0;
+  32   1         *PWMCL=19;
+  33   1         PWM4T1H=0xFF20;
+  34   1         PWM4T1L=0xFF21;
+  35   1         *PWM4T1H=0;
+  36   1         *PWM4T1L=3;
+  37   1         PWM4T2H=0xFF22;
+  38   1         PWM4T2L=0xFF23;
+  39   1         *PWM4T2H=0;
+  40   1         *PWM4T2L=0x10;
+  41   1         PWM4CR=0xFF24;
+  42   1         *PWM4CR=0;
+  43   1         PWM5T1H=0xFF30;
+  44   1         PWM5T1L=0xFF31;
+  45   1         *PWM5T1H=0;
+  46   1         *PWM5T1L=3;
+  47   1         PWM5T2H=0xFF32;
+  48   1         PWM5T2L=0xFF33;
+  49   1         *PWM5T1H=0;
+  50   1         *PWM5T1L=15;
+  51   1         PWM5CR=0xFF34;
+  52   1         *PWM5CR=0;
+  53   1         P_SW2&=0x0F;
+  54   1         PWMCR|=0x8C;
+  55   1      }
+C51 COMPILER V9.53.0.0   MAIN                                                              02/06/2015 15:06:09 PAGE 2   
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    208    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     26    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

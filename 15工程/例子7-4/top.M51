@@ -1,0 +1,96 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        02/21/2017  21:31:53  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\C51\BIN\BL51.EXE main.obj TO top RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  D:\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\C51\LIB\C51S.LIB (?C?SLCMP)
+
+
+LINK MAP OF MODULE:  top (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0004H     UNIT         _DATA_GROUP_
+            IDATA   000CH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0003H     ABSOLUTE     
+            CODE    0006H     0082H     UNIT         ?PR?MAIN?MAIN
+            CODE    0088H     0016H     UNIT         ?C?LIB_CODE
+            CODE    009EH     000CH     UNIT         ?C_C51STARTUP
+            CODE    00AAH     0001H     UNIT         ?PR?WAKEUP?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   top (MAIN)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                  0008H    0004H
+
+
+
+SYMBOL TABLE OF MODULE:  top (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  B:00A8H.7       PUBLIC        EA
+  C:00AAH         PUBLIC        wakeup
+  C:0006H         PUBLIC        main
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/21/2017  21:31:53  PAGE 2
+
+
+  D:0087H         PUBLIC        PCON
+  B:00A8H.0       PUBLIC        EX0
+  B:0088H.0       PUBLIC        IT0
+  -------         PROC          WAKEUP
+  C:00AAH         LINE#         2
+  C:00AAH         LINE#         4
+  -------         ENDPROC       WAKEUP
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        j
+  -------         ENDDO         
+  C:0006H         LINE#         5
+  C:0006H         LINE#         6
+  C:0006H         LINE#         8
+  C:0008H         LINE#         9
+  C:000AH         LINE#         10
+  C:000CH         LINE#         11
+  C:000CH         LINE#         12
+  C:000CH         LINE#         13
+  C:000FH         LINE#         15
+  C:0048H         LINE#         16
+  C:004BH         LINE#         18
+  C:004EH         LINE#         19
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        ?C?SLCMP
+  C:0088H         PUBLIC        ?C?SLCMP
+  -------         ENDMOD        ?C?SLCMP
+
+Program Size: data=13.0 xdata=0 code=171
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

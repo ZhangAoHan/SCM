@@ -1,0 +1,91 @@
+C51 COMPILER V9.53.0.0   MAIN                                                              05/25/2017 14:26:56 PAGE 1   
+
+
+C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: E:\keil5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include "reg51.h"
+   2          #include "stdio.h"
+   3          #define OSC           18432000L
+   4          #define BAUD          9600
+   5          #define URMD          0
+   6          #define ADC_POWER     0x80
+   7          #define ADC_FLAG      0x10
+   8          #define ADC_START     0x08
+   9          #define ADC_SPEEDLL   0x00
+  10          #define ADC_SPEEDL    0x20
+  11          #define ADC_SPEEDH    0x40
+  12          #define ADC_SPEEDHH   0x60
+  13          
+  14          sfr T2H       =0xD6;
+  15          sfr T2L       =0xD7;
+  16          sfr AUXR      =0x8E;
+  17          sfr ADC_CONTR =0xBC;
+  18          sfr ADC_RES   =0xBD;
+  19          sfr ADC_RESL  =0xBE;
+  20          sfr P1ASF     =0x9D;
+  21          
+  22          unsigned char ch=4;
+  23          float voltage=0;
+  24          unsigned char tstr[5];
+  25          unsigned int tmp=0;
+  26          float old_voltage=0;
+  27          void SendData(unsigned char dat)
+  28          {
+  29   1        while(!TI);
+  30   1        TI=0;
+  31   1        SBUF=dat;
+  32   1      }
+  33          
+  34          void adc_int() interrupt 5
+  35          {
+  36   1        unsigned char i=0;
+  37   1        ADC_CONTR &=!ADC_FLAG;
+  38   1        tmp=(ADC_RES*4+ADC_RESL);
+  39   1        voltage=(tmp*5.0)/1024;
+  40   1        sprintf(tstr,"%1.4f",voltage);
+  41   1        if(voltage!=old_voltage)
+  42   1        {
+  43   2          old_voltage=voltage;
+  44   2          SendData('\r');
+  45   2          SendData('\n');
+  46   2           for(i=0;i<5;i++)
+  47   2             SendData(tstr[i]);
+  48   2        }
+  49   1        ADC_CONTR=ADC_POWER |ADC_SPEEDLL | ADC_START | ch;
+  50   1      }
+  51          
+  52          void main()
+  53          {
+  54   1        unsigned int i;
+  55   1        SCON=0x5A;
+C51 COMPILER V9.53.0.0   MAIN                                                              05/25/2017 14:26:56 PAGE 2   
+
+  56   1        T2L=65536-OSC/4/BAUD;
+  57   1        T2H=(65536-OSC/4/BAUD)>>8;
+  58   1        AUXR=0x14;
+  59   1        AUXR|=0x01;
+  60   1        P1ASF=0xFF;
+  61   1        ADC_RES=0;
+  62   1        ADC_CONTR=ADC_POWER|ADC_SPEEDLL | ADC_START | ch;
+  63   1        for(i=0;i<10000;i++);
+  64   1        IE=0xA0;
+  65   1        while(1);
+  66   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    268    ----
+   CONSTANT SIZE    =      6    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     16       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

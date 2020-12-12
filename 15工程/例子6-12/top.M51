@@ -1,0 +1,85 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        01/14/2015  14:18:23  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE main.obj TO top RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  top (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+                    0008H     0018H                  *** GAP ***
+            BIT     0020H.0   0000H.6   UNIT         _BIT_GROUP_
+                    0020H.6   0000H.2                *** GAP ***
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     006BH     UNIT         ?PR?MAIN?MAIN
+            CODE    006EH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   top (MAIN)
+
+
+SEGMENT                           BIT_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                  0020H.0  0000H.6
+
+
+
+SYMBOL TABLE OF MODULE:  top (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0003H         PUBLIC        main
+  -------         PROC          MAIN
+  -------         DO            
+  D:0006H         SYMBOL        a
+  D:0004H         SYMBOL        b
+  B:0020H.0       SYMBOL        c
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/14/2015  14:18:23  PAGE 2
+
+
+  B:0020H.1       SYMBOL        d
+  B:0020H.2       SYMBOL        e
+  B:0020H.3       SYMBOL        f
+  B:0020H.4       SYMBOL        g
+  B:0020H.5       SYMBOL        h
+  -------         ENDDO         
+  C:0003H         LINE#         1
+  C:0003H         LINE#         2
+  C:0003H         LINE#         3
+  C:000BH         LINE#         5
+  C:0019H         LINE#         6
+  C:002BH         LINE#         7
+  C:003EH         LINE#         8
+  C:0051H         LINE#         9
+  C:005FH         LINE#         10
+  C:006DH         LINE#         11
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+Program Size: data=9.6 xdata=0 code=122
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

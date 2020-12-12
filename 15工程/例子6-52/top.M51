@@ -1,0 +1,230 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        01/19/2015  22:26:52  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE main.obj, max.obj TO top RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL WITH FLOATING POINT ARITHMETIC
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  max.obj (MAX)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPDIV)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FCAST)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (PRINTF)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPGETOPN)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPROUND)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPCONVERT)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPADD)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPMUL)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FTNPWR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CSTPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LNEG)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?PLDIIDATA)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CCASE)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (PUTCHAR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  top (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0004H     UNIT         ?DT?MAIN
+                    000CH     0014H                  *** GAP ***
+            BIT     0020H.0   0001H.1   UNIT         _BIT_GROUP_
+                    0021H.1   0000H.7                *** GAP ***
+            DATA    0022H     0024H     UNIT         _DATA_GROUP_
+            IDATA   0046H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0564H     UNIT         ?C?LIB_CODE
+            CODE    0567H     046FH     UNIT         ?PR?PRINTF?PRINTF
+            CODE    09D6H     008CH     UNIT         ?C_C51STARTUP
+            CODE    0A62H     0070H     UNIT         ?PR?MAIN?MAIN
+            CODE    0AD2H     002DH     UNIT         ?CO?MAIN
+            CODE    0AFFH     0027H     UNIT         ?PR?PUTCHAR?PUTCHAR
+            CODE    0B26H     0013H     UNIT         ?PR?_MAX?MAX
+            CODE    0B39H     0013H     UNIT         ?PR?_MIN?MAX
+            CODE    0B4CH     0013H     UNIT         ?PR?_AVG?MAX
+            CODE    0B5FH     0009H     UNIT         ?C_INITSEG
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/19/2015  22:26:52  PAGE 2
+
+
+
+
+OVERLAY MAP OF MODULE:   top (MAIN)
+
+
+SEGMENT                           BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH     START    LENGTH
+------------------------------------------------------------------
+?C_C51STARTUP                  -----    -----      -----    -----
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN                  -----    -----      0022H    0008H
+  +--> ?PR?_MAX?MAX
+  +--> ?PR?_MIN?MAX
+  +--> ?PR?_AVG?MAX
+  +--> ?CO?MAIN
+  +--> ?PR?PRINTF?PRINTF
+
+?PR?PRINTF?PRINTF              0020H.0  0001H.1    002AH    001CH
+  +--> ?PR?PUTCHAR?PUTCHAR
+
+
+
+SYMBOL TABLE OF MODULE:  top (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0A62H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  D:008DH         PUBLIC        TH1
+  D:0008H         PUBLIC        i
+  D:000AH         PUBLIC        j
+  -------         PROC          MAIN
+  -------         DO            
+  D:0022H         SYMBOL        k
+  D:0024H         SYMBOL        l
+  D:0026H         SYMBOL        m
+  -------         ENDDO         
+  C:0A62H         LINE#         5
+  C:0A62H         LINE#         6
+  C:0A62H         LINE#         9
+  C:0A65H         LINE#         10
+  C:0A68H         LINE#         11
+  C:0A6BH         LINE#         12
+  C:0A6EH         LINE#         13
+  C:0A7DH         LINE#         14
+  C:0A8CH         LINE#         15
+  C:0A9FH         LINE#         16
+  C:0AAEH         LINE#         17
+  C:0ABDH         LINE#         18
+  -------         ENDPROC       MAIN
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/19/2015  22:26:52  PAGE 3
+
+
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        MAX
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0B4CH         PUBLIC        _avg
+  C:0B39H         PUBLIC        _min
+  C:0B26H         PUBLIC        _max
+  -------         PROC          _MAX
+  D:0006H         SYMBOL        x
+  D:0004H         SYMBOL        y
+  C:0B26H         LINE#         1
+  C:0B26H         LINE#         2
+  C:0B26H         LINE#         3
+  C:0B34H         LINE#         4
+  C:0B38H         LINE#         5
+  -------         ENDPROC       _MAX
+  -------         PROC          _MIN
+  D:0006H         SYMBOL        x
+  D:0004H         SYMBOL        y
+  C:0B39H         LINE#         7
+  C:0B39H         LINE#         8
+  C:0B39H         LINE#         9
+  C:0B47H         LINE#         10
+  C:0B4BH         LINE#         11
+  -------         ENDPROC       _MIN
+  -------         PROC          _AVG
+  D:0006H         SYMBOL        x
+  D:0004H         SYMBOL        y
+  C:0B4CH         LINE#         13
+  C:0B4CH         LINE#         14
+  C:0B4CH         LINE#         15
+  C:0B5EH         LINE#         16
+  -------         ENDPROC       _AVG
+  -------         ENDMOD        MAX
+
+  -------         MODULE        ?C?FPDIV
+  C:0006H         PUBLIC        ?C?FPDIV
+  -------         ENDMOD        ?C?FPDIV
+
+  -------         MODULE        ?C?FCAST
+  C:00ADH         PUBLIC        ?C?FCASTC
+  C:00A8H         PUBLIC        ?C?FCASTI
+  C:00A3H         PUBLIC        ?C?FCASTL
+  -------         ENDMOD        ?C?FCAST
+
+  -------         MODULE        PRINTF
+  D:002AH         PUBLIC        ?_PRINTF?BYTE
+  D:002AH         PUBLIC        ?_SPRINTF?BYTE
+  C:05C9H         PUBLIC        _PRINTF
+  C:05C3H         PUBLIC        _SPRINTF
+  -------         ENDMOD        PRINTF
+
+  -------         MODULE        ?C?FPROUND
+  C:012BH         PUBLIC        ?C?FPROUND
+  -------         ENDMOD        ?C?FPROUND
+
+  -------         MODULE        ?C?FPCONVERT
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/19/2015  22:26:52  PAGE 4
+
+
+  C:015AH         PUBLIC        ?C?FPCONVERT
+  -------         ENDMOD        ?C?FPCONVERT
+
+  -------         MODULE        ?C?FPADD
+  C:0264H         PUBLIC        ?C?FPADD
+  C:0260H         PUBLIC        ?C?FPSUB
+  -------         ENDMOD        ?C?FPADD
+
+  -------         MODULE        ?C?FPMUL
+  C:0355H         PUBLIC        ?C?FPMUL
+  -------         ENDMOD        ?C?FPMUL
+
+  -------         MODULE        ?C?FTNPWR
+  C:048BH         PUBLIC        ?C?FTNPWR
+  -------         ENDMOD        ?C?FTNPWR
+
+  -------         MODULE        ?C?CLDPTR
+  C:04CBH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CLDOPTR
+  C:04E4H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?CSTPTR
+  C:0511H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+  -------         MODULE        ?C?LNEG
+  C:0523H         PUBLIC        ?C?LNEG
+  -------         ENDMOD        ?C?LNEG
+
+  -------         MODULE        ?C?PLDIIDATA
+  C:0531H         PUBLIC        ?C?PLDIIDATA
+  -------         ENDMOD        ?C?PLDIIDATA
+
+  -------         MODULE        ?C?CCASE
+  C:0541H         PUBLIC        ?C?CCASE
+  -------         ENDMOD        ?C?CCASE
+
+  -------         MODULE        PUTCHAR
+  C:0AFFH         PUBLIC        _PUTCHAR
+  -------         ENDMOD        PUTCHAR
+
+Program Size: data=50.1 xdata=0 code=2920
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

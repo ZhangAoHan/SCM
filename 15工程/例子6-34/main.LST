@@ -1,0 +1,71 @@
+C51 COMPILER V9.53.0.0   MAIN                                                              01/17/2015 14:10:00 PAGE 1   
+
+
+C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include "stdio.h"
+   2          #include "reg51.h"
+   3          void main()
+   4          {
+   5   1         int a[8];
+   6   1         int b[3][3];
+   7   1         xdata char str[40];
+   8   1         int i,j;
+   9   1         SCON= 0x52;                     
+  10   1         TMOD = 0x20;   
+  11   1         TCON = 0x69;    
+  12   1         TH1 = 0xF3;
+  13   1         printf("please input data of a[8]\n");
+  14   1         for(i=0;i<8;i++)
+  15   1           scanf("%d,",&a[i]);
+  16   1           putchar('\n');
+  17   1        
+  18   1         printf("please input data of b[3][3]\n");
+  19   1         for(i=0;i<3;i++)
+  20   1        {
+  21   2             for(j=0;j<3;j++)
+  22   2               scanf("%d,",&b[i][j]);
+  23   2        }
+  24   1        putchar('\n');
+  25   1        
+  26   1        printf("please input string of str[40]\n");
+  27   1          // scanf("%s,",str);
+  28   1          // gets(str,40);
+  29   1      for(i=0;i<40;i++)
+  30   1         {
+  31   2          scanf("%c",&str[i]);
+  32   2          if(str[i]=='\n') break;
+  33   2         }
+  34   1        putchar('\n');
+  35   1        for(i=0;i<8;i++)
+  36   1           printf("a[%d]=%d,",i,a[i]);
+  37   1         printf("\n");
+  38   1         for(i=0;i<3;i++)
+  39   1        {
+  40   2             for(j=0;j<3;j++)
+  41   2               printf("b[%d][%d]=%d,",i,j,b[i][j]);
+  42   2               putchar('\n');
+  43   2        }
+  44   1             puts(str);
+  45   1      while(1);
+  46   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    423    ----
+   CONSTANT SIZE    =    122    ----
+   XDATA SIZE       =   ----      40
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      38
+   IDATA SIZE       =   ----    ----
+C51 COMPILER V9.53.0.0   MAIN                                                              01/17/2015 14:10:00 PAGE 2   
+
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

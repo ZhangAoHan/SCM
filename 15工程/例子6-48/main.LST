@@ -1,0 +1,53 @@
+C51 COMPILER V9.53.0.0   MAIN                                                              01/19/2015 17:59:23 PAGE 1   
+
+
+C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include "stdio.h"
+   2          #include "reg51.h"
+   3          
+   4          void con_string(char *s1, char *s2 )       
+   5          {
+   6   1        while(*s1!='\0') 
+   7   1           s1++;
+   8   1        while(*s2!='\0')
+   9   1           *s1++=*s2++;
+  10   1           *s1='\0';
+  11   1      }
+  12            
+  13          
+  14          void main()
+  15          {
+  16   1        xdata char  a[40],b[40];
+  17   1        SCON= 0x52;
+  18   1          TMOD = 0x20;
+  19   1          TCON = 0x69;
+  20   1          TH1 = 0xF3;
+  21   1        printf("please enter the string of a[40]\n");
+  22   1          gets(a,40);
+  23   1        printf("please enter the string of b[40]\n");
+  24   1          gets(b,40); 
+  25   1        printf("\n connected the string is\n");
+  26   1        con_string(a,b);    
+  27   1         puts(a); 
+  28   1        while(1);
+  29   1        
+  30   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    179    ----
+   CONSTANT SIZE    =     95    ----
+   XDATA SIZE       =   ----      80
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       6
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

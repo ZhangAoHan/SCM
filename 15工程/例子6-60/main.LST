@@ -1,0 +1,63 @@
+C51 COMPILER V9.53.0.0   MAIN                                                              01/20/2015 17:24:48 PAGE 1   
+
+
+C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include "stdio.h"
+   2          #include "reg51.h"
+   3          enum color{red,green,blue};
+   4          enum color i,j,k,st;
+   5          void main()
+   6          {
+   7   1        int n=0,m;
+   8   1        SCON= 0x52;
+   9   1        TMOD = 0x20;
+  10   1        TCON = 0x69;
+  11   1        TH1 = 0xF3;
+  12   1       
+  13   1         for(i=red;i<=blue;i++)
+  14   1            for(j=red;j<=blue;j++)
+  15   1              for(k=red;k<=blue;k++)
+  16   1              {
+  17   2                     n=n+1;
+  18   2                printf("%-4d",n);         
+  19   2                  for(m=1;m<=3;m++)
+  20   2                    {
+  21   3                       switch(m)
+  22   3                       {
+  23   4                         case 1 : st=i;break;
+  24   4                         case 2:  st=j;break;
+  25   4                         case 3:  st=k;break;
+  26   4                         default: break;
+  27   4                       }
+  28   3                       switch(st)
+  29   3                       {
+  30   4                         case red  :  printf("%-10s","red");break;
+  31   4                         case green:  printf("%-10s","green");break;
+  32   4                         case blue :  printf("%-10s","blue");break;
+  33   4                         default: break;
+  34   4                       }
+  35   3                     }
+  36   2               printf("\n");
+  37   2              }
+  38   1              printf("\n total:%5d\n",n);
+  39   1         while(1);
+  40   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    216    ----
+   CONSTANT SIZE    =     41    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

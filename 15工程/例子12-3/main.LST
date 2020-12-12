@@ -1,0 +1,113 @@
+C51 COMPILER V9.53.0.0   MAIN                                                              02/05/2015 13:52:37 PAGE 1   
+
+
+C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include "reg51.h"
+   2          #include "stdio.h"
+   3          #include "12864.h"
+   4          #define ADC_POWER     0x80
+   5          #define ADC_FLAG      0x10
+   6          #define ADC_START     0x08
+   7          #define ADC_SPEEDLL   0x00
+   8          #define ADC_SPEEDL    0x20
+   9          #define ADC_SPEEDH    0x40
+  10          #define ADC_SPEEDHH   0x60
+  11          
+  12          sfr AUXR      =0x8E;
+  13          sfr ADC_CONTR =0xBC;
+  14          sfr ADC_RES   =0xBD;
+  15          sfr ADC_RESL  =0xBE;
+  16          sfr P1ASF     =0x9D;
+  17          
+  18          unsigned char ch=4;
+  19          bit flag=1;
+  20          unsigned char max_tstr[10],min_tstr[10],avg_tstr[10];
+  21          unsigned int tmp=0;
+  22          xdata unsigned char value[128];
+  23          unsigned int max_value=0 ,min_value=1024,avg_value=10;
+  24          unsigned char inc=0;
+  25          void adc_int() interrupt 5
+  26          {
+  27   1        unsigned char i=0;
+  28   1        ADC_CONTR &=!ADC_FLAG;
+  29   1        tmp=(ADC_RES*4+ADC_RESL);
+  30   1        if(inc!=128 && flag==0)
+  31   1        {
+  32   2            value[inc]=tmp/16;
+  33   2            if(tmp>max_value)
+  34   2                  max_value=tmp;
+  35   2            if(tmp<min_value)
+  36   2                 min_value=tmp;
+  37   2             inc++;
+  38   2        }
+  39   1        else
+  40   1        {
+  41   2              inc=0;
+  42   2              flag=1;
+  43   2        }
+  44   1        ADC_CONTR=ADC_POWER |ADC_SPEEDLL | ADC_START | ch;
+  45   1      }
+  46          
+  47          void main()
+  48          {
+  49   1        long unsigned int i;
+  50   1        P0M0=0;
+  51   1        P0M1=0;
+  52   1        P2M0=0;
+  53   1        P2M1=0;
+  54   1        P1ASF=0xFF;
+  55   1        ADC_RES=0;
+C51 COMPILER V9.53.0.0   MAIN                                                              02/05/2015 13:52:37 PAGE 2   
+
+  56   1        ADC_CONTR=ADC_POWER|ADC_SPEEDLL | ADC_START | ch;
+  57   1        for(i=0;i<10000;i++);
+  58   1        IE=0xA0;
+  59   1        lcdinit();
+  60   1        lcdshowstr(0,0,"测量交流信号");
+  61   1        for(i=0;i<600000;i++);
+  62   1        lcdwritecmd(0x01);
+  63   1          while(1)
+  64   1          { 
+  65   2          if(flag==1)
+  66   2            {
+  67   3                lcdinit();
+  68   3                sprintf(max_tstr,"%+1.4f",(max_value*5.0)/1024);
+  69   3                sprintf(min_tstr,"%+1.4f",(min_value*5.0)/1024);
+  70   3                sprintf(avg_tstr,"%+1.4f",((max_value-min_value)*5.0)/1024);
+  71   3                max_value=0;
+  72   3                min_value=1024;
+  73   3                lcdshowstr(0,1,"MAX: ");
+  74   3                lcdshowstr(2,1,max_tstr);
+  75   3                lcdshowstr(5,1," V");
+  76   3                lcdshowstr(0,2,"MIN: ");
+  77   3                lcdshowstr(2,2,min_tstr);
+  78   3                lcdshowstr(5,2," V");
+  79   3                lcdshowstr(0,3,"PTP: ");
+  80   3                lcdshowstr(2,3,avg_tstr);
+  81   3                lcdshowstr(5,3," V");
+  82   3              for(i=0;i<300000;i++);
+  83   3              lcdwritecmd(0x01);
+  84   3              drawpoint(value); 
+  85   3              flag=0; 
+  86   3            } 
+  87   2          }
+  88   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    679    ----
+   CONSTANT SIZE    =     41    ----
+   XDATA SIZE       =    128    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     40       5
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,166 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        04/15/2015  10:55:14  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE main.obj TO top RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?COPY)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (PRINTF)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CSTPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?PLDIIDATA)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CCASE)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (PUTCHAR)
+
+
+LINK MAP OF MODULE:  top (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+                    0008H     0018H                  *** GAP ***
+            BIT     0020H.0   0001H.1   UNIT         _BIT_GROUP_
+                    0021H.1   0000H.7                *** GAP ***
+            DATA    0022H     0054H     UNIT         _DATA_GROUP_
+            IDATA   0076H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     035CH     UNIT         ?PR?PRINTF?PRINTF
+            CODE    035FH     0184H     UNIT         ?C?LIB_CODE
+            CODE    04E3H     0130H     UNIT         ?PR?MAIN?MAIN
+            CODE    0613H     0060H     UNIT         ?CO?MAIN
+            CODE    0673H     0027H     UNIT         ?PR?PUTCHAR?PUTCHAR
+            CODE    069AH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   top (MAIN)
+
+
+SEGMENT                           BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH     START    LENGTH
+------------------------------------------------------------------
+?C_C51STARTUP                  -----    -----      -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                  -----    -----      0022H    0040H
+  +--> ?CO?MAIN
+  +--> ?PR?PRINTF?PRINTF
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/15/2015  10:55:14  PAGE 2
+
+
+?PR?PRINTF?PRINTF              0020H.0  0001H.1    0062H    0014H
+  +--> ?PR?PUTCHAR?PUTCHAR
+
+
+
+SYMBOL TABLE OF MODULE:  top (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0088H         PUBLIC        TCON
+  D:0089H         PUBLIC        TMOD
+  D:008DH         PUBLIC        TH1
+  D:0098H         PUBLIC        SCON
+  C:04E3H         PUBLIC        main
+  C:0639H         SYMBOL        _?ix1000
+  C:064DH         SYMBOL        _?ix1001
+  C:065FH         SYMBOL        _?ix1002
+  -------         PROC          MAIN
+  -------         DO            
+  D:0022H         SYMBOL        a
+  D:0036H         SYMBOL        b
+  D:0048H         SYMBOL        c
+  D:005CH         SYMBOL        i
+  D:005EH         SYMBOL        j
+  D:0060H         SYMBOL        k
+  -------         ENDDO         
+  C:04E3H         LINE#         3
+  C:04E3H         LINE#         4
+  C:04E3H         LINE#         5
+  C:04F6H         LINE#         6
+  C:0509H         LINE#         7
+  C:051CH         LINE#         8
+  C:0529H         LINE#         9
+  C:052CH         LINE#         10
+  C:052FH         LINE#         11
+  C:0532H         LINE#         12
+  C:0535H         LINE#         13
+  C:0539H         LINE#         14
+  C:0569H         LINE#         15
+  C:0572H         LINE#         16
+  C:0577H         LINE#         17
+  C:0577H         LINE#         18
+  C:057CH         LINE#         19
+  C:05BAH         LINE#         20
+  C:05C3H         LINE#         21
+  C:05D6H         LINE#         22
+  C:05DBH         LINE#         23
+  C:05DBH         LINE#         24
+  C:05E4H         LINE#         25
+  C:05F5H         LINE#         26
+  C:0608H         LINE#         27
+  C:0611H         LINE#         28
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/15/2015  10:55:14  PAGE 3
+
+
+
+  -------         MODULE        ?C?COPY
+  C:042FH         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+  -------         MODULE        PRINTF
+  D:0062H         PUBLIC        ?_PRINTF517?BYTE
+  D:0062H         PUBLIC        ?_PRINTF?BYTE
+  D:0062H         PUBLIC        ?_SPRINTF517?BYTE
+  D:0062H         PUBLIC        ?_SPRINTF?BYTE
+  C:0065H         PUBLIC        _PRINTF
+  C:0065H         PUBLIC        _PRINTF517
+  C:005FH         PUBLIC        _SPRINTF
+  C:005FH         PUBLIC        _SPRINTF517
+  -------         ENDMOD        PRINTF
+
+  -------         MODULE        ?C?CLDPTR
+  C:0455H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CLDOPTR
+  C:046EH         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?CSTPTR
+  C:049BH         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+  -------         MODULE        ?C?PLDIIDATA
+  C:04ADH         PUBLIC        ?C?PLDIIDATA
+  -------         ENDMOD        ?C?PLDIIDATA
+
+  -------         MODULE        ?C?CCASE
+  C:04BDH         PUBLIC        ?C?CCASE
+  -------         ENDMOD        ?C?CCASE
+
+  -------         MODULE        PUTCHAR
+  C:0673H         PUBLIC        _PUTCHAR
+  -------         ENDMOD        PUTCHAR
+
+Program Size: data=94.1 xdata=0 code=1702
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

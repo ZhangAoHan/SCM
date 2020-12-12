@@ -1,0 +1,77 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        02/14/2015  10:04:05  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE main.obj TO top RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+
+
+LINK MAP OF MODULE:  top (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     012FH     UNIT         MY_PROG
+
+
+
+SYMBOL TABLE OF MODULE:  top (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0003H         SEGMENT       MY_PROG
+  D:00E0H         SYMBOL        ACC
+  C:010EH         SYMBOL        CON
+  C:0117H         SYMBOL        CON1
+  C:0125H         SYMBOL        DELAY
+  C:0127H         SYMBOL        DELAY_1
+  C:0129H         SYMBOL        DELAY_2
+  C:0119H         SYMBOL        DLY
+  C:0103H         SYMBOL        LOOP1
+  C:0105H         SYMBOL        LOOP2
+  C:0103H         SYMBOL        MAIN
+  D:00C0H         SYMBOL        P4
+  C:010CH         SYMBOL        SETP41
+  C:0115H         SYMBOL        SETP42
+  C:0000H         LINE#         12
+  C:0103H         LINE#         19
+  C:0105H         LINE#         21
+  C:0108H         LINE#         22
+  C:010AH         LINE#         23
+  C:010CH         LINE#         25
+  C:010EH         LINE#         27
+  C:0111H         LINE#         28
+  C:0113H         LINE#         29
+  C:0115H         LINE#         31
+  C:0117H         LINE#         33
+  C:0119H         LINE#         35
+  C:011BH         LINE#         36
+  C:011CH         LINE#         37
+  C:011FH         LINE#         38
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/14/2015  10:04:05  PAGE 2
+
+
+  C:0120H         LINE#         39
+  C:0123H         LINE#         40
+  C:0125H         LINE#         48
+  C:0127H         LINE#         50
+  C:0129H         LINE#         53
+  C:012AH         LINE#         54
+  C:012DH         LINE#         55
+  C:012EH         LINE#         56
+  C:0131H         LINE#         57
+  -------         ENDMOD        MAIN
+
+Program Size: data=8.0 xdata=0 code=306
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

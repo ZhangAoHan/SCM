@@ -1,0 +1,37 @@
+C51 COMPILER V9.53.0.0   MAIN                                                              01/13/2015 21:57:30 PAGE 1   
+
+
+C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include <self_define.h>
+   3          void main()
+   4          {
+   5   1        char l;
+   6   1        bit a=1;
+   7   1        P4=0xFF;
+   8   1        DP=0x30;
+   9   1        ACC=10;
+  10   1        B=5;
+  11   1        l=ACC+B;
+  12   1            
+  13   1      }
+*** WARNING C316 IN LINE 13 OF main.c: unterminated conditionals
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     18    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----       1
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

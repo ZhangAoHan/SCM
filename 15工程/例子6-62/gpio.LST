@@ -1,0 +1,141 @@
+A51 MACRO ASSEMBLER  GPIO                                                                 01/21/2015 12:11:42 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN gpio.OBJ
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE gpio.a51 SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     $nomod51 
+                       2     
+                       3     ;$include (reg51.inc)
+                +1     4     ;-------------------------------------------------------------------------------
+                +1     5     ; Copyright 1995-1996 KEIL Software, Inc.
+                +1     6     ; 8051 Processor Declarations
+                +1     7     ;-------------------------------------------------------------------------------
+                +1     8  +1 $save 
+                +1    84  +1 $restore 
+                +1    85     
+                      86     
+                      87             
+                      88     NAME CONTROL_GPIO
+  00C0                89     P4        DATA 0C0H                
+                      90     segcode segment code
+                      91             public CONTROL_GPIO
+----                  92             rseg segcode
+0000                  93     CONTROL_GPIO:
+0000 7400             94             MOV  A,#0                
+0002 20E004           95     Loop2:  JB   ACC.0, SETP41          
+0005 D2C6             96                 SETB P4.6                   
+0007 8002             97                 JMP  CON                  
+0009 C2C6             98     SETP41: CLR  P4.6                   
+000B 20E104           99     CON:    JB   ACC.1,SETP42          
+000E D2C7            100                 SETB P4.7                    
+0010 8002            101                 JMP  CON1                
+0012 C2C7            102     SETP42: CLR  P4.7    
+0014 20E204          103     CON1:   JB   ACC.2, SETP43          
+0017 D296            104                 SETB P1.6                   
+0019 8002            105                 JMP  CON2                  
+001B C296            106     SETP43: CLR  P1.6                   
+001D 20E304          107     CON2:   JB   ACC.3,SETP44          
+0020 D297            108                 SETB P1.7                    
+0022 8002            109                 JMP  CON3                
+0024 C297            110     SETP44: CLR  P1.7    
+0026 04              111     CON3:   INC  A
+0027 80D9            112             JMP  Loop2
+0029 22              113                     RET
+                     114     
+                     115     END 
+                                             
+A51 MACRO ASSEMBLER  GPIO                                                                 01/21/2015 12:11:42 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AC . . . . . . . .  B ADDR   00D0H.6 A   
+ACC. . . . . . . .  D ADDR   00E0H   A   
+B. . . . . . . . .  D ADDR   00F0H   A   
+CON. . . . . . . .  C ADDR   000BH   R   SEG=SEGCODE
+CON1 . . . . . . .  C ADDR   0014H   R   SEG=SEGCODE
+CON2 . . . . . . .  C ADDR   001DH   R   SEG=SEGCODE
+CON3 . . . . . . .  C ADDR   0026H   R   SEG=SEGCODE
+CONTROL_GPIO . . .  C ADDR   0000H   R   SEG=SEGCODE
+CY . . . . . . . .  B ADDR   00D0H.7 A   
+DPH. . . . . . . .  D ADDR   0083H   A   
+DPL. . . . . . . .  D ADDR   0082H   A   
+EA . . . . . . . .  B ADDR   00A8H.7 A   
+ES . . . . . . . .  B ADDR   00A8H.4 A   
+ET0. . . . . . . .  B ADDR   00A8H.1 A   
+ET1. . . . . . . .  B ADDR   00A8H.3 A   
+EX0. . . . . . . .  B ADDR   00A8H.0 A   
+EX1. . . . . . . .  B ADDR   00A8H.2 A   
+F0 . . . . . . . .  B ADDR   00D0H.5 A   
+IE . . . . . . . .  D ADDR   00A8H   A   
+IE0. . . . . . . .  B ADDR   0088H.1 A   
+IE1. . . . . . . .  B ADDR   0088H.3 A   
+INT0 . . . . . . .  B ADDR   00B0H.2 A   
+INT1 . . . . . . .  B ADDR   00B0H.3 A   
+IP . . . . . . . .  D ADDR   00B8H   A   
+IT0. . . . . . . .  B ADDR   0088H.0 A   
+IT1. . . . . . . .  B ADDR   0088H.2 A   
+LOOP2. . . . . . .  C ADDR   0002H   R   SEG=SEGCODE
+OV . . . . . . . .  B ADDR   00D0H.2 A   
+P. . . . . . . . .  B ADDR   00D0H.0 A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+P4 . . . . . . . .  D ADDR   00C0H   A   
+PCON . . . . . . .  D ADDR   0087H   A   
+PS . . . . . . . .  B ADDR   00B8H.4 A   
+PSW. . . . . . . .  D ADDR   00D0H   A   
+PT0. . . . . . . .  B ADDR   00B8H.1 A   
+PT1. . . . . . . .  B ADDR   00B8H.3 A   
+PX0. . . . . . . .  B ADDR   00B8H.0 A   
+PX1. . . . . . . .  B ADDR   00B8H.2 A   
+RB8. . . . . . . .  B ADDR   0098H.2 A   
+RD . . . . . . . .  B ADDR   00B0H.7 A   
+REN. . . . . . . .  B ADDR   0098H.4 A   
+RI . . . . . . . .  B ADDR   0098H.0 A   
+RS0. . . . . . . .  B ADDR   00D0H.3 A   
+RS1. . . . . . . .  B ADDR   00D0H.4 A   
+RXD. . . . . . . .  B ADDR   00B0H.0 A   
+SBUF . . . . . . .  D ADDR   0099H   A   
+SCON . . . . . . .  D ADDR   0098H   A   
+SEGCODE. . . . . .  C SEG    002AH       REL=UNIT
+SETP41 . . . . . .  C ADDR   0009H   R   SEG=SEGCODE
+SETP42 . . . . . .  C ADDR   0012H   R   SEG=SEGCODE
+SETP43 . . . . . .  C ADDR   001BH   R   SEG=SEGCODE
+SETP44 . . . . . .  C ADDR   0024H   R   SEG=SEGCODE
+SM0. . . . . . . .  B ADDR   0098H.7 A   
+SM1. . . . . . . .  B ADDR   0098H.6 A   
+SM2. . . . . . . .  B ADDR   0098H.5 A   
+SP . . . . . . . .  D ADDR   0081H   A   
+T0 . . . . . . . .  B ADDR   00B0H.4 A   
+A51 MACRO ASSEMBLER  GPIO                                                                 01/21/2015 12:11:42 PAGE     3
+
+T1 . . . . . . . .  B ADDR   00B0H.5 A   
+TB8. . . . . . . .  B ADDR   0098H.3 A   
+TCON . . . . . . .  D ADDR   0088H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TF1. . . . . . . .  B ADDR   0088H.7 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TI . . . . . . . .  B ADDR   0098H.1 A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TL1. . . . . . . .  D ADDR   008BH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+TXD. . . . . . . .  B ADDR   00B0H.1 A   
+WR . . . . . . . .  B ADDR   00B0H.6 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

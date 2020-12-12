@@ -1,0 +1,39 @@
+C51 COMPILER V9.53.0.0   MAX                                                               01/19/2015 22:26:51 PAGE 1   
+
+
+C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MAX
+OBJECT MODULE PLACED IN max.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE max.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          int max(int x,int y) 
+   2          {
+   3   1        if (x>y) return x;
+   4   1        else return y;
+   5   1      }
+   6          
+   7          int min(int x,int y) 
+   8          {
+   9   1        if (x<y) return x;
+  10   1        else return y;
+  11   1      }
+  12          
+  13          float avg(int x,int y) 
+  14          {
+  15   1        return((x+y)/2.0);
+  16   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     57    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

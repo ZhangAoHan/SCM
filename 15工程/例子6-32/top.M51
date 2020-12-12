@@ -1,0 +1,83 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        01/16/2015  21:27:18  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE main.obj TO top RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?COPY)
+
+
+LINK MAP OF MODULE:  top (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     001AH     UNIT         _DATA_GROUP_
+            IDATA   0022H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     00F6H     UNIT         ?C?LIB_CODE
+            CODE    00F9H     002BH     UNIT         ?PR?MAIN?MAIN
+            CODE    0124H     001AH     UNIT         ?CO?MAIN
+            CODE    013EH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   top (MAIN)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                  0008H    001AH
+  +--> ?CO?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  top (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:00F9H         PUBLIC        main
+  C:0124H         SYMBOL        _?ix1000
+  C:0136H         SYMBOL        _?ix1001
+  -------         PROC          MAIN
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/16/2015  21:27:18  PAGE 2
+
+
+  -------         DO            
+  D:0008H         SYMBOL        a
+  D:001AH         SYMBOL        b
+  -------         ENDDO         
+  C:00F9H         LINE#         1
+  C:00F9H         LINE#         2
+  C:00F9H         LINE#         3
+  C:010CH         LINE#         4
+  C:011FH         LINE#         5
+  C:0123H         LINE#         6
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        ?C?COPY
+  C:00D3H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+Program Size: data=35.0 xdata=0 code=330
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

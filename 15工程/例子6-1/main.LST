@@ -1,0 +1,298 @@
+C51 COMPILER V9.53.0.0   MAIN                                                              04/30/2015 13:36:43 PAGE 1   
+
+
+C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND CODE LISTINCLUDE SYMB
+                    -OLS TABS(2)
+
+line level    source
+
+   1          #include "stdio.h"               //预处理命令，调用库函数
+   1      =1  /*--------------------------------------------------------------------------
+   2      =1  STDIO.H
+   3      =1  
+   4      =1  Prototypes for standard I/O functions.
+   5      =1  Copyright (c) 1988-2002 Keil Elektronik GmbH and Keil Software, Inc.
+   6      =1  All rights reserved.
+   7      =1  --------------------------------------------------------------------------*/
+   8      =1  
+   9      =1  #ifndef __STDIO_H__
+  10      =1  #define __STDIO_H__
+  11      =1  
+  12      =1  #ifndef EOF
+  13      =1   #define EOF -1
+  14      =1  #endif
+  15      =1  
+  16      =1  #ifndef NULL
+  17      =1   #define NULL ((void *) 0)
+  18      =1  #endif
+  19      =1  
+  20      =1  #ifndef _SIZE_T
+  21      =1   #define _SIZE_T
+  22      =1   typedef unsigned int size_t;
+  23      =1  #endif
+  24      =1  
+  25      =1  #pragma SAVE
+  26      =1  #pragma REGPARMS
+  27      =1  extern char _getkey (void);
+  28      =1  extern char getchar (void);
+  29      =1  extern char ungetchar (char);
+  30      =1  extern char putchar (char);
+  31      =1  extern int printf   (const char *, ...);
+  32      =1  extern int sprintf  (char *, const char *, ...);
+  33      =1  extern int vprintf  (const char *, char *);
+  34      =1  extern int vsprintf (char *, const char *, char *);
+  35      =1  extern char *gets (char *, int n);
+  36      =1  extern int scanf (const char *, ...);
+  37      =1  extern int sscanf (char *, const char *, ...);
+  38      =1  extern int puts (const char *);
+  39      =1  
+  40      =1  #pragma RESTORE
+  41      =1  
+  42      =1  #endif
+  43      =1  
+   2          #include "reg51.h"               //预处理命令，调用库函数
+   1      =1  /*--------------------------------------------------------------------------
+   2      =1  REG51.H
+   3      =1  
+   4      =1  Header file for generic 80C51 and 80C31 microcontroller.
+   5      =1  Copyright (c) 1988-2002 Keil Elektronik GmbH and Keil Software, Inc.
+   6      =1  All rights reserved.
+   7      =1  --------------------------------------------------------------------------*/
+   8      =1  
+   9      =1  #ifndef __REG51_H__
+C51 COMPILER V9.53.0.0   MAIN                                                              04/30/2015 13:36:43 PAGE 2   
+
+  10      =1  #define __REG51_H__
+  11      =1  
+  12      =1  /*  BYTE Register  */
+  13      =1  sfr P0   = 0x80;
+  14      =1  sfr P1   = 0x90;
+  15      =1  sfr P2   = 0xA0;
+  16      =1  sfr P3   = 0xB0;
+  17      =1  sfr PSW  = 0xD0;
+  18      =1  sfr ACC  = 0xE0;
+  19      =1  sfr B    = 0xF0;
+  20      =1  sfr SP   = 0x81;
+  21      =1  sfr DPL  = 0x82;
+  22      =1  sfr DPH  = 0x83;
+  23      =1  sfr PCON = 0x87;
+  24      =1  sfr TCON = 0x88;
+  25      =1  sfr TMOD = 0x89;
+  26      =1  sfr TL0  = 0x8A;
+  27      =1  sfr TL1  = 0x8B;
+  28      =1  sfr TH0  = 0x8C;
+  29      =1  sfr TH1  = 0x8D;
+  30      =1  sfr IE   = 0xA8;
+  31      =1  sfr IP   = 0xB8;
+  32      =1  sfr SCON = 0x98;
+  33      =1  sfr SBUF = 0x99;
+  34      =1  
+  35      =1  
+  36      =1  /*  BIT Register  */
+  37      =1  /*  PSW   */
+  38      =1  sbit CY   = 0xD7;
+  39      =1  sbit AC   = 0xD6;
+  40      =1  sbit F0   = 0xD5;
+  41      =1  sbit RS1  = 0xD4;
+  42      =1  sbit RS0  = 0xD3;
+  43      =1  sbit OV   = 0xD2;
+  44      =1  sbit P    = 0xD0;
+  45      =1  
+  46      =1  /*  TCON  */
+  47      =1  sbit TF1  = 0x8F;
+  48      =1  sbit TR1  = 0x8E;
+  49      =1  sbit TF0  = 0x8D;
+  50      =1  sbit TR0  = 0x8C;
+  51      =1  sbit IE1  = 0x8B;
+  52      =1  sbit IT1  = 0x8A;
+  53      =1  sbit IE0  = 0x89;
+  54      =1  sbit IT0  = 0x88;
+  55      =1  
+  56      =1  /*  IE   */
+  57      =1  sbit EA   = 0xAF;
+  58      =1  sbit ES   = 0xAC;
+  59      =1  sbit ET1  = 0xAB;
+  60      =1  sbit EX1  = 0xAA;
+  61      =1  sbit ET0  = 0xA9;
+  62      =1  sbit EX0  = 0xA8;
+  63      =1  
+  64      =1  /*  IP   */ 
+  65      =1  sbit PS   = 0xBC;
+  66      =1  sbit PT1  = 0xBB;
+  67      =1  sbit PX1  = 0xBA;
+  68      =1  sbit PT0  = 0xB9;
+  69      =1  sbit PX0  = 0xB8;
+  70      =1  
+  71      =1  /*  P3  */
+C51 COMPILER V9.53.0.0   MAIN                                                              04/30/2015 13:36:43 PAGE 3   
+
+  72      =1  sbit RD   = 0xB7;
+  73      =1  sbit WR   = 0xB6;
+  74      =1  sbit T1   = 0xB5;
+  75      =1  sbit T0   = 0xB4;
+  76      =1  sbit INT1 = 0xB3;
+  77      =1  sbit INT0 = 0xB2;
+  78      =1  sbit TXD  = 0xB1;
+  79      =1  sbit RXD  = 0xB0;
+  80      =1  
+  81      =1  /*  SCON  */
+  82      =1  sbit SM0  = 0x9F;
+  83      =1  sbit SM1  = 0x9E;
+  84      =1  sbit SM2  = 0x9D;
+  85      =1  sbit REN  = 0x9C;
+  86      =1  sbit TB8  = 0x9B;
+  87      =1  sbit RB8  = 0x9A;
+  88      =1  sbit TI   = 0x99;
+  89      =1  sbit RI   = 0x98;
+  90      =1  
+  91      =1  #endif
+   3          int max(int a, int b)            //定义max函数，a，b为形式参数
+   4          {                                //{ }为函数的边界
+   5   1        if(a>b)                        //如果a大于b条件成立
+   6   1          return a;                    //将a作为返回值返回到主程序调用处
+   7   1        else                           //否则，a小于等于b条件成立
+   8   1          return b;                    //将b作为返回值返回到主程序调用处
+   9   1      }
+  10          main()                           //主函数
+  11          {
+  12   1       int i,j,k,l;                    //声明数据类型i,j,k
+  13   1       SCON= 0x52;                     /*8051单片机串口初始化*/
+  14   1       TMOD = 0x20;   
+  15   1       TCON = 0x69;    
+  16   1       TH1 = 0xF3;     
+  17   1       scanf("%d %d",&i,&j);           //输入变量i和j的值
+  18   1       l=i+j;                          //变量i和变量j的值求和，送给l
+  19   1       k=max(i,j);                     //调用max函数，求取最大值k
+  20   1       printf("i + j =%d\n",l);        //输出l的值
+  21   1       printf("max value is %d\n",k);  //打印k的值
+  22   1       while(1);                       //无限循环
+  23   1      }                                //程序结束
+C51 COMPILER V9.53.0.0   MAIN                                                              04/30/2015 13:36:43 PAGE 4   
+
+ASSEMBLY LISTING OF GENERATED OBJECT CODE
+
+
+             ; FUNCTION _max (BEGIN)
+                                           ; SOURCE LINE # 3
+;---- Variable 'b' assigned to Register 'R4/R5' ----
+;---- Variable 'a' assigned to Register 'R6/R7' ----
+                                           ; SOURCE LINE # 4
+                                           ; SOURCE LINE # 5
+0000 D3                SETB    C
+0001 EF                MOV     A,R7
+0002 9D                SUBB    A,R5
+0003 EC                MOV     A,R4
+0004 6480              XRL     A,#080H
+0006 F8                MOV     R0,A
+0007 EE                MOV     A,R6
+0008 6480              XRL     A,#080H
+000A 98                SUBB    A,R0
+000B 4001              JC      ?C0001
+                                           ; SOURCE LINE # 6
+000D 22                RET     
+000E         ?C0001:
+                                           ; SOURCE LINE # 8
+000E AE04              MOV     R6,AR4
+0010 AF05              MOV     R7,AR5
+                                           ; SOURCE LINE # 9
+0012         ?C0002:
+0012 22                RET     
+             ; FUNCTION _max (END)
+
+             ; FUNCTION main (BEGIN)
+                                           ; SOURCE LINE # 10
+                                           ; SOURCE LINE # 11
+                                           ; SOURCE LINE # 13
+0000 759852            MOV     SCON,#052H
+                                           ; SOURCE LINE # 14
+0003 758920            MOV     TMOD,#020H
+                                           ; SOURCE LINE # 15
+0006 758869            MOV     TCON,#069H
+                                           ; SOURCE LINE # 16
+0009 758DF3            MOV     TH1,#0F3H
+                                           ; SOURCE LINE # 17
+000C 750000      E     MOV     ?_scanf?BYTE+03H,#00H
+000F 750000      R     MOV     ?_scanf?BYTE+04H,#HIGH i
+0012 750000      R     MOV     ?_scanf?BYTE+05H,#LOW i
+0015 750000      E     MOV     ?_scanf?BYTE+06H,#00H
+0018 750000      R     MOV     ?_scanf?BYTE+07H,#HIGH j
+001B 750000      R     MOV     ?_scanf?BYTE+08H,#LOW j
+001E 7BFF              MOV     R3,#0FFH
+0020 7A00        R     MOV     R2,#HIGH ?SC_0
+0022 7900        R     MOV     R1,#LOW ?SC_0
+0024 120000      E     LCALL   _scanf
+                                           ; SOURCE LINE # 18
+0027 E500        R     MOV     A,i+01H
+0029 2500        R     ADD     A,j+01H
+002B FF                MOV     R7,A
+002C E500        R     MOV     A,i
+002E 3500        R     ADDC    A,j
+;---- Variable 'l' assigned to Register 'DPTR' ----
+0030 8F82              MOV     DPL,R7
+0032 F583              MOV     DPH,A
+                                           ; SOURCE LINE # 19
+C51 COMPILER V9.53.0.0   MAIN                                                              04/30/2015 13:36:43 PAGE 5   
+
+0034 AD00        R     MOV     R5,j+01H
+0036 AC00        R     MOV     R4,j
+0038 AF00        R     MOV     R7,i+01H
+003A AE00        R     MOV     R6,i
+003C 120000      R     LCALL   _max
+003F 8E00        R     MOV     k,R6
+0041 8F00        R     MOV     k+01H,R7
+                                           ; SOURCE LINE # 20
+0043 7BFF              MOV     R3,#0FFH
+0045 7A00        R     MOV     R2,#HIGH ?SC_6
+0047 7900        R     MOV     R1,#LOW ?SC_6
+0049 858300      E     MOV     ?_printf?BYTE+03H,DPH
+004C 858200      E     MOV     ?_printf?BYTE+04H,DPL
+004F 120000      E     LCALL   _printf
+                                           ; SOURCE LINE # 21
+0052 7BFF              MOV     R3,#0FFH
+0054 7A00        R     MOV     R2,#HIGH ?SC_17
+0056 7900        R     MOV     R1,#LOW ?SC_17
+0058 850000      E     MOV     ?_printf?BYTE+03H,k
+005B 850000      E     MOV     ?_printf?BYTE+04H,k+01H
+005E 120000      E     LCALL   _printf
+0061         ?C0004:
+                                           ; SOURCE LINE # 22
+0061 80FE              SJMP    ?C0004
+             ; FUNCTION main (END)
+
+C51 COMPILER V9.53.0.0   MAIN                                                              04/30/2015 13:36:43 PAGE 6   
+
+NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
+====                                    =====   ======  ====    ======  ====
+
+
+_scanf . . . . . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
+size_t . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_INT    -----  2
+_printf. . . . . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
+main . . . . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+  i. . . . . . . . . . . . . . . . . .  AUTO     DATA   INT      0000H  2
+  j. . . . . . . . . . . . . . . . . .  AUTO     DATA   INT      0002H  2
+  k. . . . . . . . . . . . . . . . . .  AUTO     DATA   INT      0004H  2
+  l. . . . . . . . . . . . . . . . . .  * REG *  DATA   INT      0082H  2
+SCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0098H  1
+TMOD . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0089H  1
+TCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0088H  1
+_max . . . . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+  a. . . . . . . . . . . . . . . . . .  * REG *  DATA   INT      0006H  2
+  b. . . . . . . . . . . . . . . . . .  * REG *  DATA   INT      0004H  2
+TH1. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   008DH  1
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    118    ----
+   CONSTANT SIZE    =     34    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       6
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,59 @@
+C51 COMPILER V9.56.0.0   MAIN                                                              02/25/2017 17:18:49 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: D:\keil\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include <STC15F2K60S2.H>
+   2          //#include "reg51.h"
+   3          
+   4          //sfr P_SW1    =0xA2;
+   5          //sfr CCON     =0xD8;
+   6          //sfr CMOD     =0xD9;
+   7          //sfr CL       =0xE9;
+   8          //sfr CH       =0xF9;
+   9          //sfr CCAPM0   =0xDA;
+  10          //sbit CCF0    =CCON^0;
+  11          //sbit CCF1    =CCON^1;
+  12          //sbit CR      =CCON^6;
+  13          //sbit CF      =CCON^7;
+  14          
+  15          void PCA_int() interrupt 7
+  16          {
+  17   1        CCF0=0;
+  18   1        P0=~P0;
+  19   1        //P47=!P47;
+  20   1      }
+  21          
+  22          void main()
+  23          {
+  24   1        P0M0=P0M1=0;
+  25   1        P0=0;
+  26   1      //  P47=0;
+  27   1        P_SW1=0x00;
+  28   1        CCON=0;
+  29   1        CL=0;
+  30   1        CH=0;
+  31   1        CMOD=0x00;
+  32   1        CCAPM0=0x11;
+  33   1        CR=1;
+  34   1        EA=1;
+  35   1        while(1);
+  36   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     32    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

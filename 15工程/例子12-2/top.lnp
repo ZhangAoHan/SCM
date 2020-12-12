@@ -1,0 +1,4 @@
+"main.obj",
+"led1602.obj" 
+TO "top" 
+RAMSIZE(256) 

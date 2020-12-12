@@ -1,0 +1,4 @@
+"main.obj",
+"gpio.obj" 
+TO "top" 
+RAMSIZE(256) 

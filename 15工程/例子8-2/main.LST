@@ -1,0 +1,56 @@
+C51 COMPILER V9.56.0.0   MAIN                                                              02/23/2017 22:09:49 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: D:\keil\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          //#include "reg51.h"
+   2          #include <STC15F2K60S2.H>
+   3          
+   4          //#define TIMS 3036
+   5          //sfr AUXR  =0x8E;
+   6          unsigned char i;
+   7          void timer_0() interrupt 1
+   8          {
+   9   1      //  P46=!P46;
+  10   1      //  P47=!P47;
+  11   1        i++;
+  12   1        if(i==10)
+  13   1        {
+  14   2          i=0;
+  15   2        P0=~P0;
+  16   2        //TR0=0;
+  17   2        }
+  18   1      }
+  19          main()
+  20          {
+  21   1        P0M0=P0M1=0;
+  22   1      //  TL0=(65535-50000)/256;
+  23   1      //  TH0=(65535-50000)%256;
+  24   1        AUXR&=0x7F;
+  25   1        TMOD=0x09;
+  26   1      //  P46=0;
+  27   1      //  P47=0;
+  28   1        P0=0x00;
+  29   1        TR0=1;
+  30   1        ET0=1;
+  31   1        EA=1;
+  32   1        while(1);
+  33   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     43    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

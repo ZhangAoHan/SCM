@@ -1,0 +1,44 @@
+A51 MACRO ASSEMBLER  MAIN                                                                 02/13/2015 22:26:04 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN main.OBJ
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE main.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     NAME main
+                       2     my_seg SEGMENT CODE                  ; ÉùÃ÷´úÂë¶Îmy_seg
+----                   3                RSEG    my_seg            ; ÇÐ»»µ½´úÂë¶Îmy_seg
+0000 030205FF          4     TABLE:     DB      3,2,5,0xFF        ; ÉùÃ÷ËÄ¸ö³£Ê
+                       5             
+                       6     myprog SEGMENT CODE                  ; ÉùÃ÷´úÂë¶Îmyprog
+----                   7                RSEG    myprog            ; ÇÐ»»µ½´úÂë¶Îmyprog
+0000 020000   F        8                        LJMP main                 ; ÔÚ³ÌÐò´æ´¢Æ÷0x0000µÄÎ»ÖÃÓÐÒ»ÌõÌø×ªÖ¸Áî
+                       9                        USING 0                   ; Ê¹ÓÃµÚÒ»×é¼Ä´æÆ÷
+0100                  10                        ORG 100H                  ; ¶¨Î»µ½´úÂë¶Î100HµÄÎ»ÖÃ
+0100 900000   F       11      main:     MOV     DPTR, #TABLE      ; ½«TABLE±íµÄµØÖ·ËÍ¸øDPTR
+0103 7403             12                MOV     A,#3              ; ½«³£ÊËÍ¸øÀÛ¼ÓÆ÷A 
+0105 93               13                MOVC    A,@A+DPTR         ; ½«DPTR+3ËùÖ¸ÏòµÄ³ÌÐòFlashµÄÄÚÈÝËÍµ½ÀÛ¼ÓÆ÷A
+0106 850090           14                        MOV     P1,0              ; ½«P1¶Ë¿ÚÖÃ0x0000
+0109 F590             15                        MOV     P1,A              ; ½«P1¶Ë¿ÚÖÃÀÛ¼ÓÆ÷AµÄÄÚÈÝ
+                      16     END
+A51 MACRO ASSEMBLER  MAIN                                                                 02/13/2015 22:26:04 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+MAIN . . . . . . .  C ADDR   0100H   R   SEG=MYPROG
+MYPROG . . . . . .  C SEG    010BH       REL=UNIT
+MY_SEG . . . . . .  C SEG    0004H       REL=UNIT
+P1 . . . . . . . .  D ADDR   0090H   A   
+TABLE. . . . . . .  C ADDR   0000H   R   SEG=MY_SEG
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

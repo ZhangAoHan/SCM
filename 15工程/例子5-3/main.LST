@@ -1,0 +1,42 @@
+A51 MACRO ASSEMBLER  MAIN                                                                 02/13/2015 22:51:42 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN main.OBJ
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE main.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     myvars SEGMENT IDATA            ;定义IDATA段
+----                   2                RSEG    myvars
+0000                   3     BUFFER:    DS      100          ; 保留100个字节
+----                   4      CSEG AT 0                      ; 定位到程序存储器0x0000的位置。
+                       5              
+                       6     myprog SEGMENT CODE             ; 定义代码段
+----                   7                RSEG     myprog
+0000 020000   F        8                        LJMP     main        ; 无条件跳转到main
+0100                   9                        ORG      100H        ; 定位到100H的位置
+0100 7800     F       10     main:      MOV     R0,#BUFFER   ; 将BUFFER的地址给R0
+0102 E6               11                MOV     A,@R0        ; 将R0指向的内部RAM的内容给累加器A
+0103 08               12                INC      R0          ; 将R0寄存器的内容递增1
+0104 F6               13                MOV     @R0,A        ; 将累加器A的内容给了R0寄存器所指向的存储器地址
+                      14     END
+                             
+A51 MACRO ASSEMBLER  MAIN                                                                 02/13/2015 22:51:42 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BUFFER . . . . . .  I ADDR   0000H   R   SEG=MYVARS
+MAIN . . . . . . .  C ADDR   0100H   R   SEG=MYPROG
+MYPROG . . . . . .  C SEG    0105H       REL=UNIT
+MYVARS . . . . . .  I SEG    0064H       REL=UNIT
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

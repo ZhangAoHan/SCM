@@ -1,0 +1,50 @@
+C51 COMPILER V9.56.0.0   MAIN                                                              12/18/2016 19:37:27 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: D:\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include "stdio.h"
+   2          #include "reg51.h"
+   3           void main()
+   4          {
+   5   1        int a;
+   6   1        SCON= 0x52;                     
+   7   1        TMOD = 0x20;   
+   8   1        TCON = 0x69;    
+   9   1        TH1 = 0xF3; 
+  10   1        scanf("%d",&a);
+  11   1        switch(a)
+  12   1        {
+  13   2          case 1:    puts("January\n");                        break;
+  14   2          case 2:    puts("February\n");                       break;
+  15   2          case 3:    puts("March\n");                          break;
+  16   2          case 4:    puts("April\n");                          break;
+  17   2          case 5:    puts("May\n");                            break;
+  18   2          case 6:    puts("June\n");                           break;
+  19   2          case 7:    puts("July\n");                           break;
+  20   2          case 8:    puts("August\n");                         break;
+  21   2          case 9:    puts("September\n");                      break;
+  22   2          case 10:   puts("October\n");                        break;
+  23   2          case 11:   puts("November\n");                       break;
+  24   2          case 12:   puts("December\n");                       break;
+  25   2          default :  puts("input number should be in 1~12\n"); 
+  26   2        }
+  27   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    204    ----
+   CONSTANT SIZE    =    133    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
