@@ -1,0 +1,109 @@
+
+#include <SPI.h>
+
+#include <Wire.h>
+
+#include <Adafruit_GFX.h>
+
+#include <Adafruit_SSD1306.h>
+
+#define OLED_RESET 4
+
+Adafruit_SSD1306 display(OLED_RESET);
+
+#define NUMFLAKES 10
+
+#define XPOS 0
+
+#define YPOS 1
+
+#define DELTAY 2
+
+int hours = 0;
+
+int mins = 0;
+
+int secs = 0;
+
+void setup() {
+
+pinMode(2,INPUT);
+
+Serial.begin(9600);
+
+display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
+
+display.display();
+
+delay(1);
+
+display.clearDisplay();
+
+}
+
+void loop() {
+
+// put your main code here, to run repeatedly:
+
+delay(1000);
+
+display.setCursor(0,0);
+
+display.clearDisplay();
+
+display.setTextSize(2);
+
+display.setTextColor(WHITE);
+
+display.println(secs);
+
+display.setCursor(23,0);
+
+display.println(":");
+
+display.setCursor(34,0);
+
+display.println(hours);
+
+display.setCursor(58,0);
+
+display.setTextSize(1);
+
+display.println(mins);
+
+display.display();
+
+mins++;
+
+if(mins > 59)
+
+{
+
+hours++;
+
+mins = 0;
+
+}
+
+if(hours > 59)
+
+{
+
+secs++;
+
+hours = 0;
+
+}
+
+if(secs > 24)
+
+{
+
+hours = 0;
+
+secs = 0;
+
+mins = 0;
+
+}
+ }
