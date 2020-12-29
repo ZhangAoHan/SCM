@@ -1,0 +1,110 @@
+C51 COMPILER V8.18   SERIALTEST                                                            07/23/2009 20:06:45 PAGE 1   
+
+
+C51 COMPILER V8.18, COMPILATION OF MODULE SERIALTEST
+OBJECT MODULE PLACED IN serialTest.OBJ
+COMPILER INVOKED BY: d:\Keil\C51\BIN\C51.EXE serialTest.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /**************************************************
+   2          *文件名称：serialTest.c
+   3          *文件功能：实验板串口模块测试程序
+   4          *版本：V0.0.1
+   5          *作者：yd
+   6          *时间：09.07.22
+   7          *说明：本测试程序适用于实验板上的RS232和RS485的单机
+   8          通信,应用查询式
+   9          ***************************************************/
+  10          #include <AT89X52.h>
+  11          #define uchar unsigned char
+  12          #define uint  unsigned int
+  13          #define sei() (EA =1)
+  14          #define cli() (EA =0)
+  15          /********************************************************************************************
+  16          * 函数名称：Delay(uint a)
+  17          * 功    能：延迟时间=a*1ms
+  18          * 入口参数：
+  19          * 出口参数：无
+  20          *********************************************************************************************/
+  21          void Delay(uint a)
+  22          {
+  23   1         uchar  i;
+  24   1         while(a--)
+  25   1         for(i=0;i<125;i++);
+  26   1      }
+  27          /*********************************************
+  28          *函数名称：usart0_Initial(void)
+  29          *函数功能：初始化串口
+  30          *入口函数：无
+  31          *出口函数：无
+  32          *********************************************/
+  33          void usart_Initial(void)
+  34          { 
+  35   1      /************TH1=256-(K*oscFreq)/384*BaudRate************/
+  36   1              SCON=0x50;   //SM0=0;SM1=1;REN=1;
+  37   1              TI=0;        //数据发送状态清零
+  38   1              RI=0;            //数据接收状态清零 
+  39   1              PCON=0;          //不加倍
+  40   1              TH1=0xF3;        //bode=2400
+  41   1              TL1=0XF3;
+  42   1              TMOD=0X20;       //TIMER1 MODER2;
+  43   1              ET1=0;           //屏蔽timer1溢出中断
+  44   1              TR1=1;           //启动timer1
+  45   1              ES=0;            //屏蔽串口中断
+  46   1      }
+  47          /*********************************************
+  48          *函数名称：send_char(uchar txd) 
+  49          *函数功能：串口发送一个字符
+  50          *入口函数：要发送的一个字符txd
+  51          *出口函数：无
+  52          *********************************************/
+  53          void send_char(uchar txd) 
+  54          {
+  55   1         TI=0;
+C51 COMPILER V8.18   SERIALTEST                                                            07/23/2009 20:06:45 PAGE 2   
+
+  56   1         SBUF=txd;
+  57   1         while(!TI);                          // 等特数据传送
+  58   1         TI=0;                                        // 清除数据传送标志
+  59   1      }
+  60          /********************************************
+  61          *函数名称：get_char(void)
+  62          *函数功能：串口接收一个字符
+  63          *函数入口：串口发送的字符rxd
+  64          *函数出口：无
+  65          ********************************************/
+  66          uchar get_char(void)
+  67          {
+  68   1         uchar temp;
+  69   1         RI=0;
+  70   1         while(!RI);   // 等特数据传送
+  71   1         temp=SBUF;
+  72   1         RI=0;                 // 清除数据传送标志 
+  73   1         return temp;
+  74   1      }
+  75          void main()
+  76          {
+  77   1        uchar temp;
+  78   1        usart_Initial();
+  79   1        while(1)
+  80   1        {
+  81   2          send_char('A'); 
+  82   2              Delay(10);
+  83   2              temp =get_char();
+  84   2        }
+  85   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     90    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

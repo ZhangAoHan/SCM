@@ -1,0 +1,113 @@
+BL51 BANKED LINKER/LOCATER V6.20                                                        07/23/2009  20:43:04  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.20, INVOKED BY:
+D:\KEIL\C51\BIN\BL51.EXE DAC0832Main.obj TO DAC0832 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  DAC0832Main.obj (DAC0832MAIN)
+  D:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  DAC0832 (DAC0832MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     001BH     UNIT         ?PR?MAIN?DAC0832MAIN
+            CODE    001EH     0016H     UNIT         ?PR?_DELAY?DAC0832MAIN
+            CODE    0034H     0012H     UNIT         ?PR?_WRITE0832?DAC0832MAIN
+            CODE    0046H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   DAC0832 (DAC0832MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?DAC0832MAIN
+
+?PR?MAIN?DAC0832MAIN
+  +--> ?PR?_WRITE0832?DAC0832MAIN
+  +--> ?PR?_DELAY?DAC0832MAIN
+
+?PR?_WRITE0832?DAC0832MAIN
+  +--> ?PR?_DELAY?DAC0832MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  DAC0832 (DAC0832MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DAC0832MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  B:00A0H.5       PUBLIC        P2_5
+BL51 BANKED LINKER/LOCATER V6.20                                                      07/23/2009  20:43:04  PAGE 2
+
+
+  B:00A0H.6       PUBLIC        P2_6
+  B:00A0H.7       PUBLIC        P2_7
+  C:0003H         PUBLIC        main
+  C:001EH         PUBLIC        _Delay
+  C:0034H         PUBLIC        _write0832
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        a
+  -------         DO            
+  D:0005H         SYMBOL        i
+  -------         ENDDO         
+  C:001EH         LINE#         21
+  C:001EH         LINE#         22
+  C:001EH         LINE#         24
+  C:0028H         LINE#         25
+  C:0033H         LINE#         26
+  -------         ENDPROC       _DELAY
+  -------         PROC          _WRITE0832
+  D:0004H         SYMBOL        a
+  C:0034H         LINE#         33
+  C:0036H         LINE#         34
+  C:0036H         LINE#         35
+  C:003CH         LINE#         36
+  C:0043H         LINE#         37
+  C:0045H         LINE#         38
+  -------         ENDPROC       _WRITE0832
+  -------         PROC          MAIN
+  -------         DO            
+  D:0003H         SYMBOL        temp
+  -------         ENDDO         
+  C:0003H         LINE#         39
+  C:0003H         LINE#         40
+  C:0003H         LINE#         42
+  C:0005H         LINE#         43
+  C:0005H         LINE#         44
+  C:0005H         LINE#         45
+  C:000AH         LINE#         46
+  C:0011H         LINE#         47
+  C:0017H         LINE#         48
+  C:0017H         LINE#         49
+  C:0018H         LINE#         50
+  C:001AH         LINE#         52
+  C:001AH         LINE#         53
+  C:001CH         LINE#         54
+  C:001CH         LINE#         55
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        DAC0832MAIN
+
+Program Size: data=9.0 xdata=0 code=82
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

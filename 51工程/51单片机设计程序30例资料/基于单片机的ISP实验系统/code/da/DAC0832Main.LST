@@ -1,0 +1,81 @@
+C51 COMPILER V8.18   DAC0832MAIN                                                           07/23/2009 20:43:04 PAGE 1   
+
+
+C51 COMPILER V8.18, COMPILATION OF MODULE DAC0832MAIN
+OBJECT MODULE PLACED IN DAC0832Main.OBJ
+COMPILER INVOKED BY: d:\Keil\C51\BIN\C51.EXE DAC0832Main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /*****************************************************
+   2          *文件名称：DAC082Main.c
+   3          *文件功能：实验板上da转换模块dac0832测试程序
+   4          *版本：    V0.0.1 
+   5          *作者：    yd
+   6          *时间：    09.07.22
+   7          *****************************************************/
+   8          #include <AT89X52.h>
+   9          #define uchar unsigned char
+  10          #define uint  unsigned int
+  11          //------------DAC0832端口定义-----------------------
+  12          #define  CHOOSE0832  {P2_5 =0;P2_6 =0;P2_7 =0;}  //0832片选择
+  13          #define  PORT0832    P0   //0832数据端口
+  14          //--------------------------------------------------
+  15          /********************************************************************************************
+  16          * 函数名称：Delay(uint a)
+  17          * 功    能：延迟时间=a*1ms
+  18          * 入口参数：
+  19          * 出口参数：无
+  20          *********************************************************************************************/
+  21          void Delay(uint a)
+  22          {
+  23   1         uchar  i;
+  24   1         while(a--)
+  25   1         for(i=0;i<125;i++);
+  26   1      }
+  27          /*******************************************************
+  28          *函数名称：write0832(uchar a)
+  29          *函数功能：写DA转换芯片0832数据
+  30          *入口参数：a,要写的数据
+  31          *出口参数：无
+  32          *******************************************************/
+  33          void write0832(uchar a)
+  34          {
+  35   1        CHOOSE0832;
+  36   1        Delay(5);
+  37   1        PORT0832 =a; 
+  38   1      }
+  39          void main()
+  40          {
+  41   1         uchar temp;
+  42   1         temp=0x00;
+  43   1         while(1)
+  44   1         {
+  45   2           write0832(temp);
+  46   2               Delay(50);
+  47   2               if(temp<0xff)
+  48   2               {
+  49   3                 temp++;
+  50   3               }
+  51   2               else
+  52   2               {
+  53   3                 temp=0x00;
+  54   3               }
+  55   2         }
+C51 COMPILER V8.18   DAC0832MAIN                                                           07/23/2009 20:43:04 PAGE 2   
+
+  56   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     67    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

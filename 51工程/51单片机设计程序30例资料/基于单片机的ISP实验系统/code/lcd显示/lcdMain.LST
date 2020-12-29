@@ -1,0 +1,192 @@
+C51 COMPILER V8.18   LCDMAIN                                                               07/23/2009 14:15:03 PAGE 1   
+
+
+C51 COMPILER V8.18, COMPILATION OF MODULE LCDMAIN
+OBJECT MODULE PLACED IN lcdMain.OBJ
+COMPILER INVOKED BY: d:\Keil\C51\BIN\C51.EXE lcdMain.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /*********************************************************
+   2          *文件名称：lcdMain.c
+   3          *文件功能：测试实验板上lcd显示模块,此lcd为带汉字库的12864
+   4          *版本：    V0.0.1
+   5          *作者：    yd
+   6          *时间：    09.07.22
+   7          *说明：该lcd显示屏的数据端口是通过8255扩展的，此处测试程序
+   8          把8255的端口全选择在方式0，即无条件数据传送
+   9          *********************************************************/
+  10          #include <AT89X52.h>
+  11          #include <absacc.h>
+  12          #include <intrins.h>
+  13          #define uchar unsigned char
+  14          #define uint  unsigned int
+  15          //--------------------8255端口操作定义---------------------
+  16          #define CHOOSE8255()  {P2_5=0;P2_6=1;P2_7=0;}   //选择8255
+  17          #define PA_ADDRESS        0x00    //片选8255时，PA端口地址 
+  18          #define PB_ADDRESS            0x01    //片选8255时，PB端口地址
+  19          #define PC_ADDRESS                0x02    //片选8255时，PC端口地址
+  20          #define COMMAND_ADDRESS   0x03    //片选8255时，控制端口地址
+  21          //--------------------lcd控制端口定义----------------------
+  22          #define LCD_RS   P1_0  
+  23          #define LCD_RW   P1_1
+  24          #define LCD_E    P1_2
+  25          //---------------------------------------------------------
+  26                  /*屏幕XY轴定义*/
+  27                  #define Line1    0x80
+  28                  #define Line2    0x90
+  29                  #define Line3    0x88
+  30                  #define Line4    0x98
+  31                  #define Y                0x80
+  32          
+  33          enum SEND_DATA_TYPE{DAT=0x00,COMM=0x01};
+  34          enum COMM_TYPE{COMM_BASE_FUN = 0x30, COMM_RE_FUN = 0x34,                        /*通信命令*/
+  35                                  COMM_CLR = 0x01, COMM_CURSOR = 0x06, COMM_ON_DISPLAY = 0x0C,
+  36                                  COMM_DRAW_ON = 0x36 };
+  37          void chk_busy (void);
+  38          void wr_lcd(uchar mode,uchar sendData);
+  39          void display_one_8X4(uchar x, uchar y, uchar cH, uchar cL);
+  40          void init_lcd (void);
+  41          /**********************************************************
+  42          *函数名称：chk_busy (void)
+  43          *函数功能：判断lcd是否忙
+  44          *入口参数：无
+  45          *出口参数：无
+  46          **********************************************************/
+  47          void chk_busy (void)
+  48          {
+  49   1        CHOOSE8255();  //片选8255
+  50   1        XBYTE[COMMAND_ADDRESS] =0x00;  //8255,PB口定义为方式0，输出模式
+  51   1        XBYTE[PB_ADDRESS]     =0xff;
+  52   1        //P1=0xff;
+  53   1        //rs=0;
+  54   1        //rw=1;
+  55   1        //e =1;
+C51 COMPILER V8.18   LCDMAIN                                                               07/23/2009 14:15:03 PAGE 2   
+
+  56   1        LCD_RS =0;
+  57   1        LCD_RW =1;
+  58   1        LCD_E  =1;
+  59   1        XBYTE[COMMAND_ADDRESS] =0x02;    //8255,PB口定义为方式0，输入模式
+  60   1        while((XBYTE[PB_ADDRESS])&0x80); //等待lcd忙结束
+  61   1        //while(busy==1);
+  62   1        //e =0;
+  63   1        LCD_E =0;
+  64   1      }
+  65          /**********************************************************
+  66          *函数名称：wr_lcd(uchar mode,uchar sendData)
+  67          *函数功能：向lcd写数据或者命令
+  68          *入口参数：mode,数据操作模式选择；sendData,操作的数据
+  69          *出口参数：无
+  70          **********************************************************/
+  71          void wr_lcd(uchar mode,uchar sendData)
+  72          {
+  73   1         chk_busy ();
+  74   1         if(mode==DAT)
+  75   1         {
+  76   2          //rs=1;   
+  77   2          //rw=0;   
+  78   2               LCD_RS =1; //数据
+  79   2               LCD_RW =0; //写
+  80   2         }
+  81   1         else 
+  82   1         {
+  83   2          //rs=0;   
+  84   2          //rw=0;   
+  85   2               LCD_RS =0; //命令
+  86   2               LCD_RW =0; //写
+  87   2         }
+  88   1         XBYTE[COMMAND_ADDRESS] =0x00;  //8255,PB口定义为方式0，输出模式
+  89   1         XBYTE[PB_ADDRESS]    =sendData;
+  90   1         //P1=content;   //output data or comm
+  91   1         //e=1;
+  92   1         LCD_E =1;
+  93   1         _nop_();
+  94   1         LCD_E =0;
+  95   1         //e=0;
+  96   1      }
+  97          /**********************************************************
+  98          *函数名称：init_lcd (void)
+  99          *函数功能：lcd初始化
+ 100          *入口参数：无
+ 101          *出口参数：无
+ 102          **********************************************************/
+ 103          void init_lcd (void)
+ 104          {
+ 105   1        wr_lcd (COMM,0x30);  /*30---基本指令动作*/   
+ 106   1        wr_lcd (COMM,0x01);  /*清屏，地址指针指向00H*/
+ 107   1        wr_lcd (COMM,0x06);  /*光标的移动方向*/
+ 108   1        wr_lcd (COMM,0x0c);  /*开显示，关游标*/
+ 109   1      }
+ 110          /**********************************************************
+ 111          *功能:指定位置显示一个字符(16位)
+ 112          *位置:  左上角(0,0)→X轴 (0,7)
+ 113                                 ↓
+ 114                                    Y轴(3,0)
+ 115          
+ 116          ***********************************************************/
+ 117          void display_one_8X4(uchar x, uchar y, uchar cH, uchar cL)
+C51 COMPILER V8.18   LCDMAIN                                                               07/23/2009 14:15:03 PAGE 3   
+
+ 118          {
+ 119   1              uchar pos = 0;
+ 120   1              if( (x < 8) && (y < 4) )
+ 121   1              {
+ 122   2                      //change the postion
+ 123   2              switch(y)
+ 124   2              {
+ 125   3                  case 0:
+ 126   3                      pos = Line1;
+ 127   3                      break;
+ 128   3                  case 1:
+ 129   3                      pos = Line2;
+ 130   3                      break;
+ 131   3                  case 2:
+ 132   3                      pos = Line3;
+ 133   3                      break;
+ 134   3                  case 3:
+ 135   3                      pos = Line4;
+ 136   3                      break;
+ 137   3              }
+ 138   2                      pos = pos+x;
+ 139   2      
+ 140   2                      //display
+ 141   2                      wr_lcd (COMM,COMM_BASE_FUN);
+ 142   2                      wr_lcd (COMM,pos);
+ 143   2              
+ 144   2                      wr_lcd (DAT, cH );
+ 145   2                      wr_lcd (DAT, cL );
+ 146   2              }
+ 147   1      }
+ 148          /*************************************************************
+ 149          功能：进行字符显示
+ 150          参数：x,横轴坐标；y,纵轴坐标;str[],字符坐标;doubleNum,字符数量
+ 151          **************************************************************/
+ 152          void display_string(uchar x,uchar y,const uchar str[], uchar doubleNum)
+ 153          {
+ 154   1          register uchar i;
+ 155   1          for(i = 0; i < doubleNum; i ++)
+ 156   1          {
+ 157   2              display_one_8X4(x+i,y,str[(i<<1)],str[(i<<1)+1]);
+ 158   2          }
+ 159   1      }
+ 160          void main()
+ 161          {
+ 162   1        init_lcd();
+ 163   1        display_string(0,0,"abcd",4); //显示字符
+ 164   1        while(1);
+ 165   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    263    ----
+   CONSTANT SIZE    =      5    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      11
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

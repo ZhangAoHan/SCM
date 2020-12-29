@@ -1,0 +1,15 @@
+<html>
+<body>
+<pre>
+<h1>礦ision3 Build Log</h1>
+<h2>Project:</h2>
+E:\leung\袁东的项目\完成\13基于DAC0832模拟低频DDS\code\dds-dac0832.uv2
+Project File Date:  06/12/2009
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling sin_dds.c...
+linking...
+Program Size: data=23.0 xdata=0 code=407
+creating hex file from "dds-dac0832"...
+"dds-dac0832" - 0 Error(s), 0 Warning(s).

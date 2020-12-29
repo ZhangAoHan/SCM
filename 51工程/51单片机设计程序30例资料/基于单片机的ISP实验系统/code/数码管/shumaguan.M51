@@ -1,0 +1,172 @@
+BL51 BANKED LINKER/LOCATER V6.20                                                        07/22/2009  19:04:19  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.20, INVOKED BY:
+D:\KEIL\C51\BIN\BL51.EXE shumaguan.obj TO shumaguan RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  shumaguan.obj (SHUMAGUAN)
+  D:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  shumaguan (SHUMAGUAN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0034H     UNIT         ?PR?_READ8255?SHUMAGUAN
+            CODE    0037H     002EH     UNIT         ?PR?_WRITE8255?SHUMAGUAN
+            CODE    0065H     0017H     UNIT         ?PR?_WRITELED?SHUMAGUAN
+            CODE    007CH     000FH     UNIT         ?PR?MAIN?SHUMAGUAN
+            CODE    008BH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   shumaguan (SHUMAGUAN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?SHUMAGUAN
+
+?PR?MAIN?SHUMAGUAN
+  +--> ?PR?_WRITELED?SHUMAGUAN
+
+?PR?_WRITELED?SHUMAGUAN
+  +--> ?PR?_WRITE8255?SHUMAGUAN
+
+
+
+SYMBOL TABLE OF MODULE:  shumaguan (SHUMAGUAN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        SHUMAGUAN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0037H         PUBLIC        _write8255
+  B:00A0H.5       PUBLIC        P2_5
+BL51 BANKED LINKER/LOCATER V6.20                                                      07/22/2009  19:04:19  PAGE 2
+
+
+  B:00A0H.6       PUBLIC        P2_6
+  B:00A0H.7       PUBLIC        P2_7
+  C:007CH         PUBLIC        main
+  C:0065H         PUBLIC        _writeLed
+  C:0003H         PUBLIC        _read8255
+  -------         PROC          _WRITE8255
+  D:0007H         SYMBOL        portMode
+  D:0005H         SYMBOL        c
+  C:0037H         LINE#         40
+  C:0037H         LINE#         41
+  C:0037H         LINE#         42
+  C:0043H         LINE#         43
+  C:0043H         LINE#         44
+  C:0043H         LINE#         45
+  C:0043H         LINE#         46
+  C:0043H         LINE#         47
+  C:0049H         LINE#         48
+  C:004EH         LINE#         49
+  C:004FH         LINE#         50
+  C:004FH         LINE#         51
+  C:004FH         LINE#         52
+  C:004FH         LINE#         53
+  C:0054H         LINE#         54
+  C:0059H         LINE#         55
+  C:005AH         LINE#         56
+  C:005AH         LINE#         57
+  C:005AH         LINE#         58
+  C:005AH         LINE#         59
+  C:005FH         LINE#         60
+  C:0064H         LINE#         61
+  C:0064H         LINE#         62
+  C:0064H         LINE#         63
+  C:0064H         LINE#         64
+  C:0064H         LINE#         65
+  C:0064H         LINE#         66
+  -------         ENDPROC       _WRITE8255
+  -------         PROC          _READ8255
+  D:0007H         SYMBOL        portMode
+  -------         DO            
+  D:0006H         SYMBOL        c
+  -------         ENDDO         
+  C:0003H         LINE#         73
+  C:0003H         LINE#         74
+  C:0003H         LINE#         76
+  C:000FH         LINE#         77
+  C:000FH         LINE#         78
+  C:000FH         LINE#         79
+  C:000FH         LINE#         80
+  C:000FH         LINE#         81
+  C:0015H         LINE#         82
+  C:001AH         LINE#         83
+  C:001CH         LINE#         84
+  C:001CH         LINE#         85
+  C:001CH         LINE#         86
+  C:001CH         LINE#         87
+  C:0022H         LINE#         88
+  C:0027H         LINE#         89
+BL51 BANKED LINKER/LOCATER V6.20                                                      07/22/2009  19:04:19  PAGE 3
+
+
+  C:0029H         LINE#         90
+  C:0029H         LINE#         91
+  C:0029H         LINE#         92
+  C:0029H         LINE#         93
+  C:002FH         LINE#         94
+  C:0034H         LINE#         95
+  C:0034H         LINE#         96
+  C:0034H         LINE#         97
+  C:0034H         LINE#         98
+  C:0034H         LINE#         99
+  C:0034H         LINE#         100
+  C:0036H         LINE#         101
+  -------         ENDPROC       _READ8255
+  -------         PROC          _WRITELED
+  D:0007H         SYMBOL        cs
+  D:0006H         SYMBOL        display
+  -------         DO            
+  D:0005H         SYMBOL        c
+  -------         ENDDO         
+  C:0065H         LINE#         108
+  C:0067H         LINE#         109
+  C:0067H         LINE#         111
+  C:0069H         LINE#         112
+  C:006EH         LINE#         113
+  C:0071H         LINE#         114
+  C:0074H         LINE#         115
+  C:0077H         LINE#         116
+  -------         ENDPROC       _WRITELED
+  -------         PROC          MAIN
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:007CH         LINE#         118
+  C:007CH         LINE#         119
+  C:007CH         LINE#         121
+  C:007CH         LINE#         122
+  C:007CH         LINE#         123
+  C:007EH         LINE#         124
+  C:007EH         LINE#         125
+  C:0085H         LINE#         126
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        SHUMAGUAN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_READ8255?SHUMAGUAN
+
+Program Size: data=9.0 xdata=0 code=151
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)
