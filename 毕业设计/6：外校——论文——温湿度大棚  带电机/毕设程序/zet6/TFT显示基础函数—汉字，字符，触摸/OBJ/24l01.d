@@ -1,0 +1,11 @@
+..\obj\24l01.o: ..\SENSOR\24l01.c
+..\obj\24l01.o: ..\SENSOR\24l01.h
+..\obj\24l01.o: ..\SYSTEM\sys\sys.h
+..\obj\24l01.o: ..\SYSTEM\sys\stm32f10x.h
+..\obj\24l01.o: ..\SYSTEM\sys\core_cm3.h
+..\obj\24l01.o: E:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\24l01.o: ..\SYSTEM\sys\system_stm32f10x.h
+..\obj\24l01.o: ..\TFT\lcd.h
+..\obj\24l01.o: E:\keil\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\24l01.o: ..\SYSTEM\delay\delay.h
+..\obj\24l01.o: ..\SENSOR\spi.h

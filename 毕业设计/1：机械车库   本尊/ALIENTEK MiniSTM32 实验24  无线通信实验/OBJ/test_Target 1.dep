@@ -1,0 +1,91 @@
+Dependencies for Project 'test', Target 'Target 1': (DO NOT MODIFY !)
+F (.\startup_stm32f10x_hd.s)(0x532BB241)(--cpu Cortex-M3 -g --apcs=interwork -I "E:\毕业设计\毕业设计\1：机械车库   本尊\ALIENTEK MiniSTM32 实验24  无线通信实验\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include--pd "STM32F10X_MD SETA 1"--list ..\obj\startup_stm32f10x_hd.lst --xref -o ..\obj\startup_stm32f10x_hd.o --depend ..\obj\startup_stm32f10x_hd.d)
+F (.\test.c)(0x5CDC3256)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\ALIENTEK MiniSTM32 实验24  无线通信实验\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD-o ..\obj\test.o --omf_browse ..\obj\test.crf --depend ..\obj\test.d)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\usart\usart.h)(0x550EB9F1)
+I (E:\keil\ARM\ARMCC\include\stdio.h)(0x54199D7C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (..\HARDWARE\24l01.h)(0x5CD8AF7C)
+I (..\HARDWARE\control.h)(0x5CDBC226)
+I (..\HARDWARE\motor.h)(0x5CDBC226)
+I (..\HARDWARE\timer.h)(0x5CDBC24A)
+I (..\HARDWARE\io_control.h)(0x5CDBC512)
+F (..\SYSTEM\delay\delay.c)(0x555AC5E1)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\ALIENTEK MiniSTM32 实验24  无线通信实验\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD-o ..\obj\delay.o --omf_browse ..\obj\delay.crf --depend ..\obj\delay.d)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\SYSTEM\sys\sys.c)(0x550EB960)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\ALIENTEK MiniSTM32 实验24  无线通信实验\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD-o ..\obj\sys.o --omf_browse ..\obj\sys.crf --depend ..\obj\sys.d)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\SYSTEM\usart\usart.c)(0x550EB9F1)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\ALIENTEK MiniSTM32 实验24  无线通信实验\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD-o ..\obj\usart.o --omf_browse ..\obj\usart.crf --depend ..\obj\usart.d)
+I (..\SYSTEM\usart\usart.h)(0x550EB9F1)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (E:\keil\ARM\ARMCC\include\stdio.h)(0x54199D7C)
+F (..\HARDWARE\24l01.c)(0x5CD8AF7C)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\ALIENTEK MiniSTM32 实验24  无线通信实验\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD-o ..\obj\24l01.o --omf_browse ..\obj\24l01.crf --depend ..\obj\24l01.d)
+I (..\HARDWARE\24l01.h)(0x5CD8AF7C)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (..\HARDWARE\spi.h)(0x5CD2E665)
+F (..\HARDWARE\control.c)(0x5CDC3569)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\ALIENTEK MiniSTM32 实验24  无线通信实验\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD-o ..\obj\control.o --omf_browse ..\obj\control.crf --depend ..\obj\control.d)
+I (..\HARDWARE\control.h)(0x5CDBC226)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\HARDWARE\io_control.h)(0x5CDBC512)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (..\HARDWARE\motor.h)(0x5CDBC226)
+I (..\HARDWARE\24l01.h)(0x5CD8AF7C)
+I (..\HARDWARE\timer.h)(0x5CDBC24A)
+F (..\HARDWARE\spi.c)(0x5CD2E665)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\ALIENTEK MiniSTM32 实验24  无线通信实验\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD-o ..\obj\spi.o --omf_browse ..\obj\spi.crf --depend ..\obj\spi.d)
+I (..\HARDWARE\spi.h)(0x5CD2E665)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\HARDWARE\timer.c)(0x5CDBC254)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\ALIENTEK MiniSTM32 实验24  无线通信实验\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD-o ..\obj\timer.o --omf_browse ..\obj\timer.crf --depend ..\obj\timer.d)
+I (..\HARDWARE\timer.h)(0x5CDBC24A)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\HARDWARE\control.h)(0x5CDBC226)
+F (..\HARDWARE\motor.c)(0x5CDBC226)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\ALIENTEK MiniSTM32 实验24  无线通信实验\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD-o ..\obj\motor.o --omf_browse ..\obj\motor.crf --depend ..\obj\motor.d)
+I (..\HARDWARE\motor.h)(0x5CDBC226)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (..\SYSTEM\usart\usart.h)(0x550EB9F1)
+I (E:\keil\ARM\ARMCC\include\stdio.h)(0x54199D7C)
+F (..\HARDWARE\io_control.c)(0x5CDBC512)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\ALIENTEK MiniSTM32 实验24  无线通信实验\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD-o ..\obj\io_control.o --omf_browse ..\obj\io_control.crf --depend ..\obj\io_control.d)
+I (..\HARDWARE\io_control.h)(0x5CDBC512)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\README.TXT)(0x5CDC3256)()

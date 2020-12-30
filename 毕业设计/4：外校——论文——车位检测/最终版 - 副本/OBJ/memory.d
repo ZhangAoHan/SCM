@@ -1,0 +1,15 @@
+..\obj\memory.o: ..\SENSOR\memory.c
+..\obj\memory.o: ..\SENSOR\memory.h
+..\obj\memory.o: ..\SYSTEM\sys\sys.h
+..\obj\memory.o: ..\SYSTEM\sys\stm32f10x.h
+..\obj\memory.o: ..\SYSTEM\sys\core_cm3.h
+..\obj\memory.o: E:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\memory.o: ..\SYSTEM\sys\system_stm32f10x.h
+..\obj\memory.o: ..\SYSTEM\delay\delay.h
+..\obj\memory.o: ..\TFT\at24c02.h
+..\obj\memory.o: ..\TFT\at24c02iic.h
+..\obj\memory.o: ..\SENSOR\ds18b20.h
+..\obj\memory.o: E:\keil\ARM\ARMCC\Bin\..\include\math.h
+..\obj\memory.o: ..\TFT\lcd.h
+..\obj\memory.o: E:\keil\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\memory.o: ..\TFT\text.h

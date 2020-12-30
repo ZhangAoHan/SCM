@@ -1,0 +1,16 @@
+..\obj\display.o: ..\HARDWARE\display.c
+..\obj\display.o: ..\HARDWARE\display.h
+..\obj\display.o: ..\SYSTEM\sys\sys.h
+..\obj\display.o: ..\SYSTEM\sys\stm32f10x.h
+..\obj\display.o: ..\SYSTEM\sys\core_cm3.h
+..\obj\display.o: E:\学习软件\Keil\ARM\ARMCC\bin\..\include\stdint.h
+..\obj\display.o: ..\SYSTEM\sys\system_stm32f10x.h
+..\obj\display.o: ..\TFT\lcd.h
+..\obj\display.o: E:\学习软件\Keil\ARM\ARMCC\include\stdlib.h
+..\obj\display.o: ..\TFT\touch.h
+..\obj\display.o: ..\SYSTEM\delay\delay.h
+..\obj\display.o: ..\TFT\text.h
+..\obj\display.o: ..\HARDWARE\as608.h
+..\obj\display.o: E:\学习软件\Keil\ARM\ARMCC\bin\..\include\stdio.h
+..\obj\display.o: ..\HARDWARE\as608_control.h
+..\obj\display.o: ..\HARDWARE\motor_control.h

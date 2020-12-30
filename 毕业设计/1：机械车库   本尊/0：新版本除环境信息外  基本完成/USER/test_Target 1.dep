@@ -1,0 +1,219 @@
+Dependencies for Project 'test', Target 'Target 1': (DO NOT MODIFY !)
+F (.\startup_stm32f10x_hd.s)(0x54B0B2EE)(--device DARMSTM --pd "__EVAL SETA 1" -g --apcs=interwork -I E:\Ñ§Ï°Èí¼þ\Keil\ARM\ARMCC\include-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\RV31\INC-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\CMSIS\Include-I Device\Include--list ..\obj\startup_stm32f10x_hd.lst --xref -o ..\obj\startup_stm32f10x_hd.o --depend ..\obj\startup_stm32f10x_hd.d)
+F (.\test.c)(0x5CF1817F)(-c --device DARMSTM -D__EVAL -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\ARMCC\include-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\RV31\INC-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\CMSIS\Include-I Device\Include-DSTM32F10X_HD-o ..\obj\test.o --depend ..\obj\test.d)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdint.h)(0x00000000)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\usart\usart.h)(0x550EB9F1)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdio.h)(0x00000000)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (..\TFT\lcd.h)(0x5CA442C3)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdlib.h)(0x00000000)
+I (..\TFT\touch.h)(0x5CA59633)
+I (..\TFT\w25q128.h)(0x5CA442C3)
+I (..\TFT\text.h)(0x5CA49575)
+I (..\HARDWARE\motor_control.h)(0x5CF147B3)
+I (..\HARDWARE\motor.h)(0x5CF11CF1)
+I (..\HARDWARE\led.h)(0x5CF11CF2)
+I (..\HARDWARE\timer.h)(0x5CF14E3F)
+I (..\HARDWARE\usart2.h)(0x5CF14E3F)
+I (..\HARDWARE\AS608.h)(0x5CF14E3E)
+I (..\HARDWARE\malloc.h)(0x5CF14E3F)
+I (..\HARDWARE\as608_control.h)(0x5CF17548)
+I (..\HARDWARE\display.h)(0x5CF1817F)
+F (..\SYSTEM\delay\delay.c)(0x555AC5E1)(-c --device DARMSTM -D__EVAL -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\ARMCC\include-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\RV31\INC-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\CMSIS\Include-I Device\Include-DSTM32F10X_HD-o ..\obj\delay.o --depend ..\obj\delay.d)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdint.h)(0x00000000)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\SYSTEM\sys\sys.c)(0x550EB960)(-c --device DARMSTM -D__EVAL -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\ARMCC\include-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\RV31\INC-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\CMSIS\Include-I Device\Include-DSTM32F10X_HD-o ..\obj\sys.o --depend ..\obj\sys.d)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdint.h)(0x00000000)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\SYSTEM\usart\usart.c)(0x550EB9F1)(-c --device DARMSTM -D__EVAL -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\ARMCC\include-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\RV31\INC-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\CMSIS\Include-I Device\Include-DSTM32F10X_HD-o ..\obj\usart.o --depend ..\obj\usart.d)
+I (..\SYSTEM\usart\usart.h)(0x550EB9F1)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdint.h)(0x00000000)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdio.h)(0x00000000)
+F (..\README.TXT)(0x5CF17548)()
+F (..\TFT\at24c02.c)(0x5CA4911D)(-c --device DARMSTM -D__EVAL -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\ARMCC\include-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\RV31\INC-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\CMSIS\Include-I Device\Include-DSTM32F10X_HD-o ..\obj\at24c02.o --depend ..\obj\at24c02.d)
+I (..\TFT\at24c02.h)(0x5CA4911D)
+I (..\TFT\at24c02iic.h)(0x5CA46628)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdint.h)(0x00000000)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+F (..\TFT\at24c02iic.c)(0x5CA46628)(-c --device DARMSTM -D__EVAL -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\ARMCC\include-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\RV31\INC-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\CMSIS\Include-I Device\Include-DSTM32F10X_HD-o ..\obj\at24c02iic.o --depend ..\obj\at24c02iic.d)
+I (..\TFT\at24c02iic.h)(0x5CA46628)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdint.h)(0x00000000)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+F (..\TFT\lcd.c)(0x5CA456BD)(-c --device DARMSTM -D__EVAL -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\ARMCC\include-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\RV31\INC-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\CMSIS\Include-I Device\Include-DSTM32F10X_HD-o ..\obj\lcd.o --depend ..\obj\lcd.d)
+I (..\TFT\lcd.h)(0x5CA442C3)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdint.h)(0x00000000)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdlib.h)(0x00000000)
+I (..\TFT\font.h)(0x5CA495BC)
+I (..\SYSTEM\usart\usart.h)(0x550EB9F1)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdio.h)(0x00000000)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+F (..\TFT\text.c)(0x5CA495BC)(-c --device DARMSTM -D__EVAL -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\ARMCC\include-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\RV31\INC-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\CMSIS\Include-I Device\Include-DSTM32F10X_HD-o ..\obj\text.o --depend ..\obj\text.d)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdint.h)(0x00000000)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\TFT\w25q128.h)(0x5CA442C3)
+I (..\TFT\lcd.h)(0x5CA442C3)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdlib.h)(0x00000000)
+I (..\TFT\text.h)(0x5CA49575)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\string.h)(0x00000000)
+I (..\SYSTEM\usart\usart.h)(0x550EB9F1)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdio.h)(0x00000000)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+F (..\TFT\touch.c)(0x5CA59633)(-c --device DARMSTM -D__EVAL -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\ARMCC\include-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\RV31\INC-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\CMSIS\Include-I Device\Include-DSTM32F10X_HD-o ..\obj\touch.o --depend ..\obj\touch.d)
+I (..\TFT\touch.h)(0x5CA59633)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdint.h)(0x00000000)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\TFT\lcd.h)(0x5CA442C3)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdlib.h)(0x00000000)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\math.h)(0x00000000)
+I (..\TFT\at24c02.h)(0x5CA4911D)
+I (..\TFT\at24c02iic.h)(0x5CA46628)
+F (..\TFT\w25q128.c)(0x5CA442C3)(-c --device DARMSTM -D__EVAL -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\ARMCC\include-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\RV31\INC-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\CMSIS\Include-I Device\Include-DSTM32F10X_HD-o ..\obj\w25q128.o --depend ..\obj\w25q128.d)
+I (..\TFT\w25q128.h)(0x5CA442C3)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdint.h)(0x00000000)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\TFT\w25q128spi.h)(0x5CA442C4)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (..\SYSTEM\usart\usart.h)(0x550EB9F1)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdio.h)(0x00000000)
+F (..\TFT\w25q128spi.c)(0x5CA442C3)(-c --device DARMSTM -D__EVAL -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\ARMCC\include-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\RV31\INC-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\CMSIS\Include-I Device\Include-DSTM32F10X_HD-o ..\obj\w25q128spi.o --depend ..\obj\w25q128spi.d)
+I (..\TFT\w25q128spi.h)(0x5CA442C4)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdint.h)(0x00000000)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\HARDWARE\led.c)(0x5CF11CF2)(-c --device DARMSTM -D__EVAL -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\ARMCC\include-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\RV31\INC-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\CMSIS\Include-I Device\Include-DSTM32F10X_HD-o ..\obj\led.o --depend ..\obj\led.d)
+I (..\HARDWARE\led.h)(0x5CF11CF2)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdint.h)(0x00000000)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\HARDWARE\motor.c)(0x5CF11CF1)(-c --device DARMSTM -D__EVAL -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\ARMCC\include-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\RV31\INC-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\CMSIS\Include-I Device\Include-DSTM32F10X_HD-o ..\obj\motor.o --depend ..\obj\motor.d)
+I (..\HARDWARE\motor.h)(0x5CF11CF1)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdint.h)(0x00000000)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+F (..\HARDWARE\timer.c)(0x5CF18D1A)(-c --device DARMSTM -D__EVAL -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\ARMCC\include-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\RV31\INC-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\CMSIS\Include-I Device\Include-DSTM32F10X_HD-o ..\obj\timer.o --depend ..\obj\timer.d)
+I (..\HARDWARE\timer.h)(0x5CF14E3F)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdint.h)(0x00000000)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\HARDWARE\led.h)(0x5CF11CF2)
+I (..\HARDWARE\motor_control.h)(0x5CF147B3)
+I (..\TFT\lcd.h)(0x5CA442C3)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdlib.h)(0x00000000)
+F (..\HARDWARE\motor_control.c)(0x5CF14804)(-c --device DARMSTM -D__EVAL -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\ARMCC\include-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\RV31\INC-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\CMSIS\Include-I Device\Include-DSTM32F10X_HD-o ..\obj\motor_control.o --depend ..\obj\motor_control.d)
+I (..\HARDWARE\motor_control.h)(0x5CF147B3)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdint.h)(0x00000000)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\HARDWARE\led.h)(0x5CF11CF2)
+I (..\HARDWARE\motor.h)(0x5CF11CF1)
+I (..\TFT\lcd.h)(0x5CA442C3)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdlib.h)(0x00000000)
+I (..\TFT\text.h)(0x5CA49575)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+F (..\HARDWARE\as608.c)(0x5CF14E3E)(-c --device DARMSTM -D__EVAL -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\ARMCC\include-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\RV31\INC-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\CMSIS\Include-I Device\Include-DSTM32F10X_HD-o ..\obj\as608.o --depend ..\obj\as608.d)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\string.h)(0x00000000)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdint.h)(0x00000000)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\HARDWARE\usart2.h)(0x5CF14E3F)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdio.h)(0x00000000)
+I (..\HARDWARE\as608.h)(0x5CF14E3E)
+F (..\HARDWARE\usart2.c)(0x5CF14E3E)(-c --device DARMSTM -D__EVAL -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\ARMCC\include-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\RV31\INC-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\CMSIS\Include-I Device\Include-DSTM32F10X_HD-o ..\obj\usart2.o --depend ..\obj\usart2.d)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdint.h)(0x00000000)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\HARDWARE\usart2.h)(0x5CF14E3F)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdio.h)(0x00000000)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdarg.h)(0x00000000)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\string.h)(0x00000000)
+I (..\HARDWARE\timer.h)(0x5CF14E3F)
+F (..\HARDWARE\as608_control.c)(0x5CF18DF8)(-c --device DARMSTM -D__EVAL -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\ARMCC\include-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\RV31\INC-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\CMSIS\Include-I Device\Include-DSTM32F10X_HD-o ..\obj\as608_control.o --depend ..\obj\as608_control.d)
+I (..\HARDWARE\as608_control.h)(0x5CF17548)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdint.h)(0x00000000)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\TFT\lcd.h)(0x5CA442C3)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdlib.h)(0x00000000)
+I (..\HARDWARE\malloc.h)(0x5CF14E3F)
+I (..\HARDWARE\as608.h)(0x5CF14E3E)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdio.h)(0x00000000)
+I (..\TFT\touch.h)(0x5CA59633)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (..\TFT\text.h)(0x5CA49575)
+F (..\HARDWARE\malloc.c)(0x5CF14E3F)(-c --device DARMSTM -D__EVAL -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\ARMCC\include-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\RV31\INC-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\CMSIS\Include-I Device\Include-DSTM32F10X_HD-o ..\obj\malloc.o --depend ..\obj\malloc.d)
+I (..\HARDWARE\malloc.h)(0x5CF14E3F)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdint.h)(0x00000000)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\HARDWARE\display.c)(0x5CF18D68)(-c --device DARMSTM -D__EVAL -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\ARMCC\include-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\RV31\INC-I E:\Ñ§Ï°Èí¼þ\Keil\ARM\CMSIS\Include-I Device\Include-DSTM32F10X_HD-o ..\obj\display.o --depend ..\obj\display.d)
+I (..\HARDWARE\display.h)(0x5CF1817F)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdint.h)(0x00000000)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\TFT\lcd.h)(0x5CA442C3)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdlib.h)(0x00000000)
+I (..\TFT\touch.h)(0x5CA59633)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (..\TFT\text.h)(0x5CA49575)
+I (..\HARDWARE\as608.h)(0x5CF14E3E)
+I (E:\å­¦ä¹ è½¯ä»¶\Keil\ARM\ARMCC\include\stdio.h)(0x00000000)
+I (..\HARDWARE\as608_control.h)(0x5CF17548)
+I (..\HARDWARE\motor_control.h)(0x5CF147B3)

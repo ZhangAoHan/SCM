@@ -1,0 +1,11 @@
+..\obj\as608.o: ..\HARDWARE\as608.c
+..\obj\as608.o: E:\keil\ARM\ARMCC\Bin\..\include\string.h
+..\obj\as608.o: ..\SYSTEM\delay\delay.h
+..\obj\as608.o: ..\SYSTEM\sys\sys.h
+..\obj\as608.o: ..\SYSTEM\sys\stm32f10x.h
+..\obj\as608.o: ..\SYSTEM\sys\core_cm3.h
+..\obj\as608.o: E:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\as608.o: ..\SYSTEM\sys\system_stm32f10x.h
+..\obj\as608.o: ..\HARDWARE\usart2.h
+..\obj\as608.o: E:\keil\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\as608.o: ..\HARDWARE\as608.h

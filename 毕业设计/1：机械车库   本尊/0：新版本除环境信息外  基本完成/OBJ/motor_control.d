@@ -1,0 +1,13 @@
+..\obj\motor_control.o: ..\HARDWARE\motor_control.c
+..\obj\motor_control.o: ..\HARDWARE\motor_control.h
+..\obj\motor_control.o: ..\SYSTEM\sys\sys.h
+..\obj\motor_control.o: ..\SYSTEM\sys\stm32f10x.h
+..\obj\motor_control.o: ..\SYSTEM\sys\core_cm3.h
+..\obj\motor_control.o: E:\学习软件\Keil\ARM\ARMCC\bin\..\include\stdint.h
+..\obj\motor_control.o: ..\SYSTEM\sys\system_stm32f10x.h
+..\obj\motor_control.o: ..\HARDWARE\led.h
+..\obj\motor_control.o: ..\HARDWARE\motor.h
+..\obj\motor_control.o: ..\TFT\lcd.h
+..\obj\motor_control.o: E:\学习软件\Keil\ARM\ARMCC\include\stdlib.h
+..\obj\motor_control.o: ..\TFT\text.h
+..\obj\motor_control.o: ..\SYSTEM\delay\delay.h

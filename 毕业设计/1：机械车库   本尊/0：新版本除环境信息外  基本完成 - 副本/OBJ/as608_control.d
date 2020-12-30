@@ -1,0 +1,17 @@
+..\obj\as608_control.o: ..\HARDWARE\as608_control.c
+..\obj\as608_control.o: ..\HARDWARE\as608_control.h
+..\obj\as608_control.o: ..\SYSTEM\sys\sys.h
+..\obj\as608_control.o: ..\SYSTEM\sys\stm32f10x.h
+..\obj\as608_control.o: ..\SYSTEM\sys\core_cm3.h
+..\obj\as608_control.o: E:\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\as608_control.o: ..\SYSTEM\sys\system_stm32f10x.h
+..\obj\as608_control.o: ..\TFT\lcd.h
+..\obj\as608_control.o: E:\Keil\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\as608_control.o: ..\HARDWARE\malloc.h
+..\obj\as608_control.o: ..\HARDWARE\as608.h
+..\obj\as608_control.o: E:\Keil\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\as608_control.o: ..\TFT\touch.h
+..\obj\as608_control.o: ..\SYSTEM\delay\delay.h
+..\obj\as608_control.o: ..\TFT\text.h
+..\obj\as608_control.o: ..\HARDWARE\dht11.h
+..\obj\as608_control.o: ..\HARDWARE\adc.h

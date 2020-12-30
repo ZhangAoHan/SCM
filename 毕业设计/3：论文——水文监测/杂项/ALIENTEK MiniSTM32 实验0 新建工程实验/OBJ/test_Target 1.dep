@@ -1,0 +1,116 @@
+Dependencies for Project 'test', Target 'Target 1': (DO NOT MODIFY !)
+F (.\startup_stm32f10x_hd.s)(0x54B0B2EE)(--cpu Cortex-M3 -g --apcs=interwork -I "E:\毕业设计\毕业设计\3：论文——水文监测\ALIENTEK MiniSTM32 实验0 新建工程实验\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include--pd "STM32F10X_MD SETA 1"--list ..\obj\startup_stm32f10x_hd.lst --xref -o ..\obj\startup_stm32f10x_hd.o --depend ..\obj\startup_stm32f10x_hd.d)
+F (.\test.c)(0x5CED2425)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE-I "E:\毕业设计\毕业设计\3：论文——水文监测\ALIENTEK MiniSTM32 实验0 新建工程实验\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD-o ..\obj\test.o --omf_browse ..\obj\test.crf --depend ..\obj\test.d)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\usart\usart.h)(0x550EB9F1)
+I (E:\keil\ARM\ARMCC\include\stdio.h)(0x54199D7C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (..\HARDWARE\ds18b20.h)(0x5CED1920)
+I (..\HARDWARE\sensor.h)(0x5CED17F7)
+I (..\HARDWARE\timer.h)(0x5CED1899)
+I (..\HARDWARE\csb.h)(0x5CED17F8)
+I (..\HARDWARE\dht11.h)(0x5CED17F9)
+I (..\HARDWARE\led.h)(0x5CED17F8)
+I (..\HARDWARE\24l01.h)(0x5CED17F9)
+I (..\HARDWARE\rc522.h)(0x5CED2553)
+F (..\SYSTEM\delay\delay.c)(0x555AC5E1)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE-I "E:\毕业设计\毕业设计\3：论文——水文监测\ALIENTEK MiniSTM32 实验0 新建工程实验\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD-o ..\obj\delay.o --omf_browse ..\obj\delay.crf --depend ..\obj\delay.d)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\SYSTEM\sys\sys.c)(0x550EB960)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE-I "E:\毕业设计\毕业设计\3：论文——水文监测\ALIENTEK MiniSTM32 实验0 新建工程实验\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD-o ..\obj\sys.o --omf_browse ..\obj\sys.crf --depend ..\obj\sys.d)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\SYSTEM\usart\usart.c)(0x550EB9F1)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE-I "E:\毕业设计\毕业设计\3：论文——水文监测\ALIENTEK MiniSTM32 实验0 新建工程实验\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD-o ..\obj\usart.o --omf_browse ..\obj\usart.crf --depend ..\obj\usart.d)
+I (..\SYSTEM\usart\usart.h)(0x550EB9F1)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (E:\keil\ARM\ARMCC\include\stdio.h)(0x54199D7C)
+F (..\README.TXT)(0x55C9BF77)()
+F (..\HARDWARE\24l01.c)(0x5CED1CD0)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE-I "E:\毕业设计\毕业设计\3：论文——水文监测\ALIENTEK MiniSTM32 实验0 新建工程实验\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD-o ..\obj\24l01.o --omf_browse ..\obj\24l01.crf --depend ..\obj\24l01.d)
+I (..\HARDWARE\24l01.h)(0x5CED17F9)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (..\HARDWARE\24l01_spi.h)(0x5CED1899)
+F (..\HARDWARE\24l01_spi.c)(0x5CED1899)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE-I "E:\毕业设计\毕业设计\3：论文——水文监测\ALIENTEK MiniSTM32 实验0 新建工程实验\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD-o ..\obj\24l01_spi.o --omf_browse ..\obj\24l01_spi.crf --depend ..\obj\24l01_spi.d)
+I (..\HARDWARE\24l01_spi.h)(0x5CED1899)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\HARDWARE\csb.c)(0x5CED17D2)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE-I "E:\毕业设计\毕业设计\3：论文——水文监测\ALIENTEK MiniSTM32 实验0 新建工程实验\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD-o ..\obj\csb.o --omf_browse ..\obj\csb.crf --depend ..\obj\csb.d)
+I (..\HARDWARE\csb.h)(0x5CED17F8)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (..\SYSTEM\usart\usart.h)(0x550EB9F1)
+I (E:\keil\ARM\ARMCC\include\stdio.h)(0x54199D7C)
+F (..\HARDWARE\dht11.c)(0x5CED17F8)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE-I "E:\毕业设计\毕业设计\3：论文——水文监测\ALIENTEK MiniSTM32 实验0 新建工程实验\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD-o ..\obj\dht11.o --omf_browse ..\obj\dht11.crf --depend ..\obj\dht11.d)
+I (..\HARDWARE\dht11.h)(0x5CED17F9)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+F (..\HARDWARE\ds18b20.c)(0x5CED1920)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE-I "E:\毕业设计\毕业设计\3：论文——水文监测\ALIENTEK MiniSTM32 实验0 新建工程实验\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD-o ..\obj\ds18b20.o --omf_browse ..\obj\ds18b20.crf --depend ..\obj\ds18b20.d)
+I (..\HARDWARE\ds18b20.h)(0x5CED1920)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+F (..\HARDWARE\led.c)(0x5CED17F8)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE-I "E:\毕业设计\毕业设计\3：论文——水文监测\ALIENTEK MiniSTM32 实验0 新建工程实验\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD-o ..\obj\led.o --omf_browse ..\obj\led.crf --depend ..\obj\led.d)
+I (..\HARDWARE\led.h)(0x5CED17F8)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\HARDWARE\sensor.c)(0x5CED17F7)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE-I "E:\毕业设计\毕业设计\3：论文——水文监测\ALIENTEK MiniSTM32 实验0 新建工程实验\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD-o ..\obj\sensor.o --omf_browse ..\obj\sensor.crf --depend ..\obj\sensor.d)
+I (..\HARDWARE\sensor.h)(0x5CED17F7)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+F (..\HARDWARE\timer.c)(0x5CED1CD0)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE-I "E:\毕业设计\毕业设计\3：论文——水文监测\ALIENTEK MiniSTM32 实验0 新建工程实验\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD-o ..\obj\timer.o --omf_browse ..\obj\timer.crf --depend ..\obj\timer.d)
+I (..\HARDWARE\timer.h)(0x5CED1899)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\HARDWARE\csb.h)(0x5CED17F8)
+I (..\HARDWARE\led.h)(0x5CED17F8)
+I (..\HARDWARE\rc522.h)(0x5CED2553)
+F (..\HARDWARE\rc522.c)(0x5CED2553)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE-I "E:\毕业设计\毕业设计\3：论文——水文监测\ALIENTEK MiniSTM32 实验0 新建工程实验\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD-o ..\obj\rc522.o --omf_browse ..\obj\rc522.crf --depend ..\obj\rc522.d)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\HARDWARE\rc522.h)(0x5CED2553)
+I (E:\keil\ARM\ARMCC\include\string.h)(0x54199D7C)

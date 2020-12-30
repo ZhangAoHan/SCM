@@ -1,0 +1,28 @@
+--cpu Cortex-M3
+"..\obj\startup_stm32f10x_hd.o"
+"..\obj\test.o"
+"..\obj\delay.o"
+"..\obj\sys.o"
+"..\obj\usart.o"
+"..\obj\at24c02.o"
+"..\obj\at24c02iic.o"
+"..\obj\lcd.o"
+"..\obj\text.o"
+"..\obj\touch.o"
+"..\obj\w25q128.o"
+"..\obj\w25q128spi.o"
+"..\obj\led.o"
+"..\obj\motor.o"
+"..\obj\timer.o"
+"..\obj\motor_control.o"
+"..\obj\as608_1.o"
+"..\obj\usart2.o"
+"..\obj\as608_control.o"
+"..\obj\malloc.o"
+"..\obj\display.o"
+"..\obj\adc.o"
+"..\obj\dht11.o"
+--strict --scatter "..\OBJ\test.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "..\OBJ\test.map" -o ..\OBJ\test.axf

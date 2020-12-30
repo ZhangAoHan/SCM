@@ -1,0 +1,12 @@
+..\obj\lcd.o: ..\TFT\lcd.c
+..\obj\lcd.o: ..\TFT\lcd.h
+..\obj\lcd.o: ..\SYSTEM\sys\sys.h
+..\obj\lcd.o: ..\SYSTEM\sys\stm32f10x.h
+..\obj\lcd.o: ..\SYSTEM\sys\core_cm3.h
+..\obj\lcd.o: E:\学习软件\Keil\ARM\ARMCC\bin\..\include\stdint.h
+..\obj\lcd.o: ..\SYSTEM\sys\system_stm32f10x.h
+..\obj\lcd.o: E:\学习软件\Keil\ARM\ARMCC\include\stdlib.h
+..\obj\lcd.o: ..\TFT\font.h
+..\obj\lcd.o: ..\SYSTEM\usart\usart.h
+..\obj\lcd.o: E:\学习软件\Keil\ARM\ARMCC\include\stdio.h
+..\obj\lcd.o: ..\SYSTEM\delay\delay.h

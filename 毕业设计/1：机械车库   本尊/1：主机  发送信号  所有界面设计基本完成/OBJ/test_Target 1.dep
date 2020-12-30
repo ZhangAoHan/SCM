@@ -1,0 +1,208 @@
+Dependencies for Project 'test', Target 'Target 1': (DO NOT MODIFY !)
+F (.\startup_stm32f10x_hd.s)(0x54B0B2EE)(--cpu Cortex-M3 -g --apcs=interwork -I "E:\毕业设计\毕业设计\1：机械车库   本尊\1：主机  发送信号  所有界面设计基本完成\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include--pd "STM32F10X_HD SETA 1"--list ..\obj\startup_stm32f10x_hd.lst --xref -o ..\obj\startup_stm32f10x_hd.o --depend ..\obj\startup_stm32f10x_hd.d)
+F (.\test.c)(0x5CF127A6)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\1：主机  发送信号  所有界面设计基本完成\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\test.o --omf_browse ..\obj\test.crf --depend ..\obj\test.d)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\usart\usart.h)(0x550EB9F1)
+I (E:\keil\ARM\ARMCC\include\stdio.h)(0x54199D7C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (..\TFT\lcd.h)(0x5CA442C3)
+I (E:\keil\ARM\ARMCC\include\stdlib.h)(0x54199D7C)
+I (..\TFT\touch.h)(0x5CA59633)
+I (..\TFT\w25q128.h)(0x5CA442C3)
+I (..\TFT\text.h)(0x5CA49575)
+I (..\HARDWARE\usart2.h)(0x5CD8065F)
+I (..\HARDWARE\AS608.h)(0x5CD8065F)
+I (..\HARDWARE\malloc.h)(0x5CD80F64)
+I (..\HARDWARE\date_control.h)(0x5CE04691)
+I (..\HARDWARE\control.h)(0x5CE04691)
+I (..\HARDWARE\timer.h)(0x5CD87ACD)
+I (..\HARDWARE\led.h)(0x5CDC4573)
+I (..\HARDWARE\motor.h)(0x5CDCF55E)
+I (..\HARDWARE\motor_control.h)(0x5CDCF5FA)
+F (..\SYSTEM\delay\delay.c)(0x555AC5E1)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\1：主机  发送信号  所有界面设计基本完成\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\delay.o --omf_browse ..\obj\delay.crf --depend ..\obj\delay.d)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\SYSTEM\sys\sys.c)(0x550EB960)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\1：主机  发送信号  所有界面设计基本完成\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\sys.o --omf_browse ..\obj\sys.crf --depend ..\obj\sys.d)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\SYSTEM\usart\usart.c)(0x550EB9F1)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\1：主机  发送信号  所有界面设计基本完成\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\usart.o --omf_browse ..\obj\usart.crf --depend ..\obj\usart.d)
+I (..\SYSTEM\usart\usart.h)(0x550EB9F1)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (E:\keil\ARM\ARMCC\include\stdio.h)(0x54199D7C)
+F (..\README.TXT)(0x5CDD6E9B)()
+F (..\TFT\at24c02.c)(0x5CA4911D)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\1：主机  发送信号  所有界面设计基本完成\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\at24c02.o --omf_browse ..\obj\at24c02.crf --depend ..\obj\at24c02.d)
+I (..\TFT\at24c02.h)(0x5CA4911D)
+I (..\TFT\at24c02iic.h)(0x5CA46628)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+F (..\TFT\at24c02iic.c)(0x5CA46628)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\1：主机  发送信号  所有界面设计基本完成\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\at24c02iic.o --omf_browse ..\obj\at24c02iic.crf --depend ..\obj\at24c02iic.d)
+I (..\TFT\at24c02iic.h)(0x5CA46628)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+F (..\TFT\lcd.c)(0x5CA456BD)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\1：主机  发送信号  所有界面设计基本完成\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\lcd.o --omf_browse ..\obj\lcd.crf --depend ..\obj\lcd.d)
+I (..\TFT\lcd.h)(0x5CA442C3)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (E:\keil\ARM\ARMCC\include\stdlib.h)(0x54199D7C)
+I (..\TFT\font.h)(0x5CA495BC)
+I (..\SYSTEM\usart\usart.h)(0x550EB9F1)
+I (E:\keil\ARM\ARMCC\include\stdio.h)(0x54199D7C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+F (..\TFT\text.c)(0x5CA495BC)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\1：主机  发送信号  所有界面设计基本完成\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\text.o --omf_browse ..\obj\text.crf --depend ..\obj\text.d)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\TFT\w25q128.h)(0x5CA442C3)
+I (..\TFT\lcd.h)(0x5CA442C3)
+I (E:\keil\ARM\ARMCC\include\stdlib.h)(0x54199D7C)
+I (..\TFT\text.h)(0x5CA49575)
+I (E:\keil\ARM\ARMCC\include\string.h)(0x54199D7C)
+I (..\SYSTEM\usart\usart.h)(0x550EB9F1)
+I (E:\keil\ARM\ARMCC\include\stdio.h)(0x54199D7C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+F (..\TFT\touch.c)(0x5CA59633)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\1：主机  发送信号  所有界面设计基本完成\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\touch.o --omf_browse ..\obj\touch.crf --depend ..\obj\touch.d)
+I (..\TFT\touch.h)(0x5CA59633)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\TFT\lcd.h)(0x5CA442C3)
+I (E:\keil\ARM\ARMCC\include\stdlib.h)(0x54199D7C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (E:\keil\ARM\ARMCC\include\math.h)(0x54199D7A)
+I (..\TFT\at24c02.h)(0x5CA4911D)
+I (..\TFT\at24c02iic.h)(0x5CA46628)
+F (..\TFT\w25q128.c)(0x5CA442C3)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\1：主机  发送信号  所有界面设计基本完成\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\w25q128.o --omf_browse ..\obj\w25q128.crf --depend ..\obj\w25q128.d)
+I (..\TFT\w25q128.h)(0x5CA442C3)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\TFT\w25q128spi.h)(0x5CA442C4)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (..\SYSTEM\usart\usart.h)(0x550EB9F1)
+I (E:\keil\ARM\ARMCC\include\stdio.h)(0x54199D7C)
+F (..\TFT\w25q128spi.c)(0x5CA442C3)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\1：主机  发送信号  所有界面设计基本完成\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\w25q128spi.o --omf_browse ..\obj\w25q128spi.crf --depend ..\obj\w25q128spi.d)
+I (..\TFT\w25q128spi.h)(0x5CA442C4)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\HARDWARE\as608.c)(0x5CF0CB30)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\1：主机  发送信号  所有界面设计基本完成\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\as608.o --omf_browse ..\obj\as608.crf --depend ..\obj\as608.d)
+I (E:\keil\ARM\ARMCC\include\string.h)(0x54199D7C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\HARDWARE\usart2.h)(0x5CD8065F)
+I (E:\keil\ARM\ARMCC\include\stdio.h)(0x54199D7C)
+I (..\HARDWARE\as608.h)(0x5CD8065F)
+F (..\HARDWARE\control.c)(0x5CF12741)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\1：主机  发送信号  所有界面设计基本完成\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\control.o --omf_browse ..\obj\control.crf --depend ..\obj\control.d)
+I (..\HARDWARE\control.h)(0x5CE04691)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\HARDWARE\date_control.h)(0x5CE04691)
+I (E:\keil\ARM\ARMCC\include\stdio.h)(0x54199D7C)
+I (..\TFT\text.h)(0x5CA49575)
+I (..\TFT\lcd.h)(0x5CA442C3)
+I (E:\keil\ARM\ARMCC\include\stdlib.h)(0x54199D7C)
+I (..\TFT\touch.h)(0x5CA59633)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (..\HARDWARE\motor_control.h)(0x5CDCF5FA)
+I (..\HARDWARE\led.h)(0x5CDC4573)
+I (..\HARDWARE\motor.h)(0x5CDCF55E)
+F (..\HARDWARE\usart2.c)(0x5CD8065F)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\1：主机  发送信号  所有界面设计基本完成\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\usart2.o --omf_browse ..\obj\usart2.crf --depend ..\obj\usart2.d)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\HARDWARE\usart2.h)(0x5CD8065F)
+I (E:\keil\ARM\ARMCC\include\stdio.h)(0x54199D7C)
+I (E:\keil\ARM\ARMCC\include\stdarg.h)(0x54199D7C)
+I (E:\keil\ARM\ARMCC\include\string.h)(0x54199D7C)
+I (..\HARDWARE\timer.h)(0x5CD87ACD)
+F (..\HARDWARE\timer.c)(0x5CF12741)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\1：主机  发送信号  所有界面设计基本完成\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\timer.o --omf_browse ..\obj\timer.crf --depend ..\obj\timer.d)
+I (..\HARDWARE\timer.h)(0x5CD87ACD)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\HARDWARE\led.h)(0x5CDC4573)
+I (..\HARDWARE\control.h)(0x5CE04691)
+F (..\HARDWARE\malloc.c)(0x5CD80CF4)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\1：主机  发送信号  所有界面设计基本完成\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\malloc.o --omf_browse ..\obj\malloc.crf --depend ..\obj\malloc.d)
+I (..\HARDWARE\malloc.h)(0x5CD80F64)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\HARDWARE\date_control.c)(0x5CF0E2B0)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\1：主机  发送信号  所有界面设计基本完成\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\date_control.o --omf_browse ..\obj\date_control.crf --depend ..\obj\date_control.d)
+I (..\HARDWARE\date_control.h)(0x5CE04691)
+I (E:\keil\ARM\ARMCC\include\stdio.h)(0x54199D7C)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\TFT\lcd.h)(0x5CA442C3)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (E:\keil\ARM\ARMCC\include\stdlib.h)(0x54199D7C)
+I (..\TFT\touch.h)(0x5CA59633)
+I (..\HARDWARE\malloc.h)(0x5CD80F64)
+I (..\TFT\text.h)(0x5CA49575)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (..\HARDWARE\as608.h)(0x5CD8065F)
+I (..\HARDWARE\control.h)(0x5CE04691)
+I (..\TFT\at24c02.h)(0x5CA4911D)
+I (..\TFT\at24c02iic.h)(0x5CA46628)
+F (..\HARDWARE\led.c)(0x5CDC4918)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\1：主机  发送信号  所有界面设计基本完成\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\led.o --omf_browse ..\obj\led.crf --depend ..\obj\led.d)
+I (..\HARDWARE\led.h)(0x5CDC4573)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\HARDWARE\motor.c)(0x5CF12741)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\TFT -I..\HARDWARE-I "E:\毕业设计\毕业设计\1：机械车库   本尊\1：主机  发送信号  所有界面设计基本完成\USER\RTE"-I E:\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\keil\ARM\CMSIS\Include-DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\motor.o --omf_browse ..\obj\motor.crf --depend ..\obj\motor.d)
+I (..\HARDWARE\motor.h)(0x5CDCF55E)
+I (..\SYSTEM\sys\sys.h)(0x550EC367)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (E:\keil\ARM\ARMCC\include\stdint.h)(0x54199D7A)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)

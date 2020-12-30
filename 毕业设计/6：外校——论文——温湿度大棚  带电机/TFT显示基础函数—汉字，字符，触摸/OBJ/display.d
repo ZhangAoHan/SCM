@@ -1,0 +1,17 @@
+..\obj\display.o: ..\HARWARD\display.c
+..\obj\display.o: ..\HARWARD\display.h
+..\obj\display.o: ..\SYSTEM\sys\sys.h
+..\obj\display.o: ..\SYSTEM\sys\stm32f10x.h
+..\obj\display.o: ..\SYSTEM\sys\core_cm3.h
+..\obj\display.o: E:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\display.o: ..\SYSTEM\sys\system_stm32f10x.h
+..\obj\display.o: ..\TFT\text.h
+..\obj\display.o: ..\TFT\lcd.h
+..\obj\display.o: E:\keil\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\display.o: ..\HARWARD\date.h
+..\obj\display.o: ..\SYSTEM\delay\delay.h
+..\obj\display.o: ..\HARWARD\control.h
+..\obj\display.o: ..\TFT\touch.h
+..\obj\display.o: ..\TFT\w25q128.h
+..\obj\display.o: ..\TFT\at24c02.h
+..\obj\display.o: ..\TFT\at24c02iic.h

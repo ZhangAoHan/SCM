@@ -1,0 +1,67 @@
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\bin\x86\Debug\test.exe
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\bin\x86\Debug\test.pdb
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\bin\x86\Debug\AForge.Controls.dll
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\bin\x86\Debug\AForge.dll
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\bin\x86\Debug\AForge.Imaging.dll
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\bin\x86\Debug\AForge.Video.DirectShow.dll
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\bin\x86\Debug\AForge.Video.dll
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\bin\x86\Debug\AForge.Video.FFMPEG.dll
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\bin\x86\Debug\AForge.Vision.dll
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\bin\x86\Debug\AForge.Math.dll
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\bin\x86\Debug\AForge.xml
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\bin\x86\Debug\AForge.Controls.xml
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\bin\x86\Debug\AForge.Imaging.xml
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\bin\x86\Debug\AForge.Video.xml
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\bin\x86\Debug\AForge.Video.DirectShow.xml
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\bin\x86\Debug\AForge.Video.FFMPEG.xml
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\bin\x86\Debug\AForge.Vision.xml
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\bin\x86\Debug\AForge.Math.xml
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\obj\x86\Debug\test.Add.resources
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\obj\x86\Debug\test.Form1.resources
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\obj\x86\Debug\test.Properties.Resources.resources
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\obj\x86\Debug\test.csproj.GenerateResource.Cache
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\obj\x86\Debug\test.exe
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\obj\x86\Debug\test.pdb
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\bin\x86\Debug\test.exe.config
+C:\Users\Nephe\Documents\Tencent Files\641154956\FileRecv\MobileFile\xxj\xxj\test\test\obj\x86\Debug\test.csprojResolveAssemblyReference.cache
+D:\单片机学习文档\单片机工程总地址\上位机工程\监控上位机 - 副本\test\test\bin\x86\Debug\test.exe.config
+D:\单片机学习文档\单片机工程总地址\上位机工程\监控上位机 - 副本\test\test\obj\x86\Debug\test.exe
+D:\单片机学习文档\单片机工程总地址\上位机工程\监控上位机 - 副本\test\test\obj\x86\Debug\test.pdb
+E:\毕业设计\毕业设计\7：伐木场\test\test\bin\x86\Debug\test.exe.config
+E:\毕业设计\毕业设计\7：伐木场\test\test\obj\x86\Debug\test.exe
+E:\毕业设计\毕业设计\7：伐木场\test\test\obj\x86\Debug\test.pdb
+E:\毕业设计\毕业设计\7：伐木场\test\test\obj\x86\Debug\test.csprojResolveAssemblyReference.cache
+E:\毕业设计\毕业设计\7：伐木场\test\test\obj\x86\Debug\test.Add.resources
+E:\毕业设计\毕业设计\7：伐木场\test\test\obj\x86\Debug\test.Form1.resources
+E:\毕业设计\毕业设计\7：伐木场\test\test\obj\x86\Debug\test.Properties.Resources.resources
+E:\毕业设计\毕业设计\7：伐木场\test\test\obj\x86\Debug\test.csproj.GenerateResource.Cache
+E:\毕业设计\毕业设计\7：伐木场\test\test\bin\x86\Debug\test.exe
+E:\毕业设计\毕业设计\7：伐木场\test\test\bin\x86\Debug\test.pdb
+E:\毕业设计\毕业设计\7：伐木场\test\test\bin\x86\Debug\AForge.Math.dll
+E:\毕业设计\毕业设计\7：伐木场\test\test\bin\x86\Debug\AForge.xml
+E:\毕业设计\毕业设计\7：伐木场\test\test\bin\x86\Debug\AForge.Controls.xml
+E:\毕业设计\毕业设计\7：伐木场\test\test\bin\x86\Debug\AForge.Imaging.xml
+E:\毕业设计\毕业设计\7：伐木场\test\test\bin\x86\Debug\AForge.Math.xml
+E:\毕业设计\毕业设计\7：伐木场\test\test\bin\x86\Debug\AForge.Video.xml
+E:\毕业设计\毕业设计\7：伐木场\test\test\bin\x86\Debug\AForge.Video.DirectShow.xml
+E:\毕业设计\毕业设计\7：伐木场\test\test\bin\x86\Debug\AForge.Video.FFMPEG.xml
+E:\毕业设计\毕业设计\7：伐木场\test\test\bin\x86\Debug\AForge.Vision.xml
+F:\毕业设计\毕业设计\7：伐木场\test\test\bin\x86\Debug\test.exe.config
+F:\毕业设计\毕业设计\7：伐木场\test\test\obj\x86\Debug\test.exe
+F:\毕业设计\毕业设计\7：伐木场\test\test\obj\x86\Debug\test.pdb
+F:\毕业设计\毕业设计\7：伐木场\test\test\bin\x86\Debug\test.exe
+F:\毕业设计\毕业设计\7：伐木场\test\test\bin\x86\Debug\test.pdb
+F:\毕业设计\毕业设计\7：伐木场\test\test\bin\x86\Debug\AForge.Math.dll
+F:\毕业设计\毕业设计\7：伐木场\test\test\bin\x86\Debug\AForge.xml
+F:\毕业设计\毕业设计\7：伐木场\test\test\bin\x86\Debug\AForge.Controls.xml
+F:\毕业设计\毕业设计\7：伐木场\test\test\bin\x86\Debug\AForge.Imaging.xml
+F:\毕业设计\毕业设计\7：伐木场\test\test\bin\x86\Debug\AForge.Math.xml
+F:\毕业设计\毕业设计\7：伐木场\test\test\bin\x86\Debug\AForge.Video.xml
+F:\毕业设计\毕业设计\7：伐木场\test\test\bin\x86\Debug\AForge.Video.DirectShow.xml
+F:\毕业设计\毕业设计\7：伐木场\test\test\bin\x86\Debug\AForge.Video.FFMPEG.xml
+F:\毕业设计\毕业设计\7：伐木场\test\test\bin\x86\Debug\AForge.Vision.xml
+F:\毕业设计\毕业设计\7：伐木场\test\test\obj\x86\Debug\test.csprojResolveAssemblyReference.cache
+F:\毕业设计\毕业设计\7：伐木场\test\test\obj\x86\Debug\test.Add.resources
+F:\毕业设计\毕业设计\7：伐木场\test\test\obj\x86\Debug\test.Form1.resources
+F:\毕业设计\毕业设计\7：伐木场\test\test\obj\x86\Debug\test.Properties.Resources.resources
+F:\毕业设计\毕业设计\7：伐木场\test\test\obj\x86\Debug\test.csproj.GenerateResource.Cache

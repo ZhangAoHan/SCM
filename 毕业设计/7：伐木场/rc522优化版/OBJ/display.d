@@ -1,0 +1,16 @@
+..\obj\display.o: ..\HARWARD\display.c
+..\obj\display.o: ..\HARWARD\display.h
+..\obj\display.o: ..\SYSTEM\sys\sys.h
+..\obj\display.o: ..\SYSTEM\sys\stm32f10x.h
+..\obj\display.o: ..\SYSTEM\sys\core_cm3.h
+..\obj\display.o: E:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\display.o: ..\SYSTEM\sys\system_stm32f10x.h
+..\obj\display.o: ..\SYSTEM\delay\delay.h
+..\obj\display.o: ..\HARWARD\rc522.h
+..\obj\display.o: ..\TFT\lcd.h
+..\obj\display.o: E:\keil\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\display.o: ..\TFT\text.h
+..\obj\display.o: ..\HARWARD\dht11.h
+..\obj\display.o: ..\HARWARD\adc.h
+..\obj\display.o: ..\SYSTEM\usart\usart.h
+..\obj\display.o: E:\keil\ARM\ARMCC\Bin\..\include\stdio.h

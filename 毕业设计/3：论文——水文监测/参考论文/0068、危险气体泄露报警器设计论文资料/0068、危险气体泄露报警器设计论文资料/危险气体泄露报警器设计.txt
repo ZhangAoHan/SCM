@@ -1,0 +1,83 @@
+危险气体泄露报警器设计
+
+摘    要
+质量监控和随着各种天然气、煤制气、液化气的开发和使用，各种可燃性气体散发在工作场所和人们生活中。为了有效地进行燃气生产中的气体成分分析、环境保护中的空气污染检测和对民用燃气泄漏的检测及报警，国内外科研人员很早就致力于研究可燃气体的检测方法和控制方法，研制各式各样的气体检测和分析仪器，用于环境监测、生产过程中的监控及气体成分分析、气体泄漏报警等。
+无线可燃气体泄漏报警器适用于各种可燃气体（液化气、天然气、城市煤气）泄漏探测报警，即可独立工作，也可方便地配合6防区防盗现场报警器或智能9防区无线防盗报警电话机组网使用。
+随着时代的不断进步，人们对自己所处环境的安全性提出了更高的要求，尤其是在家居安全方面，不得不时刻留意那些不速之客。现在很多小区都安装了智能报警系统，因而大大提高了小区的安全程度，有效保证了居民的人身财产安全。由于红外线是不可见光，有很强的隐蔽性和保密性，因此在防盗、警戒等安保装置中得到了广泛的应用。此外，在电子防盗、人体探测等领域中，被动式热释电红外探测器也以其价格低廉、技术性能稳定等特点而受到广大用户和专业人士的欢迎。
+关键词：气体传感；单片机；红外热释电；无线发射
+
+ 
+ABSTRACT
+
+Quality is controlled and with various natural gas, coal gasification, development and use of liquefied gas, various flammable gas are distributed in workplace and in people's life. For the gas composition analysis, air pollution detection in environmental protection and detection of the civil gas leakage and calling the police while producing gas effectively, domestic and international scientific research personnel were devoted to studying the detection method of the flammable gas and controlling the method long ago, develop the gas detection of all kinds and analytical instrument, the control, gas composition analysis, gas that are used for in environmental monitoring, production process leak the alarm etc.. The wireless flammable gas leaks the alarm and suitable for various flammable gas (the liquefied gas, natural gas, city gas) and leaks and surveys calling the police, can work alone, can also cooperate 6 defense area guard against theft on-the-spot alarm or intelligence 9 defense area wireless theft-proof alarm call aircrew network use conveniently.
+With the constant progress of the times, people put forward higher requirement to one's own security of living in the environment, especially have to look out for those uninvited guests constantly in the security of the house. Install the intellectual warning system in a lot of districts now, therefore improve the safe coefficient of the district greatly, have guarantee personal property safety of residence effectively. Because the infrared ray is the invisible rays, there are very strong disguise and privacy, so is widely used in security protection device China of guarding against theft, warning etc.. In addition, guard against theft in electron, human body person who survey field, it is cheap with him too that the passive form is hot to clear up the infrared detector of electricity, the characteristic that technical feature is stable is well received by the masses of users and professional personages.
+Keywords: gas sensing; SCM; Piezoelectric IR; Wireless launches 
+
+
+
+ 
+目　　录
+
+
+引 言	1
+１总　述	2
+２设计要求	3
+3方案论证及说明	4
+3.1 方案一：防盗报警器的论证	4
+3.1.1 红外线报警器的论证	4
+3.1.2 被动式热释电红外报警器的论证	4
+3.2 方案二：危险气体报警器的论证	5
+3.2.1 催化燃烧式可燃气体报警器的论证	5
+3.2.2利用集成运放完成的气体报警器的论证	5
+3.3 方案三：无线发射与接收的论证	6
+3.3.1 VD5026/VD5027无线发射与接收电路的论证	6
+3.3.1 PT2262/PT2272无线发射与接收电路的论证	6
+3.4 方案四：单片机的论证	7
+4 危险气体泄露报警器设计	8
+4.1 可燃性爆炸气体的形成	8
+4.2 可燃气体报警器的分类	8
+4.2.1 按使用方法分类	8
+4.2.2 按传感器原理分类	8
+4.3 主要技术指标	9
+4.3.1 技术参数	9
+4.3.2 主要特性	9
+4.3.3 器件选择	10
+4.4 工作原理	10
+4.5 可燃气体报警器的应用范围	12
+4.5.1 用于监测报警	12
+4.5.2 寻找泄漏点	12
+4.5.3 个人防护	12
+4.6 可燃气体报警器的安装	12
+4.7 可燃气体报警器的维护	13
+4.8 可燃气体报警器校准	14
+4.8.1直接校准	14
+4.8.2 相对校准	14
+4.9 可燃气体检测器的防爆	14
+5. 红外热释电报警器的电路的设计	15
+5.1 BISS0001的结构和工作原理	15
+5.1.1 BISs0001引脚功能说明	15
+5.1.2 BISSO001的电气参数	16
+5.1.3 BISSO001工作原理	16
+5.2 BISS0001在热释电红外报警应用电路	17
+5.3 安装调试	19
+6. PT2262/PT2272编码解码电路的设计	20
+6.1  PT2262/PT2272编码解码芯片介绍	20
+6.1.1 PT2262/PT2272特点	20
+6.1.2 PT2262/PT2272应用范围	20
+6.1.3 PT2262引脚见图3—1	20
+6.1.4 PT2262参数如表3—2	21
+6.1.5 PT2272 解码电路引脚见图3—2	22
+6.1.6 PT2262/2272芯片的地址编码设定和修改	23
+6.2 PT2262/2272芯片的发射与接收	23
+6.2.1 PT2262/2272芯片的发射与接收应用电路的设计	24
+6.2.2 PT2272接收电路设计	25
+7.单片机显示电路的设计	26
+7.1 MCS-51单片机的介绍	26
+7.2 单片机的结构有类型	27
+7.3 MCS-51的引脚说明	28
+7.4 单片机显示电路原理	30
+参考文献	33
+附录	34
+致 谢	40
+ 
+
