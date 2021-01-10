@@ -1,0 +1,5 @@
+D:\单片机学习文档\单片机工程总地址\上位机工程\c#程序结构\cshangp程序结构\cshangp程序结构\bin\Debug\cshangp程序结构.exe
+D:\单片机学习文档\单片机工程总地址\上位机工程\c#程序结构\cshangp程序结构\cshangp程序结构\bin\Debug\cshangp程序结构.pdb
+D:\单片机学习文档\单片机工程总地址\上位机工程\c#程序结构\cshangp程序结构\cshangp程序结构\obj\Debug\cshangp程序结构.csprojResolveAssemblyReference.cache
+D:\单片机学习文档\单片机工程总地址\上位机工程\c#程序结构\cshangp程序结构\cshangp程序结构\obj\Debug\cshangp程序结构.exe
+D:\单片机学习文档\单片机工程总地址\上位机工程\c#程序结构\cshangp程序结构\cshangp程序结构\obj\Debug\cshangp程序结构.pdb
