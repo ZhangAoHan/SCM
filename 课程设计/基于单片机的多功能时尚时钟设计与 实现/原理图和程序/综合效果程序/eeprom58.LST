@@ -1,0 +1,128 @@
+C51 COMPILER V8.08   EEPROM58                                                              04/25/2013 21:45:24 PAGE 1   
+
+
+C51 COMPILER V8.08, COMPILATION OF MODULE EEPROM58
+OBJECT MODULE PLACED IN eeprom58.OBJ
+COMPILER INVOKED BY: D:\Program Files\keil-3\C51\BIN\C51.EXE eeprom58.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "NEW_8051.H"
+   2          #include "task.h"       
+   3          #include <intrins.h>  
+   4          typedef unsigned char  INT8U;
+   5          typedef unsigned int   INT16U;
+   6          
+   7          /*
+   8          sfr IAP_DATA    = 0xC2;
+   9          sfr IAP_ADDRH   = 0xC3;
+  10          sfr IAP_ADDRL   = 0xC4;
+  11          sfr IAP_CMD     = 0xC5;
+  12          sfr IAP_TRIG    = 0xC6;
+  13          sfr IAP_CONTR   = 0xC7;
+  14          */
+  15          
+  16          //定义Flash 操作等待时间及允许IAP/ISP/EEPROM 操作的常数
+  17          //#define ENABLE_ISP 0x80 //系统工作时钟<30MHz 时，对IAP_CONTR 寄存器设置此值
+  18          //#define ENABLE_ISP 0x81 //系统工作时钟<24MHz 时，对IAP_CONTR 寄存器设置此值
+  19          #define ENABLE_ISP 0x82 //系统工作时钟<20MHz 时，对IAP_CONTR 寄存器设置此值
+  20          //#define ENABLE_ISP 0x83 //系统工作时钟<12MHz 时，对IAP_CONTR 寄存器设置此值
+  21          //#define ENABLE_ISP 0x84 //系统工作时钟<6MHz 时，对IAP_CONTR 寄存器设置此值
+  22          //#define ENABLE_ISP 0x85 //系统工作时钟<3MHz 时，对IAP_CONTR 寄存器设置此值
+  23          //#define ENABLE_ISP 0x86 //系统工作时钟<2MHz 时，对IAP_CONTR 寄存器设置此值
+  24          //#define ENABLE_ISP 0x87 //系统工作时钟<1MHz 时，对IAP_CONTR 寄存器设置此值
+  25          
+  26          void IAP_Disable();
+  27          
+  28          union union_temp16
+  29          {
+  30              INT16U un_temp16;
+  31              INT8U  un_temp8[2];
+  32          }my_unTemp16;
+  33          
+  34          //读一字节，调用前需打开IAP 功能，入口:DPTR = 字节地址，返回:A = 读出字节
+  35          INT8U byte_read(INT16U add)
+  36          {
+  37   1          IAP_DATA = 0x00;
+  38   1          IAP_CONTR = ENABLE_ISP;         //打开IAP 功能, 设置Flash 操作等待时间
+  39   1          IAP_CMD = 0x01;                 //IAP/ISP/EEPROM 字节读命令
+  40   1      
+  41   1          my_unTemp16.un_temp16 = add;
+  42   1          IAP_ADDRH = my_unTemp16.un_temp8[0];    //设置目标单元地址的高8 位地址
+  43   1          IAP_ADDRL = my_unTemp16.un_temp8[1];    //设置目标单元地址的低8 位地址
+  44   1      
+  45   1          //EA = 0;
+  46   1          IAP_TRIG = 0x5A;   //先送 5Ah,再送A5h 到ISP/IAP 触发寄存器,每次都需如此
+  47   1          IAP_TRIG = 0xA5;   //送完A5h 后，ISP/IAP 命令立即被触发起动
+  48   1          _nop_();
+  49   1          //EA = 1;
+  50   1          IAP_Disable();  //关闭IAP 功能, 清相关的特殊功能寄存器,使CPU 处于安全状态,
+  51   1                          //一次连续的IAP 操作完成之后建议关闭IAP 功能,不需要每次都关
+  52   1          return (IAP_DATA);
+  53   1      }
+  54          
+  55          //字节编程，调用前需打开IAP 功能，入口:DPTR = 字节地址, A= 须编程字节的数据
+C51 COMPILER V8.08   EEPROM58                                                              04/25/2013 21:45:24 PAGE 2   
+
+  56          void byte_program(INT16U add, INT8U ch)
+  57          {
+  58   1          IAP_CONTR = ENABLE_ISP;         //打开 IAP 功能, 设置Flash 操作等待时间
+  59   1          IAP_CMD = 0x02;                 //IAP/ISP/EEPROM 字节编程命令
+  60   1      
+  61   1          my_unTemp16.un_temp16 = add;
+  62   1          IAP_ADDRH = my_unTemp16.un_temp8[0];    //设置目标单元地址的高8 位地址
+  63   1          IAP_ADDRL = my_unTemp16.un_temp8[1];    //设置目标单元地址的低8 位地址
+  64   1      
+  65   1          IAP_DATA = ch;                  //要编程的数据先送进IAP_DATA 寄存器
+  66   1          //EA = 0;
+  67   1          IAP_TRIG = 0x5A;   //先送 5Ah,再送A5h 到ISP/IAP 触发寄存器,每次都需如此
+  68   1          IAP_TRIG = 0xA5;   //送完A5h 后，ISP/IAP 命令立即被触发起动
+  69   1          _nop_();
+  70   1          //EA = 1;
+  71   1          IAP_Disable();  //关闭IAP 功能, 清相关的特殊功能寄存器,使CPU 处于安全状态,
+  72   1                          //一次连续的IAP 操作完成之后建议关闭IAP 功能,不需要每次都关
+  73   1      }
+  74          
+  75          //擦除扇区, 入口:DPTR = 扇区地址
+  76          void sector_erase(INT16U add)
+  77          {
+  78   1          IAP_CONTR = ENABLE_ISP;         //打开IAP 功能, 设置Flash 操作等待时间
+  79   1          IAP_CMD = 0x03;                 //IAP/ISP/EEPROM 扇区擦除命令
+  80   1      
+  81   1          my_unTemp16.un_temp16 = add;
+  82   1          IAP_ADDRH = my_unTemp16.un_temp8[0];    //设置目标单元地址的高8 位地址
+  83   1          IAP_ADDRL = my_unTemp16.un_temp8[1];    //设置目标单元地址的低8 位地址
+  84   1      
+  85   1          //EA = 0;
+  86   1          IAP_TRIG = 0x5A;   //先送 5Ah,再送A5h 到ISP/IAP 触发寄存器,每次都需如此
+  87   1          IAP_TRIG = 0xA5;   //送完A5h 后，ISP/IAP 命令立即被触发起动
+  88   1          _nop_();
+  89   1          //EA = 1;
+  90   1          IAP_Disable();  //关闭IAP 功能, 清相关的特殊功能寄存器,使CPU 处于安全状态,
+  91   1                          //一次连续的IAP 操作完成之后建议关闭IAP 功能,不需要每次都关
+  92   1      }
+  93          
+  94          void IAP_Disable()
+  95          {
+  96   1          //关闭IAP 功能, 清相关的特殊功能寄存器,使CPU 处于安全状态,
+  97   1          //一次连续的IAP 操作完成之后建议关闭IAP 功能,不需要每次都关
+  98   1          IAP_CONTR = 0;      //关闭IAP 功能
+  99   1          IAP_CMD   = 0;      //清命令寄存器,使命令寄存器无命令,此句可不用
+ 100   1          IAP_TRIG  = 0;      //清命令触发寄存器,使命令触发寄存器无触发,此句可不用
+ 101   1          IAP_ADDRH = 0;
+ 102   1          IAP_ADDRL = 0;
+ 103   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    124    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =      2    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

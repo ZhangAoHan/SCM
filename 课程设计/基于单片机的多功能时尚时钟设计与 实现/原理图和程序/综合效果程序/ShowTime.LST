@@ -1,0 +1,399 @@
+C51 COMPILER V9.53.0.0   SHOWTIME                                                          11/24/2020 12:40:26 PAGE 1   
+
+
+C51 COMPILER V9.53.0.0, COMPILATION OF MODULE SHOWTIME
+OBJECT MODULE PLACED IN ..\ShowTime.obj
+COMPILER INVOKED BY: E:\Keil\C51\BIN\C51.EXE ShowTime.c LARGE OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2) OBJECT
+                    -(..\ShowTime.obj)
+
+line level    source
+
+   1          
+   2          #include "task.h"
+   3          bit flag;
+   4          uchar id;
+   5          uchar Tem=32;
+   6          /*********延时子程序**********/
+   7          void delay1(void)//18.432M 180us
+   8          {
+   9   1        uchar a,b;
+  10   1           for(b=115;b>0;b--)
+  11   1              for(a=5;a>0;a--);
+  12   1      }
+  13          /*********************************************/
+  14          void OE_open(void)
+  15          {
+  16   1        OEB=OEC=0;  
+  17   1      }
+  18          void OE_close(void)
+  19          {
+  20   1        OEB=OEC=1;  
+  21   1      }
+  22          /**********************************************************/
+  23          void display(void)  
+  24          { 
+  25   1        uchar i; 
+  26   1      /******************显示时分秒数据**************************/
+  27   1      /**************************************************/     
+  28   1        if((flag==1)&&(id==1))    //实现调时 的闪烁位 （以下同） 
+  29   1        {
+  30   2          for(i=0;i<8;i++)    //这里用16个LED实现时间显示（以下同）
+  31   2          {  
+  32   3            OE_close(); //关闭显示  //时的十位不显示（亮灭的结合就实现了闪烁）
+  33   3               
+  34   3            delay1();   
+  35   3          }  
+  36   2        
+  37   2          //if(BIT_timeout)return;
+  38   2          for(i=0;i<8;i++) 
+  39   2          { 
+  40   3            OE_close(); //关闭显示    //时的个位不显示    
+  41   3            delay1();   
+  42   3          }
+  43   2        
+  44   2           //if(BIT_timeout)return;
+  45   2        }
+  46   1        else
+  47   1        {
+  48   2          for(i=0;i<8;i++)      //这里用8个LED实现时间显示
+  49   2          {  
+  50   3            Send_data_C(tab[Hour/16][i*2]);   //时的十位
+  51   3            Send_data_B(tab[Hour/16][i*2+1]);
+  52   3            Send_data_A(_8X8Number[tvalue/100][i]); //显示温度十位
+  53   3            //Send_data_A(_8X8Number[Tem%10][i]); //显示温度个位
+  54   3            //595下降沿锁存
+C51 COMPILER V9.53.0.0   SHOWTIME                                                          11/24/2020 12:40:26 PAGE 2   
+
+  55   3            
+  56   3            OE_open();//打开显示
+  57   3            OEA=0;       
+  58   3            delay1();   
+  59   3          }
+  60   2          OE_close(); //关闭显示
+  61   2          OEA=1;   
+  62   2           //if(BIT_timeout)return;
+  63   2          for(i=0;i<8;i++) 
+  64   2          { 
+  65   3            Send_data_C(tab[Hour%16][i*2]); //时的  个位
+  66   3            Send_data_B(tab[Hour%16][i*2+1]);
+  67   3            Send_data_A(_8X8Number[tvalue%100/10][i]); //显示温度个位 
+  68   3            
+  69   3            //595下降沿锁存
+  70   3            
+  71   3            OE_open();//打开显示
+  72   3            OEA=0;     
+  73   3            delay1();   
+  74   3          } 
+  75   2          OE_close(); //关闭显示
+  76   2          OEA=1;
+  77   2          //if(BIT_timeout)return;
+  78   2        }
+  79   1      /***********************************************************/ 
+  80   1        
+  81   1        for(i=0;i<8;i++) 
+  82   1        { 
+  83   2          Send_data_C(tab[10][i*2]);      //显示两点
+  84   2          Send_data_B(tab[10][i*2+1]);
+  85   2          Send_data_A(_8X8Number[12][i]); //显示小数点
+  86   2          OEA=0;
+  87   2          OE_open();//打开显示   
+  88   2          delay1();  
+  89   2        }
+  90   1        OE_close(); //关闭显示
+  91   1        OEA=1;
+  92   1        //if(BIT_timeout)
+  93   1        //return;
+  94   1      /**************************************************/ 
+  95   1        if((flag==1)&&(id==2))      
+  96   1        {
+  97   2          for(i=0;i<8;i++) 
+  98   2          { 
+  99   3            OE_close(); //关闭显示     //分的十位不显示 
+ 100   3            delay1();
+ 101   3          }
+ 102   2          
+ 103   2          if(BIT_timeout)return;
+ 104   2          for(i=0;i<8;i++) 
+ 105   2          { 
+ 106   3            OE_close(); //关闭显示    //分的个位不显示                   
+ 107   3            delay1();  
+ 108   3          }
+ 109   2        
+ 110   2          //if(BIT_timeout)return;
+ 111   2        }
+ 112   1        else
+ 113   1        { 
+ 114   2          for(i=0;i<8;i++) 
+ 115   2          { 
+ 116   3            Send_data_C(tab[Cent/16][i*2]);   //分的 十位
+C51 COMPILER V9.53.0.0   SHOWTIME                                                          11/24/2020 12:40:26 PAGE 3   
+
+ 117   3            Send_data_B(tab[Cent/16][i*2+1]);
+ 118   3            //Send_data_A(_8X8Number[11][i]); //显示.
+ 119   3            Send_data_A(_8X8Number[tvalue%10][i]); //显示温度小数位
+ 120   3            
+ 121   3            //
+ 122   3            //595下降沿锁存
+ 123   3            
+ 124   3            OE_open();//打开显示
+ 125   3            OEA=0;
+ 126   3            delay1();   
+ 127   3          }
+ 128   2          OE_close(); //关闭显示
+ 129   2          OEA=1;
+ 130   2          //if(BIT_timeout)return;
+ 131   2          for(i=0;i<8;i++) 
+ 132   2          { 
+ 133   3            Send_data_C(tab[Cent%16][i*2]);    //分的个位
+ 134   3            Send_data_B(tab[Cent%16][i*2+1]);
+ 135   3            Send_data_A(_8X8Number[11][i]); //显示.//
+ 136   3            
+ 137   3            
+ 138   3            OE_open();//打开显示
+ 139   3            OEA=0;              
+ 140   3            delay1();  
+ 141   3          }
+ 142   2          OE_close(); //关闭显示
+ 143   2          OEA=1;
+ 144   2          //if(BIT_timeout)return;
+ 145   2      
+ 146   2        }
+ 147   1        for(i=0;i<8;i++)     //显示两点 
+ 148   1        { 
+ 149   2          Send_data_C(tab[10][i*2]);
+ 150   2          Send_data_B(tab[10][i*2+1]);
+ 151   2          //Send_data_A(_8X8Number[12][i]); //显示m
+ 152   2          Send_data_A(_8X8Number[10][i]); //显示C
+ 153   2          //595下降沿锁存
+ 154   2          
+ 155   2          OE_open();//打开显示
+ 156   2          OEA=0;    
+ 157   2          delay1();  
+ 158   2        }
+ 159   1        OE_close(); //关闭显示
+ 160   1        OEA=1;
+ 161   1        //if(BIT_timeout)return;
+ 162   1        for(i=0;i<8;i++) 
+ 163   1        { 
+ 164   2          Send_data_C(tab[Sec/16][i*2]);     //秒的十位
+ 165   2          Send_data_B(tab[Sec/16][i*2+1]);
+ 166   2          
+ 167   2          //595下降沿锁存
+ 168   2          
+ 169   2          OE_open();//打开显示  
+ 170   2          delay1();    
+ 171   2        }
+ 172   1        OE_close(); //关闭显示
+ 173   1         //if(BIT_timeout)return;
+ 174   1        for(i=0;i<8;i++) 
+ 175   1        { 
+ 176   2          Send_data_C(tab[Sec%16][i*2]);     //秒的 个位
+ 177   2          Send_data_B(tab[Sec%16][i*2+1]);
+ 178   2          
+C51 COMPILER V9.53.0.0   SHOWTIME                                                          11/24/2020 12:40:26 PAGE 4   
+
+ 179   2          //595下降沿锁存
+ 180   2          
+ 181   2          OE_open();//打开显示 
+ 182   2          delay1();    
+ 183   2        }
+ 184   1        OE_close(); //关闭显示
+ 185   1        //OEA=1;
+ 186   1        //if(BIT_timeout)return;
+ 187   1        /*********************显示月日数据***************************/
+ 188   1        delay1();  //这里延时的作用是 把日期与时间拉开距离
+ 189   1          delay1();
+ 190   1            delay1();
+ 191   1              delay1();
+ 192   1                delay1();
+ 193   1                  delay1();
+ 194   1                    delay1();
+ 195   1                      delay1();
+ 196   1            delay1();
+ 197   1              delay1();
+ 198   1                delay1();
+ 199   1                  delay1();
+ 200   1                    delay1();
+ 201   1                      delay1();
+ 202   1              delay1();
+ 203   1              delay1();
+ 204   1                delay1();
+ 205   1                  delay1();
+ 206   1                    delay1();
+ 207   1                      delay1();
+ 208   1                        delay1();
+ 209   1                          delay1();
+ 210   1                            delay1();
+ 211   1        /****************************************************/
+ 212   1      /****************************************************/
+ 213   1        for(i=7;i>0;i--) 
+ 214   1        { 
+ 215   2          Send_data_C(tab1[11][i*2]);         //日字符
+ 216   2          Send_data_B(tab1[11][i*2+1]);
+ 217   2            
+ 218   2          //595下降沿锁存
+ 219   2          
+ 220   2          OE_open();//打开显示     
+ 221   2          delay1();    
+ 222   2        }
+ 223   1        OE_close(); //关闭显示
+ 224   1        //if(BIT_timeout)return;
+ 225   1        if((flag==1)&&(id==4)) 
+ 226   1        {
+ 227   2          for(i=8;i>0;i--) 
+ 228   2          { 
+ 229   3            OE_close(); //关闭显示    //日期个位不显示   
+ 230   3            delay1();  
+ 231   3          }
+ 232   2            if(BIT_timeout)return;
+ 233   2          for(i=8;i>0;i--) 
+ 234   2          { 
+ 235   3            OE_close(); //关闭显示    //日期十位不显示
+ 236   3            delay1();    
+ 237   3          }
+ 238   2          if(BIT_timeout)return;
+ 239   2        }
+ 240   1        else
+C51 COMPILER V9.53.0.0   SHOWTIME                                                          11/24/2020 12:40:26 PAGE 5   
+
+ 241   1        {
+ 242   2          for(i=8;i>0;i--) 
+ 243   2          { 
+ 244   3            Send_data_C(tab1[Day%16][i*2]);       //日期个位
+ 245   3            Send_data_B(tab1[Day%16][i*2+1]); 
+ 246   3            
+ 247   3            //595下降沿锁存
+ 248   3            
+ 249   3            OE_open();//打开显示
+ 250   3            delay1();  
+ 251   3          }
+ 252   2          OE_close(); //关闭显示
+ 253   2          for(i=8;i>0;i--) 
+ 254   2          { 
+ 255   3            Send_data_C(tab1[Day/16][i*2]);        //日期十位
+ 256   3            Send_data_B(tab1[Day/16][i*2+1]);
+ 257   3              
+ 258   3            //595下降沿锁存
+ 259   3            
+ 260   3            OE_open();//打开显示
+ 261   3            delay1();  
+ 262   3          } 
+ 263   2        }
+ 264   1      OE_close(); //关闭显示
+ 265   1        if(BIT_timeout)return;
+ 266   1      /******************************************/
+ 267   1      
+ 268   1      /************************************************************/
+ 269   1        for(i=8;i>0;i--)  
+ 270   1        { 
+ 271   2          Send_data_C(tab1[10][i*2]);          //月字符
+ 272   2          Send_data_B(tab1[10][i*2+1]); 
+ 273   2          
+ 274   2          //595下降沿锁存
+ 275   2          
+ 276   2          OE_open();//打开显示
+ 277   2          delay1();  
+ 278   2        }
+ 279   1        OE_close(); //关闭显示
+ 280   1        if(BIT_timeout)return;
+ 281   1          if((flag==1)&&(id==3))      
+ 282   1        {
+ 283   2          for(i=8;i>0;i--) 
+ 284   2          {   
+ 285   3            OE_close(); //关闭显示       //月的个位不显示  
+ 286   3            delay1();  
+ 287   3          }
+ 288   2        
+ 289   2           if(BIT_timeout)return;
+ 290   2          for(i=8;i>0;i--)
+ 291   2          { 
+ 292   3            OE_close(); //关闭显示       //月的十位不显示 
+ 293   3            delay1();    
+ 294   3          }
+ 295   2          if(BIT_timeout)return;
+ 296   2        }
+ 297   1        else
+ 298   1        { 
+ 299   2          for(i=8;i>0;i--) 
+ 300   2          { 
+ 301   3            Send_data_C(tab1[Month%16][i*2]);      //月的 个位
+ 302   3            Send_data_B(tab1[Month%16][i*2+1]);
+C51 COMPILER V9.53.0.0   SHOWTIME                                                          11/24/2020 12:40:26 PAGE 6   
+
+ 303   3            
+ 304   3            //595下降沿锁存
+ 305   3            
+ 306   3            OE_open();//打开显示      
+ 307   3            delay1();    
+ 308   3          }
+ 309   2          OE_close(); //关闭显示
+ 310   2          if(BIT_timeout)return;  
+ 311   2          for(i=8;i>0;i--) 
+ 312   2          { 
+ 313   3            Send_data_C(tab1[Month/16][i*2]);      //月的  十位
+ 314   3            Send_data_B(tab1[Month/16][i*2+1]);
+ 315   3            
+ 316   3            //595下降沿锁存
+ 317   3            
+ 318   3            OE_open();//打开显示
+ 319   3            delay1();    
+ 320   3          }
+ 321   2          
+ 322   2        }
+ 323   1          OE_close(); //关闭显示
+ 324   1          //OEA=1;
+ 325   1            //if(BIT_timeout)return;
+ 326   1      /***********************************/
+ 327   1      
+ 328   1      
+ 329   1      /******************显示星期数据******************************/
+ 330   1        
+ 331   1      //  if((flag==1)&&(id==5))
+ 332   1      //  {
+ 333   1      //  for(i=8;i>0;i--)
+ 334   1      //  { 
+ 335   1      //    OE_close(); //关闭显示     //星期值不显示
+ 336   1      //    delay1();  
+ 337   1      //  }
+ 338   1      //  if(BIT_timeout)return;
+ 339   1      //  } 
+ 340   1      //  else
+ 341   1      //  {
+ 342   1      //    for(i=8;i>0;i--) 
+ 343   1      //    { 
+ 344   1      //      Send_data_C(tab1[Week][i*2]);    //星期值
+ 345   1      //      Send_data_B(tab1[Week][i*2+1]);
+ 346   1      //        
+ 347   1      //      //595下降沿锁存
+ 348   1      //      
+ 349   1      //      OE_open();//打开显示   
+ 350   1      //      delay1();  
+ 351   1      //    }   
+ 352   1      //  }
+ 353   1      //  OE_close(); //关闭显示
+ 354   1      //  if(BIT_timeout)return;
+ 355   1      }
+ 356          /*********************************************************************************/
+ 357          /*************************************************************************************
+ 358          ************************************************************************************
+ 359          ***********************                                     ***************************
+ 360          ***********************    http://59tiaoba.taobao.com       ***************************
+ 361          ***********************                                     ***************************
+ 362          *******************************程序编写：Fucp***************************************
+ 363          **********************************************************************************/
+
+C51 COMPILER V9.53.0.0   SHOWTIME                                                          11/24/2020 12:40:26 PAGE 7   
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1950    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =      2       1
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

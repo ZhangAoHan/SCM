@@ -1,0 +1,9 @@
+"..\task.obj",
+"..\main.obj",
+"..\IR_Receive.obj",
+"..\ShowTime.obj",
+"..\DS18B20.obj",
+"..\zimo.obj",
+".\Round_table.LIB" 
+TO "..\xuanzhuan" 
+PRINT(".\xuanzhuan.m51") RAMSIZE(256) 

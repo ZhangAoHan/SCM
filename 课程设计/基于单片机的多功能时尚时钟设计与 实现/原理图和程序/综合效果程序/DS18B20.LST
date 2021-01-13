@@ -1,0 +1,100 @@
+C51 COMPILER V9.53.0.0   DS18B20                                                           11/24/2020 12:40:26 PAGE 1   
+
+
+C51 COMPILER V9.53.0.0, COMPILATION OF MODULE DS18B20
+OBJECT MODULE PLACED IN ..\DS18B20.obj
+COMPILER INVOKED BY: E:\Keil\C51\BIN\C51.EXE DS18B20.C LARGE OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2) OBJECT(
+                    -..\DS18B20.obj)
+
+line level    source
+
+   1          #include "NEW_8051.H"
+   2          #include "task.h"
+   3          
+   4          sbit DQ=P4^0;//ds18b20与单片机连接口
+   5          uint tvalue;//温度值
+   6          uchar tflag;//温度正负标志
+   7          /******************************ds1820程序***************************************/
+   8          void delay_18B20(unsigned int i)//延时1微秒
+   9          {
+  10   1         while(i--);
+  11   1      }
+  12          void ds1820rst()/*ds1820复位*/
+  13          { unsigned char x=0;
+  14   1      DQ = 1;          //DQ复位
+  15   1      delay_18B20(20); //延时
+  16   1      DQ = 0;          //DQ拉低
+  17   1      delay_18B20(500); //精确延时大于480us
+  18   1      DQ = 1;          //拉高
+  19   1      delay_18B20(200); 
+  20   1         } 
+  21          
+  22             uchar ds1820rd()/*读数据*/
+  23          { unsigned char i=0;
+  24   1      unsigned char dat = 0;
+  25   1      for (i=8;i>0;i--)
+  26   1      {   DQ = 0; //给脉冲信号
+  27   2          dat>>=1;
+  28   2          DQ = 1; //给脉冲信号
+  29   2          if(DQ)
+  30   2          dat|=0x80;
+  31   2          delay_18B20(50);
+  32   2      }
+  33   1         return(dat);
+  34   1      }
+  35          void ds1820wr(uchar wdata)/*写数据*/
+  36          {unsigned char i=0;
+  37   1          for (i=8; i>0; i--)
+  38   1         { DQ = 0;
+  39   2           DQ = wdata&0x01;
+  40   2           delay_18B20(50);
+  41   2           DQ = 1;
+  42   2           wdata>>=1;
+  43   2         }
+  44   1      }
+  45          read_temp()/*读取温度值并转换*/
+  46          {uchar a,b;
+  47   1      ds1820rst();    
+  48   1      ds1820wr(0xcc);//*跳过读序列号*/
+  49   1      ds1820wr(0x44);//*启动温度转换*/
+  50   1      ds1820rst();    
+  51   1      ds1820wr(0xcc);//*跳过读序列号*/ 
+  52   1      ds1820wr(0xbe);//*读取温度*/ 
+  53   1      a=ds1820rd();
+  54   1      b=ds1820rd();
+C51 COMPILER V9.53.0.0   DS18B20                                                           11/24/2020 12:40:26 PAGE 2   
+
+  55   1      tvalue=b;
+  56   1      tvalue<<=8;
+  57   1      tvalue=tvalue|a;
+  58   1          if(tvalue<0x0fff)
+  59   1         tflag=0;
+  60   1          else
+  61   1         {tvalue=~tvalue+1;
+  62   2      tflag=1;
+  63   2         }
+  64   1      tvalue=tvalue*(0.625);//温度值扩大10倍，精确到1位小数
+  65   1      return(tvalue);
+  66   1      }
+  67          /*********************************************************************************/
+  68          /*************************************************************************************
+  69          ************************************************************************************
+  70          ***********************                                     ***************************
+  71          ***********************    http://59tiaoba.taobao.com       ***************************
+  72          ***********************                                     ***************************
+  73          ************************************程序编写：Fucp********************************************
+  74          **********************************************************************************/
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    243    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =      3       1
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
