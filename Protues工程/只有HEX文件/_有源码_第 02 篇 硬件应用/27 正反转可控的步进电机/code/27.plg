@@ -1,0 +1,62 @@
+<html>
+<body>
+<pre>
+<h1>礦ision3 Build Log</h1>
+<h2>Project:</h2>
+D:\study\第 02 篇 硬件应用\27 正反转可控的步进电机\code\27.uv2
+Project File Date:  08/12/2009
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling 27.c...
+27.C(7): error C251: illegal octal digit
+27.C(7): error C251: illegal octal digit
+27.C(15): error C141: syntax error near 'void'
+27.C(16): error C141: syntax error near '{'
+27.C(18): error C141: syntax error near 'while'
+27.C(18): error C141: syntax error near '--', expected ')'
+27.C(20): error C141: syntax error near '=', expected ')'
+27.C(20): error C129: missing ';' before '<'
+Target not created
+Build target 'Target 1'
+compiling 27.c...
+27.C(15): error C141: syntax error near 'void'
+27.C(16): error C141: syntax error near '{'
+27.C(18): error C141: syntax error near 'while'
+27.C(18): error C141: syntax error near '--', expected ')'
+27.C(20): error C141: syntax error near '=', expected ')'
+27.C(20): error C129: missing ';' before '<'
+Target not created
+Build target 'Target 1'
+compiling 27.c...
+27.C(15): error C141: syntax error near 'void'
+27.C(16): error C141: syntax error near '{'
+27.C(18): error C141: syntax error near 'while'
+27.C(18): error C141: syntax error near '--', expected ')'
+27.C(20): error C141: syntax error near '=', expected ')'
+27.C(20): error C129: missing ';' before '<'
+Target not created
+Build target 'Target 1'
+compiling 27.c...
+27.C(15): error C141: syntax error near 'void'
+27.C(16): error C141: syntax error near '{'
+27.C(18): error C141: syntax error near 'while'
+27.C(18): error C141: syntax error near '--', expected ')'
+27.C(20): error C141: syntax error near '=', expected ')'
+27.C(20): error C129: missing ';' before '<'
+Target not created
+Build target 'Target 1'
+compiling 27.c...
+27.C(31): error C202: 'K3': undefined identifier
+27.C(45): error C202: 'K3': undefined identifier
+27.C(57): error C202: 'K1': undefined identifier
+27.C(61): error C202: 'K3': undefined identifier
+27.C(63): error C202: 'K2': undefined identifier
+27.C(67): error C202: 'K3': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling 27.c...
+linking...
+Program Size: data=10.0 xdata=0 code=186
+creating hex file from "27"...
+"27" - 0 Error(s), 0 Warning(s).

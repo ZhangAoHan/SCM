@@ -1,0 +1,69 @@
+C51 COMPILER V7.06   TIMER0¿ØÖÆÁ÷Ë__Æ                                                      06/20/2009 19:41:08 PAGE 1   
+
+
+C51 COMPILER V7.06, COMPILATION OF MODULE TIMER0¿ØÖÆÁ÷Ë__Æ
+OBJECT MODULE PLACED IN TIMER0¿ØÖÆÁ÷Ë®µÆ.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE TIMER0¿ØÖÆÁ÷Ë®µÆ.c BROWSE DEBUG OBJECTEXTEND
+
+stmt level    source
+
+   1          #include<reg52.h>
+   2          #include<intrins.h>
+   3          #define uchar unsigned char
+   4          #define uint  unsigned int
+   5          void delay(uint z)
+   6          {
+   7   1              uint x,y;
+   8   1              for(x=z;x>0;x--)
+   9   1                 for(y=110;y>0;y--);
+  10   1      }
+  11          void ledliu()
+  12          {
+  13   1                      uint aa;
+  14   1                      delay(500);
+  15   1                       aa=P1;
+  16   1                       aa=_crol_(aa,1);
+  17   1                       P1=aa; 
+  18   1      }
+  19          void main()
+  20          {       
+  21   1      
+  22   1              P1=0xfe;
+  23   1              TMOD=01;
+  24   1              TH0=-50000/256;
+  25   1              TL0=-50000%256;
+  26   1              EA=1;
+  27   1              ET0=1;
+  28   1              TR0=1;
+  29   1              while(1);
+  30   1      }
+  31          void T0_time() interrupt 1//ÖÐ¶Ï·þÎñº¯Êý
+  32          {
+  33   1              uint i;
+  34   1              TH0=-50000/256;
+  35   1              TL0=-50000%256;
+  36   1              i++;
+  37   1              if(i=10)
+*** WARNING C276 IN LINE 37 OF TIMER0¿ØÖÆÁ÷Ë®µÆ.C: constant in condition expression
+  38   1              {
+  39   2                      ledliu();
+  40   2                      i=0;
+  41   2              }
+  42   1              
+  43   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    122    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+C51 COMPILER V7.06   TIMER0¿ØÖÆÁ÷Ë__Æ                                                      06/20/2009 19:41:08 PAGE 2   
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

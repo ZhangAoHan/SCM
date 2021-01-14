@@ -1,0 +1,155 @@
+C51 COMPILER V7.06   ½»Í__Æ¿ØÖÆÆ÷                                                          06/14/2009 14:55:04 PAGE 1   
+
+
+C51 COMPILER V7.06, COMPILATION OF MODULE ½»Í__Æ¿ØÖÆÆ÷
+OBJECT MODULE PLACED IN ½»Í¨µÆ¿ØÖÆÆ÷.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE ½»Í¨µÆ¿ØÖÆÆ÷.C BROWSE DEBUG OBJECTEXTEND
+
+stmt level    source
+
+   1          #include<reg52.h>
+   2          #define uchar unsigned char
+   3          #define uint unsigned int 
+   4          uchar i;
+   5          static uchar second;
+   6          bit red,green,yellow,turnred;
+   7          uchar code table[]={0x3f,0x06,0x5b,0x4f,0x66,
+   8                                                   0x6d,0x7d,0x07,0x7f,0x6f};
+   9          void delay(uint z)
+  10          {
+  11   1              uint x,y;
+  12   1              for(x=z;x>0;x--)
+  13   1                      for(y=110;y>0;y--);
+  14   1      }
+  15          void display(uchar sun)
+  16          {
+  17   1              uchar shi,ge;
+  18   1              ge=table[sun/10];
+  19   1              shi=table[sun%10];
+  20   1      
+  21   1              P2=0xff;
+  22   1              P0=ge;
+  23   1              P2=0x01;
+  24   1              delay(5);
+  25   1      
+  26   1              P2=0xff;
+  27   1              P0=shi;
+  28   1              P2=0x02;
+  29   1              delay(5);
+  30   1      
+  31   1              P2=0xff;
+  32   1              P0=ge;
+  33   1              P2=0x04;
+  34   1              delay(5);
+  35   1      
+  36   1              P2=0xff;
+  37   1              P0=shi;
+  38   1              P2=0x08;
+  39   1              delay(5);
+  40   1      
+  41   1              P2=0xff;
+  42   1              P0=ge;
+  43   1              P2=0x10;
+  44   1              delay(5);
+  45   1      
+  46   1              P2=0xff;
+  47   1              P0=shi;
+  48   1              P2=0x20;
+  49   1              delay(5);
+  50   1      
+  51   1              P2=0xff;
+  52   1              P0=ge;
+  53   1              P2=0x40;
+  54   1              delay(5);
+  55   1      
+C51 COMPILER V7.06   ½»Í__Æ¿ØÖÆÆ÷                                                          06/14/2009 14:55:04 PAGE 2   
+
+  56   1              P2=0xff;
+  57   1              P0=shi;
+  58   1              P2=0x80;
+  59   1              delay(5);
+  60   1      }
+  61          
+  62          void crl(void)
+  63          {
+  64   1              display(0);
+  65   1      }
+  66          void main()
+  67          {
+  68   1              TMOD=01;
+  69   1              TH0=-50000/256;
+  70   1              TL0=-50000%256;
+  71   1              EA=1;
+  72   1              ET0=1;
+  73   1              TR0=1;
+  74   1              second=30;
+  75   1              red=1;
+  76   1              P1=0xf5;
+  77   1              while(1)
+  78   1              {
+  79   2                      
+  80   2                      display(second);
+  81   2                      
+  82   2                      
+  83   2              }
+  84   1      }
+  85          uchar count;
+  86          void T0_time() interrupt 1//ÖÐ¶Ï·þÎñº¯Êý
+  87          {
+  88   1              TH0=-50000/256;
+  89   1              TL0=-50000%256;
+  90   1              count++;
+  91   1              if (count==20)
+  92   1                  {
+  93   2                  count=0;
+  94   2                  second--;//Ãë¼õ1
+  95   2                      if(second==0)
+  96   2                         {  //ÕâÀïÌí¼Ó¶¨Ê±µ½0µÄ´úÂë £¬¿ÉÒÔÊÇµÆµçÂ·£¬¼ÌµçÆ÷ÎüºÏµÈ£¬»òÕßÖ´ÐÐÒ»¸ö³ÌÐò
+  97   3                     if(red)
+  98   3                           {
+  99   4                                red=0;yellow=1;
+ 100   4                        second=5;
+ 101   4                                P1=0xdb;//»ÆµÆÁÁ5Ãë
+ 102   4                               }
+ 103   3                         else if(yellow && !turnred)
+ 104   3                           {
+ 105   4                                yellow=0;green=1;
+ 106   4                        second=50;
+ 107   4                                P1=0xee;//ÂÌµÆÁÁ50Ãë
+ 108   4                               }
+ 109   3                         else if(green)
+ 110   3                           {
+ 111   4                               yellow=1;green=0;
+ 112   4                       second=5;
+ 113   4                               P1=0xdb;//»ÆµÆÁÁ5Ãë
+ 114   4                               turnred=1;
+ 115   4                               }
+ 116   3                     else if(yellow && turnred)
+ 117   3                           {
+C51 COMPILER V7.06   ½»Í__Æ¿ØÖÆÆ÷                                                          06/14/2009 14:55:04 PAGE 3   
+
+ 118   4                           red=1;yellow=0;
+ 119   4                               P1=0xf5;;//ºìµÆÁÁ60Ãë
+ 120   4                       second=30;
+ 121   4                               turnred=0;
+ 122   4                               }
+ 123   3              
+ 124   3                         }
+ 125   2                      
+ 126   2          
+ 127   2          }
+ 128   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    275    ----
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      3    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      4    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

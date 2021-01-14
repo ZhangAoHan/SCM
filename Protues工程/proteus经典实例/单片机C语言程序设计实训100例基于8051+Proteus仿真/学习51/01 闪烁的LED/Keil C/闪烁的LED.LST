@@ -1,0 +1,50 @@
+C51 COMPILER V7.06   闪薩_腖ED                                                             07/22/2009 15:16:54 PAGE 1   
+
+
+C51 COMPILER V7.06, COMPILATION OF MODULE 闪薩_腖ED
+OBJECT MODULE PLACED IN 闪烁的LED.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE 闪烁的LED.C BROWSE DEBUG OBJECTEXTEND
+
+stmt level    source
+
+   1          /****************************************/
+   2          /*程序名称：点亮一个P1。0口的发光管*/
+   3          /*说   明 ：利用软件延时500ms*/
+   4          /*操作类型：位操作                */
+   5          /*作者    ：铁手一郎
+   6          /*QQ:347999853               */
+   7          /***************************************/
+   8          #include<reg52.h>
+   9          #define uint unsigned int    //宏定义
+  10          #define uchar unsigned char  //宏定义
+  11          sbit led=P1^0; /*定义P1.0*/
+  12          sbit led1=P1^1;/*定义P1.1*/
+  13          
+  14          main()
+  15             
+  16          {  
+  17   1         uint a;
+  18   1         while(1)
+  19   1              {   a=50000;
+  20   2                      led=0;    /*点亮发光管*/
+  21   2              while(a--);
+  22   2                      a=50000;
+  23   2                      led=1;
+  24   2                      while(a--);
+  25   2      }
+  26   1      
+  27   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     34    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

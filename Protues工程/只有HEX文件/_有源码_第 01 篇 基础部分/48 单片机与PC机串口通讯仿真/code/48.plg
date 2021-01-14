@@ -1,0 +1,17 @@
+<html>
+<body>
+<pre>
+<h1>礦ision3 Build Log</h1>
+<h2>Project:</h2>
+D:\study\第 01 篇 基础部分\48 单片机与PC机串口通讯仿真\code\48.uv2
+Project File Date:  08/11/2009
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling 48.c...
+linking...
+Program Size: data=114.0 xdata=0 code=586
+"48" - 0 Error(s), 0 Warning(s).
+</pre>
+</body>
+</html>

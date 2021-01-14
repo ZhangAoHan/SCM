@@ -1,0 +1,109 @@
+<html>
+<body>
+<pre>
+<h1>µVision2 Build Log</h1>
+<h2>Project:</h2>
+C:\Documents and Settings\Administrator\×ÀÃæ\¡¶µ¥Æ¬»úCÓïÑÔ³ÌĞòÉè¼ÆÊµÑµ100Àı¡ª¡ª»ùÓÚ8051+Proteus·ÂÕæ¡·°¸ÀıÑ¹Ëõ°ü\µÚ 01 Æª »ù´¡²¿·Ö\16 4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾\Keil C\4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾.uv2
+Project File Date:  06/20/2009
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling 4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾.c...
+4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾.C(9): warning C206: 'ucKeyScan': missing function-prototype
+compiling KeyProcess.c...
+KEYPROCESS.C(14): error C202: 'P3': undefined identifier
+KEYPROCESS.C(15): error C202: 'P3': undefined identifier
+KEYPROCESS.C(16): error C202: 'P3': undefined identifier
+KEYPROCESS.C(17): error C202: 'P3': undefined identifier
+KEYPROCESS.C(19): error C202: 'P3': undefined identifier
+KEYPROCESS.C(20): error C202: 'P3': undefined identifier
+KEYPROCESS.C(21): error C202: 'P3': undefined identifier
+KEYPROCESS.C(22): error C202: 'P3': undefined identifier
+KEYPROCESS.C(24): error C202: 'P3': undefined identifier
+KEYPROCESS.C(24): error C202: 'P2': undefined identifier
+KEYPROCESS.C(25): error C202: 'P3': undefined identifier
+KEYPROCESS.C(25): error C202: 'P2': undefined identifier
+KEYPROCESS.C(26): error C202: 'P3': undefined identifier
+KEYPROCESS.C(26): error C202: 'P2': undefined identifier
+KEYPROCESS.C(27): error C202: 'P3': undefined identifier
+KEYPROCESS.C(27): error C202: 'P2': undefined identifier
+KEYPROCESS.C(29): error C202: 'P3': undefined identifier
+KEYPROCESS.C(29): error C202: 'P2': undefined identifier
+KEYPROCESS.C(30): error C202: 'P3': undefined identifier
+KEYPROCESS.C(30): error C202: 'P2': undefined identifier
+KEYPROCESS.C(31): error C202: 'P3': undefined identifier
+KEYPROCESS.C(31): error C202: 'P2': undefined identifier
+KEYPROCESS.C(32): error C202: 'P3': undefined identifier
+KEYPROCESS.C(32): error C202: 'P2': undefined identifier
+compiling KeyScan.c...
+KEYSCAN.C(29): error C141: syntax error near 'unsigned'
+Target not created
+Build target 'Target 1'
+compiling KeyProcess.c...
+compiling KeyScan.c...
+KEYSCAN.C(29): error C141: syntax error near 'unsigned'
+Target not created
+Build target 'Target 1'
+compiling 4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾.c...
+4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾.C(9): warning C206: 'ucKeyScan': missing function-prototype
+compiling KeyScan.c...
+KEYSCAN.C(29): error C141: syntax error near 'unsigned'
+Target not created
+Build target 'Target 1'
+compiling KeyScan.c...
+KEYSCAN.C(22): error C129: missing ';' before 'uca_LineScan'
+Target not created
+Build target 'Target 1'
+compiling KeyScan.c...
+KEYSCAN.C(28): error C129: missing ';' before 'uca_LineScan'
+Target not created
+Build target 'Target 1'
+compiling 4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾.c...
+compiling KeyScan.c...
+KEYSCAN.C(29): error C129: missing ';' before 'ucKeyScan'
+Target not created
+Build target 'Target 1'
+compiling 4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾.c...
+4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾.C(11): error C202: 'SCANPORT': undefined identifier
+4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾.C(12): error C202: 'SCANPORT': undefined identifier
+4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾.C(27): error C202: 'SCANPORT': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling 4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾.c...
+4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾.C(11): error C202: 'uca_LineScan': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling 4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾.c...
+4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾.C(15): error C202: 'ucTemp': undefined identifier
+4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾.C(17): error C202: 'ucTemp': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling 4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_VKEYPROCESS?4_Á4¼üÅÌ_ØÕó¿ØÖÆÌ__ÎLED_ÔÊ_
+Program Size: data=13.0 xdata=0 code=403
+"4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_VKEYPROCESS?4_Á4¼üÅÌ_ØÕó¿ØÖÆÌ__ÎLED_ÔÊ_
+Program Size: data=13.0 xdata=0 code=403
+creating hex file from "4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾"...
+"4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling 4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾.c...
+linking...
+Program Size: data=13.0 xdata=0 code=406
+creating hex file from "4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾"...
+"4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling 4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾.c...
+linking...
+Program Size: data=13.0 xdata=0 code=430
+creating hex file from "4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾"...
+"4¡Á4¼üÅÌ¾ØÕó¿ØÖÆÌõĞÎLEDÏÔÊ¾" - 0 Error(s), 0 Warning(s).
+</pre>
+</body>
+</html>

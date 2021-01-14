@@ -1,0 +1,79 @@
+C51 COMPILER V7.06   LEDÄ_Äâ½»Í__Æ                                                         06/20/2009 09:02:47 PAGE 1   
+
+
+C51 COMPILER V7.06, COMPILATION OF MODULE LEDÄ_Äâ½»Í__Æ
+OBJECT MODULE PLACED IN LEDÄ£Äâ½»Í¨µÆ.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE LEDÄ£Äâ½»Í¨µÆ.C BROWSE DEBUG OBJECTEXTEND
+
+stmt level    source
+
+   1          #include<reg51.h>
+   2          #define uchar unsigned char
+   3          #define uint unsigned int
+   4          sbit ledns_re=P1^0;
+   5          sbit ledns_ge=P1^1;
+   6          sbit ledns_ye=P1^2;
+   7          sbit ledwe_re=P1^3;
+   8          sbit ledwe_ge=P1^4;
+   9          sbit ledwe_ye=P1^5;
+  10          void delay(uchar z)
+  11          {
+  12   1              uchar x,y;
+  13   1              for(x=z;x>0;x--)
+  14   1                      for(y=110;y>0;y--);     
+  15   1      }
+  16          void main()
+  17          {
+  18   1              uint i;
+  19   1              while(1)
+  20   1              {
+  21   2                      ledns_re=0;
+  22   2                      ledwe_ge=0;
+  23   2                      ledns_ye=1;
+  24   2                      ledwe_ye=1;
+  25   2                      for(i=0;i<50;i++)
+  26   2                      {
+  27   3                              delay(1000);
+  28   3                      }
+  29   2                      ledns_ye=0;
+  30   2                      ledwe_ye=0;
+  31   2                      ledns_re=1;
+  32   2                      ledwe_ge=1;
+  33   2                      for(i=0;i<10;i++)
+  34   2                      {
+  35   3                              delay(1000);
+  36   3                      }
+  37   2                      ledns_ge=0;
+  38   2                      ledwe_re=0;
+  39   2                      ledns_ye=1;
+  40   2                      ledwe_ye=1;
+  41   2                      for(i=0;i<30;i++)
+  42   2                      {
+  43   3                              delay(1000);
+  44   3                      }
+  45   2                      ledns_ye=0;
+  46   2                      ledwe_ye=0;
+  47   2                      ledns_ge=1;
+  48   2                      ledwe_re=1;
+  49   2                      for(i=0;i<10;i++)
+  50   2                      {
+  51   3                              delay(1000);
+  52   3                      }
+  53   2              }
+  54   1      }
+
+C51 COMPILER V7.06   LEDÄ_Äâ½»Í__Æ                                                         06/20/2009 09:02:47 PAGE 2   
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    127    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

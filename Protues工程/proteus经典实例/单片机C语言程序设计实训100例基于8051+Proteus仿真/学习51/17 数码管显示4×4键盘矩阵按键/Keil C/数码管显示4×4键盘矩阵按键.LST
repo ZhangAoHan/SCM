@@ -1,0 +1,100 @@
+C51 COMPILER V7.06   ÊýÂë_Ü_ÔÊ_4_Á4¼üÅÌ_ØÕó__¼ü                                            06/20/2009 17:18:06 PAGE 1   
+
+
+C51 COMPILER V7.06, COMPILATION OF MODULE ÊýÂë_Ü_ÔÊ_4_Á4¼üÅÌ_ØÕó__¼ü
+OBJECT MODULE PLACED IN ÊýÂë¹ÜÏÔÊ¾4¡Á4¼üÅÌ¾ØÕó°´¼ü.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE ÊýÂë¹ÜÏÔÊ¾4¡Á4¼üÅÌ¾ØÕó°´¼ü.c BROWSE DEBUG OBJECTEXTEND
+
+stmt level    source
+
+   1          #include<reg51.h>
+   2          #define uchar unsigned char
+   3          #define uint unsigned int
+   4          #define SCANPORT P1
+   5          sbit spk=P3^0;
+   6          uchar code table[]={0x3f,0x06,0x5b,0x4f,0x66,
+   7                                                   0x6d,0x7d,0x07,0x7f,0x6f,
+   8                                                   0x77,0x7c,0x39,0x5e,0x79,
+   9                                                   0x71};
+  10          uchar uca_LineScan[4]={0xEF,0xDF,0xBF,0x7F};
+  11          uchar ucKeyScan()
+  12          {
+  13   1              uchar Temp=0;                           
+  14   1              uchar ucRow=0,ucLine=0;     
+  15   1      
+  16   1              for(ucLine=0;ucLine<4;ucLine++) 
+  17   1                      {
+  18   2                              SCANPORT=uca_LineScan[ucLine];                     
+  19   2                              Temp=SCANPORT & 0x0F;                                    
+  20   2                              if(Temp!=0x0F)           
+  21   2                                      {                                                                        
+  22   3                                      switch(Temp)
+  23   3                                              {
+  24   4                                              case 0x0E: ucRow=10;break;               
+  25   4                                              case 0x0D: ucRow=20;break;
+  26   4                                              case 0x0B: ucRow=30;break;
+  27   4                                              case 0x07: ucRow=40;break;
+  28   4                                              default:   ucRow=50;break;
+  29   4                                              }
+  30   3                                      break;
+  31   3                                      }
+  32   2                      }
+  33   1      
+  34   1              SCANPORT=0x0F;                                  
+  35   1              return ucRow+ucLine+1;                   
+  36   1      }
+  37          void vKeyProcess(unsigned char ucKeyCode)
+  38          {
+  39   1                      
+  40   1              switch(ucKeyCode)
+  41   1                      {
+  42   2                      case 11:P0=table[0];spk=1;break;                                                          //'7'
+  43   2                      case 12:P0=table[1];spk=1;break;                                                          //'8'
+  44   2                      case 13:P0=table[2];spk=1;break;
+  45   2                      case 14:P0=table[3];spk=1;break;
+  46   2                                                                
+  47   2                      case 21:P0=table[4];spk=1;break;                                                          //'4'
+  48   2                      case 22:P0=table[5];spk=1;break;                                                          //'5'
+  49   2                      case 23:P0=table[6];spk=1;break;
+  50   2                      case 24:P0=table[7];spk=1;break;
+  51   2                                                        
+  52   2                      case 31:P0=table[8];spk=1;break;                                                          //'1'
+  53   2                      case 32:P0=table[9];spk=1;break;                                                          //'2'
+  54   2                      case 33:P0=table[10];spk=1;break;
+  55   2                      case 34:P0=table[11];spk=1;break;
+C51 COMPILER V7.06   ÊýÂë_Ü_ÔÊ_4_Á4¼üÅÌ_ØÕó__¼ü                                            06/20/2009 17:18:06 PAGE 2   
+
+  56   2      
+  57   2                      case 41:P0=table[12];spk=1;break;                                 //'3'
+  58   2                      case 42:P0=table[13];spk=1;break;
+  59   2                      case 43:P0=table[14];spk=1;break;                                                 //'0'
+  60   2                      case 44:P0=table[15];spk=1;break;                                                         //'+'
+  61   2      
+  62   2                      default:break;
+  63   2                      }
+  64   1      }
+  65          void main()
+  66          {
+  67   1              spk=0;
+  68   1              P0=0;
+  69   1              
+  70   1              while(1)
+  71   1              {
+  72   2                      vKeyProcess(ucKeyScan());
+  73   2                      spk=0;
+  74   2              }
+  75   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    223    ----
+   CONSTANT SIZE    =     16    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

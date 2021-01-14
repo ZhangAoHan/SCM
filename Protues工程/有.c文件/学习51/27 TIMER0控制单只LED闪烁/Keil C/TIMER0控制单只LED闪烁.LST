@@ -1,0 +1,49 @@
+C51 COMPILER V7.06   TIMER0控制_ブ籐ED闪薩                                                 06/20/2009 19:28:20 PAGE 1   
+
+
+C51 COMPILER V7.06, COMPILATION OF MODULE TIMER0控制_ブ籐ED闪薩
+OBJECT MODULE PLACED IN TIMER0控制单只LED闪烁.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE TIMER0控制单只LED闪烁.C BROWSE DEBUG OBJECTEXTEND
+
+stmt level    source
+
+   1          #include<reg52.h>
+   2          #define uchar unsigned char
+   3          #define uint unsigned int 
+   4          sbit led=P1^0;
+   5          void main()
+   6          {
+   7   1              TMOD=0x01;
+   8   1              TH0=-50000/256;
+   9   1              TL0=-50000%256;
+  10   1              EA=1;
+  11   1              ET0=1;
+  12   1              TR0=1;
+  13   1              while(1);
+  14   1      }
+  15          void T0_time() interrupt 1//中断服务函数
+  16          {       
+  17   1              uint i;
+  18   1              TH0=-50000/256;
+  19   1              TL0=-50000%256;
+  20   1              i++;
+  21   1              if(i==20)
+  22   1              {
+  23   2                      led=~led;
+  24   2                      i=0;
+  25   2              }
+  26   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     48    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

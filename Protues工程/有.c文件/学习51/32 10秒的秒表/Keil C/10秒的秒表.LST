@@ -1,0 +1,105 @@
+C51 COMPILER V7.06   10√Î_ƒ√Î_Ì                                                            06/21/2009 08:28:33 PAGE 1   
+
+
+C51 COMPILER V7.06, COMPILATION OF MODULE 10√Î_ƒ√Î_Ì
+OBJECT MODULE PLACED IN 10√Îµƒ√Î±Ì.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE 10√Îµƒ√Î±Ì.c BROWSE DEBUG OBJECTEXTEND
+
+stmt level    source
+
+   1          #include<reg52.h>
+   2          #define uchar unsigned char
+   3          #define uint unsigned int
+   4          sbit s1=P3^0;
+   5          uchar sun; 
+   6          uchar code table[]={0x3f,0x06,0x5b,0x4f,0x66,
+   7                                                   0x6d,0x7d,0x07,0x7f,0x6f};
+   8          void delay(uint z)
+   9          {
+  10   1              uint x,y;
+  11   1              for(x=z;x>0;x--)
+  12   1                      for(y=110;y>0;y--);
+  13   1      }
+  14          void display(uchar sum)
+  15          {
+  16   1              uchar ge,shi;
+  17   1              ge=table[sum%10];
+  18   1              shi=table[sum/10];
+  19   1              
+  20   1              P2=1;
+  21   1              P0=ge;
+  22   1              P2=0xfe;
+  23   1              delay(5);
+  24   1      
+  25   1              P2=1;
+  26   1              P0=shi;
+  27   1              P2=0xfd;
+  28   1              delay(5);       
+  29   1      }
+  30          void keycan()
+  31          {
+  32   1              uint i;
+  33   1              if(s1==0)
+  34   1              {
+  35   2                      delay(30);
+  36   2                      if(s1==0)
+  37   2                      {
+  38   3                              i++;
+  39   3                              switch(i)
+  40   3                              {
+  41   4                                      case 1:TR0=0;break;
+  42   4                                      case 2:sun=0;break;
+  43   4                                      case 3:TR0=1;i=0;break;
+  44   4                                      default:break;
+  45   4                              }
+  46   3                              while(!s1);
+  47   3                      }
+  48   2              }
+  49   1      }
+  50          void main()
+  51          {
+  52   1              
+  53   1              TMOD=01;
+  54   1              TH0=-50000/256;
+  55   1              TL0=-50000%256;
+C51 COMPILER V7.06   10√Î_ƒ√Î_Ì                                                            06/21/2009 08:28:33 PAGE 2   
+
+  56   1              EA=1;
+  57   1              ET0=1;
+  58   1              TR0=1;
+  59   1              while(1)
+  60   1              {
+  61   2                      display(sun);
+  62   2                      keycan();
+  63   2              }
+  64   1      }
+  65          void T0_time() interrupt 1//÷–∂œ∑˛ŒÒ∫Ø ˝
+  66          {       
+  67   1              uint i;
+  68   1              TH0=-50000/256;
+  69   1              TL0=-50000%256;
+  70   1              i++;
+  71   1              if(i==20)
+  72   1              {
+  73   2                      i=0;
+  74   2                      sun++;
+  75   2                      if(sun==11)
+  76   2                      {
+  77   3                              sun=0;
+  78   3                      }
+  79   2              }
+  80   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    205    ----
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

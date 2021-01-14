@@ -1,0 +1,19 @@
+<html>
+<body>
+<pre>
+<h1>礦ision2 Build Log</h1>
+<h2>Project:</h2>
+H:\《单片机C语言程序设计实训100例——基于8051+Proteus仿真》案例压缩包1\32 10秒的秒表\Keil C\10秒的秒表.uv2
+Project File Date:  06/21/2009
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling STARTUP.A51...
+A51 MACRO ASSEMBLER V7.07 - SN: Eval Version
+COPYRIGHT KEIL ELEKTRONIK GmbH 1987 - 2003
+"C:\Keil\C51\BIN\A51.EXE" "C:\Documents and Settings\Administrator\桌面\《单片机C语言程序设计实训100例——基于8051+Proteus仿真》案例压缩包\第 01 篇 基础部分\32 10秒的秒表\Keil C\STARTUP.A51" SET (SMALL) DEBUG PRINT(.\STARTUP.lst) OBJECT(.\STARTUP.obj) EP
+A51 FATAL ERROR -
+  FILE:       C:\Documents and Settings\Administrator\桌面\《单片机C语言程序设计实训100例——基于8051+Proteus仿真》案例压缩包\第 01 篇 基础部分\32 10秒的秒表\Keil C\STARTUP.A51
+  ERROR:      FILE DOES NOT EXIST
+A51 TERMINATED.
+Target not created

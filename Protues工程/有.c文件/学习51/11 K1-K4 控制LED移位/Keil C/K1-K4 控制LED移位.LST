@@ -1,0 +1,208 @@
+C51 COMPILER V7.06   K1_K4_控制LED移位                                                     06/20/2009 10:43:22 PAGE 1   
+
+
+C51 COMPILER V7.06, COMPILATION OF MODULE K1_K4_控制LED移位
+OBJECT MODULE PLACED IN K1-K4 控制LED移位.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE K1-K4 控制LED移位.c BROWSE DEBUG OBJECTEXTEND
+
+stmt level    source
+
+   1          #include<reg52.h>
+   2          #define uchar unsigned char
+   3          #define uint unsigned int
+   4          sbit s1=P1^4;
+   5          sbit s2=P1^5;
+   6          sbit s3=P1^6;
+   7          sbit s4=P1^7;
+   8          void delay(uint z)
+   9          {
+  10   1              uint x,y;
+  11   1              for(x=z;x>0;x--)
+  12   1                      for(y=110;y>0;y--);
+  13   1      }
+  14          void keycan()
+  15          {
+  16   1              uint i;
+  17   1              if(s1==0)
+  18   1              {
+  19   2                      delay(30);
+  20   2                      if(s1==0)
+  21   2                      {
+  22   3                              i++;
+  23   3                              switch(i)
+  24   3                              {
+  25   4                                      case 1:
+  26   4                                                      P0=0x7f;
+  27   4                                                      break;
+  28   4                                      case 2:
+  29   4                                                      P0=0xbf;
+  30   4                                                      break;
+  31   4                                      case 3:
+  32   4                                                      P0=0xdf;
+  33   4                                                      break;
+  34   4                                      case 4:
+  35   4                                                      P0=0xef;
+  36   4                                                      break;
+  37   4                                      case 5:
+  38   4                                                      P0=0xf7;
+  39   4                                                      break;
+  40   4                                      case 6:
+  41   4                                                      P0=0xfb;
+  42   4                                                      break;
+  43   4                                      case 7:
+  44   4                                                      P0=0xfd;
+  45   4                                                      break;
+  46   4                                      case 8:
+  47   4                                                      P0=0xfe;
+  48   4                                                      break;
+  49   4                                      default:i=0;
+  50   4                              }
+  51   3                              while(!s1);
+  52   3                      }
+  53   2              }
+  54   1              if(s2==0)
+  55   1              {
+C51 COMPILER V7.06   K1_K4_控制LED移位                                                     06/20/2009 10:43:22 PAGE 2   
+
+  56   2                      delay(30);
+  57   2                      if(s2==0)
+  58   2                      {
+  59   3                              i++;
+  60   3                              switch(i)
+  61   3                              {
+  62   4                                      case 1:
+  63   4                                                      P0=0xfd;
+  64   4                                                      break;
+  65   4                                      case 2:
+  66   4                                                      P0=0xfb;
+  67   4                                                      break;
+  68   4                                      case 3:
+  69   4                                                      P0=0xf7;
+  70   4                                                      break;
+  71   4                                      case 4:
+  72   4                                                      P0=0xef;
+  73   4                                                      break;
+  74   4                                      case 5:
+  75   4                                                      P0=0xdf;
+  76   4                                                      break;
+  77   4                                      case 6:
+  78   4                                                      P0=0xbf;
+  79   4                                                      break;
+  80   4                                      case 7:
+  81   4                                                      P0=0x7f;
+  82   4                                                      break;
+  83   4                                      case 8:
+  84   4                                                      P0=0xfe;
+  85   4                                                      break;
+  86   4                                      default:i=0;
+  87   4                              }
+  88   3                      while(!s2);
+  89   3                      }
+  90   2              }
+  91   1      }
+  92          void keycan1()
+  93          {
+  94   1              uint i;
+  95   1              if(s3==0)
+  96   1              {
+  97   2                      delay(30);
+  98   2                      if(s3==0)
+  99   2                      {
+ 100   3                              i++;
+ 101   3                              switch(i)
+ 102   3                              {
+ 103   4                                      case 1:
+ 104   4                                                      P2=0x7f;
+ 105   4                                                      break;
+ 106   4                                      case 2:
+ 107   4                                                      P2=0xbf;
+ 108   4                                                      break;
+ 109   4                                      case 3:
+ 110   4                                                      P2=0xdf;
+ 111   4                                                      break;
+ 112   4                                      case 4:
+ 113   4                                                      P2=0xef;
+ 114   4                                                      break;
+ 115   4                                      case 5:
+ 116   4                                                      P2=0xf7;
+ 117   4                                                      break;
+C51 COMPILER V7.06   K1_K4_控制LED移位                                                     06/20/2009 10:43:22 PAGE 3   
+
+ 118   4                                      case 6:
+ 119   4                                                      P2=0xfb;
+ 120   4                                                      break;
+ 121   4                                      case 7:
+ 122   4                                                      P2=0xfd;
+ 123   4                                                      break;
+ 124   4                                      case 8:
+ 125   4                                                      P2=0xfe;
+ 126   4                                                      break;
+ 127   4                                      default:i=0;
+ 128   4                              }
+ 129   3                              while(!s3);
+ 130   3                      }
+ 131   2              }
+ 132   1              if(s4==0)
+ 133   1              {
+ 134   2                      delay(30);
+ 135   2                      if(s4==0)
+ 136   2                      {
+ 137   3                              i++;
+ 138   3                              switch(i)
+ 139   3                              {
+ 140   4                                      case 1:
+ 141   4                                                      P2=0xfd;
+ 142   4                                                      break;
+ 143   4                                      case 2:
+ 144   4                                                      P2=0xfb;
+ 145   4                                                      break;
+ 146   4                                      case 3:
+ 147   4                                                      P2=0xf7;
+ 148   4                                                      break;
+ 149   4                                      case 4:
+ 150   4                                                      P2=0xef;
+ 151   4                                                      break;
+ 152   4                                      case 5:
+ 153   4                                                      P2=0xdf;
+ 154   4                                                      break;
+ 155   4                                      case 6:
+ 156   4                                                      P2=0xbf;
+ 157   4                                                      break;
+ 158   4                                      case 7:
+ 159   4                                                      P2=0x7f;
+ 160   4                                                      break;
+ 161   4                                      case 8:
+ 162   4                                                      P2=0xfe;
+ 163   4                                                      break;
+ 164   4                                      default:i=0;
+ 165   4                              }
+ 166   3                              while(!s4);
+ 167   3                      }
+ 168   2              }
+ 169   1      }
+ 170          void main()
+ 171          {
+ 172   1              P0=0xfe;
+ 173   1              P2=0xfe;
+ 174   1              while(1)
+ 175   1              {
+ 176   2                      keycan();
+ 177   2                      keycan1();
+ 178   2              }
+ 179   1      }
+C51 COMPILER V7.06   K1_K4_控制LED移位                                                     06/20/2009 10:43:22 PAGE 4   
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    482    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

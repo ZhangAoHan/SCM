@@ -1,0 +1,43 @@
+C51 COMPILER V7.06   _ブ皇隷苎_籣_允_0_9                                                 06/20/2009 09:10:50 PAGE 1   
+
+
+C51 COMPILER V7.06, COMPILATION OF MODULE _ブ皇隷苎_籣_允_0_9
+OBJECT MODULE PLACED IN 单只数码管循环显示0-9.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE 单只数码管循环显示0-9.c BROWSE DEBUG OBJECTEXTEND
+
+stmt level    source
+
+   1          #include<reg52.h>
+   2          #define uchar unsigned char
+   3          #define uint unsigned int 
+   4          uchar code table[]={0x3f,0x06,0x5b,0x4f,0x66,
+   5                                                   0x6d,0x7d,0x07,0x7f,0x6f};
+   6          void delay(uint z)
+   7          {
+   8   1              uint x,y;
+   9   1              for(x=z;x>0;x--)
+  10   1                      for(y=110;y>0;y--);
+  11   1      }
+  12          void main()
+  13          {
+  14   1              uint i;
+  15   1              for(i=0;i<10;i++)
+  16   1              {
+  17   2                      P2=table[i];
+  18   2                      delay(500);
+  19   2              }
+  20   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     59    ----
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

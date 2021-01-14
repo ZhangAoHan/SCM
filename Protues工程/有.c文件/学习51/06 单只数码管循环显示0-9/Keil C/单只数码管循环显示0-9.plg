@@ -1,0 +1,19 @@
+<html>
+<body>
+<pre>
+<h1>礦ision2 Build Log</h1>
+<h2>Project:</h2>
+C:\Documents and Settings\Administrator\桌面\《单片机C语言程序设计实训100例——基于8051+Proteus仿真》案例压缩包\第 01 篇 基础部分\06 单只数码管循环显示0-9\Keil C\单只数码管循环显示0-9.uv2
+Project File Date:  06/20/2009
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling 单只数码管循环显示0-9.c...
+linking...
+Program Size: data=9.0 xdata=0 code=84
+creating hex file from "单只数码管循环显示0-9"...
+"单只数码管循环显示0-9" - 0 Error(s), 0 Warning(s).
+</pre>
+</body>
+</html>

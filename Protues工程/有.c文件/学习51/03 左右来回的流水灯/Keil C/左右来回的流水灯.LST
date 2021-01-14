@@ -1,0 +1,53 @@
+C51 COMPILER V7.06   ×óÓÒÀ_»Ø_ÄÁ÷Ë__Æ                                                      07/22/2009 18:40:52 PAGE 1   
+
+
+C51 COMPILER V7.06, COMPILATION OF MODULE ×óÓÒÀ_»Ø_ÄÁ÷Ë__Æ
+OBJECT MODULE PLACED IN ×óÓÒÀ´»ØµÄÁ÷Ë®µÆ.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE ×óÓÒÀ´»ØµÄÁ÷Ë®µÆ.C BROWSE DEBUG OBJECTEXTEND
+
+stmt level    source
+
+   1          #include<reg52.h>
+   2          #include<intrins.h>
+   3          #define uchar unsigned char
+   4          #define uint  unsigned int
+   5          void delay(uint z)
+   6          {
+   7   1              uint x,y;
+   8   1              for(x=z;x>0;x--)
+   9   1                 for(y=110;y>0;y--);
+  10   1      }
+  11          void main()
+  12          {
+  13   1              uint led,i;
+  14   1              led=0x01;
+  15   1      while  (1)
+  16   1              {
+  17   2              for(i=0;i<8;i++)
+  18   2              {
+  19   3                      P2=led;
+  20   3                      delay(500);
+  21   3                      led<<=1;
+  22   3              }
+  23   2              for(i=8;i>0;i--)
+  24   2              {
+  25   3                      P2=led;
+  26   3                      delay(500);
+  27   3                      led>>=1;
+  28   3              }
+  29   2              }
+  30   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     96    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

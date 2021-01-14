@@ -1,0 +1,3 @@
+"t0-led.obj" 
+TO "t0-led" 
+RAMSIZE(256) 

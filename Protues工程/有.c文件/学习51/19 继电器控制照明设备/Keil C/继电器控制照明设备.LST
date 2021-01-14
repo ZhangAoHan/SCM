@@ -1,0 +1,49 @@
+C51 COMPILER V7.06   继_缙骺刂普彰魃鑏_                                                    06/20/2009 18:14:21 PAGE 1   
+
+
+C51 COMPILER V7.06, COMPILATION OF MODULE 继_缙骺刂普彰魃鑏_
+OBJECT MODULE PLACED IN 继电器控制照明设备.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE 继电器控制照明设备.c BROWSE DEBUG OBJECTEXTEND
+
+stmt level    source
+
+   1          #include <reg51.h>
+   2          #define uchar unsigned char
+   3          #define uint unsigned int 
+   4          sbit s1=P1^0;
+   5          sbit out=P2^4;
+   6          void delay(uint z)
+   7          {
+   8   1              uint x,y;
+   9   1              for(x=z;x>0;x--)
+  10   1                      for(y=110;y>0;y--);
+  11   1      }
+  12          void main()
+  13          {
+  14   1              out=1;
+  15   1              while(1)
+  16   1              {
+  17   2                      if(s1==0)
+  18   2                      {
+  19   3                              delay(30);
+  20   3                              if(s1==0)
+  21   3                              {
+  22   4                                      out=~out;
+  23   4                              }
+  24   3                      }
+  25   2              }
+  26   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     49    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

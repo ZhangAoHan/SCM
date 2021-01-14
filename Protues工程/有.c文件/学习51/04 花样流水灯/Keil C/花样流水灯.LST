@@ -1,0 +1,93 @@
+C51 COMPILER V7.06   »_ÑùÁ÷Ë__Æ                                                            06/20/2009 08:36:07 PAGE 1   
+
+
+C51 COMPILER V7.06, COMPILATION OF MODULE »_ÑùÁ÷Ë__Æ
+OBJECT MODULE PLACED IN »¨ÑùÁ÷Ë®µÆ.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE »¨ÑùÁ÷Ë®µÆ.c BROWSE DEBUG OBJECTEXTEND
+
+stmt level    source
+
+   1          #include<reg51.h>
+   2          #include<intrins.h>
+   3          #define uchar unsigned char
+   4          #define uint unsigned int
+   5          void delay(uint z)
+   6          {
+   7   1              uint x,y;
+   8   1              for(x=z;x>0;x--)
+   9   1                for(y=110;y>0;y--);
+  10   1      }
+  11          void main()
+  12          {
+  13   1              uint aa,p,i;
+  14   1              while(1)
+  15   1          {
+  16   2                      aa=0xfe;
+  17   2                      P1=aa;
+  18   2                      for(i=0;i<7;i++)
+  19   2                      {       
+  20   3                              delay(500);
+  21   3                              aa=aa<<1;
+  22   3                              P1=aa;
+  23   3                      }
+  24   2                      for(i=0;i<8;i++)
+  25   2                      {       
+  26   3                              delay(500);
+  27   3                              aa=aa>>1;
+  28   3                              P1=aa;
+  29   3                      }
+  30   2                      P1=0xff;
+  31   2                  delay(50);
+  32   2                  for(i=0;i<5;i++)
+  33   2                      {
+  34   3                                      P1=0x00;
+  35   3                                      delay(300);
+  36   3                                      P1=0xff;
+  37   3                                      delay(300);     
+  38   3                       }
+  39   2                      
+  40   2              
+  41   2                              aa=0xfe;
+  42   2                              P1=aa;
+  43   2                              for(p=0;p<7;p++)
+  44   2                              {
+  45   3                                      delay(500);
+  46   3                                      aa=_crol_(aa,1);
+  47   3                                      P1=aa;
+  48   3                              }
+  49   2                              aa=0x7f;
+  50   2                              P1=aa;
+  51   2                              for(p=0;p<8;p++)
+  52   2                              {
+  53   3                                      delay(500);
+  54   3                                      aa=_cror_(aa,1);
+  55   3                                      P1=aa;
+C51 COMPILER V7.06   »_ÑùÁ÷Ë__Æ                                                            06/20/2009 08:36:07 PAGE 2   
+
+  56   3                              }
+  57   2                      
+  58   2                              for(i=0;i<5;i++)
+  59   2                              {
+  60   3                                      P1=0x00;
+  61   3                                      delay(300);
+  62   3                                      P1=0xff;
+  63   3                                      delay(300);     
+  64   3                               }
+  65   2                              
+  66   2                      
+  67   2              }
+  68   1      }       
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    280    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

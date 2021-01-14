@@ -1,0 +1,91 @@
+C51 COMPILER V7.06   4_¡4º¸≈Ã_ÿ’Ûøÿ÷∆Ã__ŒLED_‘ _                                           06/20/2009 16:51:33 PAGE 1   
+
+
+C51 COMPILER V7.06, COMPILATION OF MODULE 4_¡4º¸≈Ã_ÿ’Ûøÿ÷∆Ã__ŒLED_‘ _
+OBJECT MODULE PLACED IN 4°¡4º¸≈Ãæÿ’Ûøÿ÷∆Ãı–ŒLEDœ‘ æ.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE 4°¡4º¸≈Ãæÿ’Ûøÿ÷∆Ãı–ŒLEDœ‘ æ.c BROWSE DEBUG OBJECTEXTEND
+
+stmt level    source
+
+   1          #include<reg51.h>
+   2          #define uchar unsigned char
+   3          #define uint unsigned int
+   4          #define SCANPORT P1
+   5          uchar uca_LineScan[4]={0xEF,0xDF,0xBF,0x7F};
+   6          uchar ucKeyScan()
+   7          {
+   8   1              uchar Temp=0;                           
+   9   1              uchar ucRow=0,ucLine=0;     
+  10   1      
+  11   1              for(ucLine=0;ucLine<4;ucLine++) 
+  12   1                      {
+  13   2                              SCANPORT=uca_LineScan[ucLine];                     
+  14   2                              Temp=SCANPORT & 0x0F;                                    
+  15   2                              if(Temp!=0x0F)           
+  16   2                                      {                                                                        
+  17   3                                      switch(Temp)
+  18   3                                              {
+  19   4                                              case 0x0E: ucRow=10;break;               
+  20   4                                              case 0x0D: ucRow=20;break;
+  21   4                                              case 0x0B: ucRow=30;break;
+  22   4                                              case 0x07: ucRow=40;break;
+  23   4                                              default:   ucRow=50;break;
+  24   4                                              }
+  25   3                                      break;
+  26   3                                      }
+  27   2                      }
+  28   1      
+  29   1              SCANPORT=0x0F;                                  
+  30   1              return ucRow+ucLine+1;                   
+  31   1      }
+  32          void vKeyProcess(unsigned char ucKeyCode)
+  33          {
+  34   1                      
+  35   1              switch(ucKeyCode)
+  36   1                      {
+  37   2                      case 11:P2=0xff;P3=0x7f;break;                                                    //'7'
+  38   2                      case 12:P2=0xff;P3=0x3f;break;                                                    //'8'
+  39   2                      case 13:P2=0xff;P3=0x1f;break;
+  40   2                      case 14:P2=0xff;P3=0x0f;break;
+  41   2                                                                
+  42   2                      case 21:P2=0xff;P3=0x07;break;                                                    //'4'
+  43   2                      case 22:P2=0xff;P3=0x03;break;                                                    //'5'
+  44   2                      case 23:P2=0xff;P3=0x01;break;
+  45   2                      case 24:P2=0xff;P3=0x00;break;
+  46   2                                                        
+  47   2                      case 31:P3=0x00;P2=0x7f;break;                                                    //'1'
+  48   2                      case 32:P3=0x00;P2=0x3f;break;                                                    //'2'
+  49   2                      case 33:P3=0x00;P2=0x1f;break;
+  50   2                      case 34:P3=0x00;P2=0x0f;break;
+  51   2      
+  52   2                      case 41:P3=0x00;P2=0x07;break;                            //'3'
+  53   2                      case 42:P3=0x00;P2=0x03;break;
+  54   2                      case 43:P3=0x00;P2=0x01;break;                                            //'0'
+  55   2                      case 44:P3=0x00;P2=0x00;break;                                                    //'+'
+C51 COMPILER V7.06   4_¡4º¸≈Ã_ÿ’Ûøÿ÷∆Ã__ŒLED_‘ _                                           06/20/2009 16:51:33 PAGE 2   
+
+  56   2      
+  57   2                      default:break;
+  58   2                      }
+  59   1      }
+  60          void main()
+  61          {
+  62   1              while(1)
+  63   1              {
+  64   2                      vKeyProcess(ucKeyScan());
+  65   2              }
+  66   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    242    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

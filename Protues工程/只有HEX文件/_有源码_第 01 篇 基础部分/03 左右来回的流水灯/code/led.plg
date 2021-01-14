@@ -1,0 +1,40 @@
+<html>
+<body>
+<pre>
+<h1>礦ision3 Build Log</h1>
+<h2>Project:</h2>
+E:\Study\Proteus\《单片机C语言程序设计实训100例——基于8051+Proteus仿真》案例压缩包\第 01 篇 基础部分\03 左右来回的流水灯\code\led.uv2
+Project File Date:  07/30/2009
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling led.c...
+led.c(2): warning C315: unknown #directive 'inlcude'
+LED.C(6): error C141: syntax error near 'x', expected ')'
+LED.C(9): error C202: 'x': undefined identifier
+Target not created
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling led.c...
+led.c(2): warning C315: unknown #directive 'inlcude'
+LED.C(23): warning C206: '_crol_': missing function-prototype
+LED.C(23): error C267: '_crol_': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling led.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYMS?LED
+Program Size: data=9.0 xdata=0 code=81
+"led" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling led.c...
+linking...
+Program Size: data=9.0 xdata=0 code=89
+"led" - 0 Error(s), 0 Warning(s).
+</pre>
+</body>
+</html>

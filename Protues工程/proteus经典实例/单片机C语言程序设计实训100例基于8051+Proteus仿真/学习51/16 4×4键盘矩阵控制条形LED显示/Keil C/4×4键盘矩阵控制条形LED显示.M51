@@ -1,0 +1,185 @@
+BL51 BANKED LINKER/LOCATER V5.03                                                        06/20/2009  16:51:34  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.03, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE .\STARTUP.obj, 4°¡4º¸≈Ãæÿ’Ûøÿ÷∆Ãı–ŒLEDœ‘ æ.obj TO 4°¡4º¸≈Ãæÿ’Ûøÿ÷∆Ãı–ŒLEDœ‘ æ RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\STARTUP.obj (?C_STARTUP)
+  4°¡4º¸≈Ãæÿ’Ûøÿ÷∆Ãı–ŒLEDœ‘ æ.obj (4_¡4º¸≈Ã_ÿ’Ûøÿ÷∆Ã__ŒLED_‘ _)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CCASE)
+
+
+LINK MAP OF MODULE:  4°¡4º¸≈Ãæÿ’Ûøÿ÷∆Ãı–ŒLEDœ‘ æ (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0004H     UNIT         ?DT?4_¡4º¸≈Ã_ÿ’Ûøÿ÷∆Ã__ŒLED_‘ _
+            IDATA   000CH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     00A7H     UNIT         ?PR?_VKEYPROCESS?4_¡4º¸≈Ã_ÿ’Ûøÿ÷∆Ã__ŒLED_‘ _
+            CODE    00AAH     008CH     UNIT         ?C_C51STARTUP
+            CODE    0136H     0043H     UNIT         ?PR?UCKEYSCAN?4_¡4º¸≈Ã_ÿ’Ûøÿ÷∆Ã__ŒLED_‘ _
+            CODE    0179H     0026H     UNIT         ?C?LIB_CODE
+            CODE    019FH     0008H     UNIT         ?PR?MAIN?4_¡4º¸≈Ã_ÿ’Ûøÿ÷∆Ã__ŒLED_‘ _
+            CODE    01A7H     0007H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   4°¡4º¸≈Ãæÿ’Ûøÿ÷∆Ãı–ŒLEDœ‘ æ (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?4_¡4º¸≈Ã_ÿ’Ûøÿ÷∆Ã__ŒLED_‘ _
+  +--> ?C_INITSEG
+
+?PR?MAIN?4_¡4º¸≈Ã_ÿ’Ûøÿ÷∆Ã__ŒLED_‘ _
+  +--> ?PR?UCKEYSCAN?4_¡4º¸≈Ã_ÿ’Ûøÿ÷∆Ã__ŒLED...
+  +--> ?PR?_VKEYPROCESS?4_¡4º¸≈Ã_ÿ’Ûøÿ÷∆Ã__Œ...
+
+
+
+SYMBOL TABLE OF MODULE:  4°¡4º¸≈Ãæÿ’Ûøÿ÷∆Ãı–ŒLEDœ‘ æ (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+BL51 BANKED LINKER/LOCATER V5.03                                                      06/20/2009  16:51:34  PAGE 2
+
+
+  C:00AAH         SEGMENT       ?C_C51STARTUP
+  I:000CH         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:00ADH         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0000H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:00AAH         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         92
+  C:00AAH         LINE#         99
+  C:00ACH         LINE#         100
+  C:00ADH         LINE#         101
+  C:00AEH         LINE#         102
+  C:00B0H         LINE#         151
+  C:00B3H         LINE#         155
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        4_¡4º¸≈Ã_ÿ’Ûøÿ÷∆Ã__ŒLED_‘ _
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0136H         PUBLIC        ucKeyScan
+  C:019FH         PUBLIC        main
+  D:0008H         PUBLIC        uca_LineScan
+  C:0003H         PUBLIC        _vKeyProcess
+  -------         PROC          UCKEYSCAN
+  -------         DO            
+  D:0001H         SYMBOL        Temp
+  D:0007H         SYMBOL        ucRow
+  D:0006H         SYMBOL        ucLine
+  -------         ENDDO         
+  C:0136H         LINE#         6
+  C:0136H         LINE#         7
+  C:0136H         LINE#         8
+  C:0137H         LINE#         9
+  C:0139H         LINE#         11
+  C:0139H         LINE#         12
+  C:0139H         LINE#         13
+  C:0140H         LINE#         14
+  C:0145H         LINE#         15
+BL51 BANKED LINKER/LOCATER V5.03                                                      06/20/2009  16:51:34  PAGE 3
+
+
+  C:0149H         LINE#         16
+  C:0149H         LINE#         17
+  C:0159H         LINE#         18
+  C:0159H         LINE#         19
+  C:015DH         LINE#         20
+  C:0161H         LINE#         21
+  C:0165H         LINE#         22
+  C:0169H         LINE#         23
+  C:016DH         LINE#         24
+  C:016DH         LINE#         25
+  C:016DH         LINE#         26
+  C:016DH         LINE#         27
+  C:0171H         LINE#         29
+  C:0174H         LINE#         30
+  C:0178H         LINE#         31
+  -------         ENDPROC       UCKEYSCAN
+  -------         PROC          _VKEYPROCESS
+  D:0007H         SYMBOL        ucKeyCode
+  C:0003H         LINE#         32
+  C:0003H         LINE#         33
+  C:0003H         LINE#         35
+  C:003BH         LINE#         36
+  C:003BH         LINE#         37
+  C:0042H         LINE#         38
+  C:0049H         LINE#         39
+  C:0050H         LINE#         40
+  C:0057H         LINE#         42
+  C:005EH         LINE#         43
+  C:0065H         LINE#         44
+  C:006CH         LINE#         45
+  C:0073H         LINE#         47
+  C:007AH         LINE#         48
+  C:0081H         LINE#         49
+  C:0088H         LINE#         50
+  C:008FH         LINE#         52
+  C:0096H         LINE#         53
+  C:009DH         LINE#         54
+  C:00A4H         LINE#         55
+  C:00A9H         LINE#         57
+  C:00A9H         LINE#         58
+  C:00A9H         LINE#         59
+  -------         ENDPROC       _VKEYPROCESS
+  -------         PROC          MAIN
+  C:019FH         LINE#         60
+  C:019FH         LINE#         61
+  C:019FH         LINE#         62
+  C:019FH         LINE#         63
+  C:019FH         LINE#         64
+  C:01A5H         LINE#         65
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        4_¡4º¸≈Ã_ÿ’Ûøÿ÷∆Ã__ŒLED_‘ _
+
+  -------         MODULE        ?C?CCASE
+  C:0179H         PUBLIC        ?C?CCASE
+  -------         ENDMOD        ?C?CCASE
+
+Program Size: data=13.0 xdata=0 code=430
+BL51 BANKED LINKER/LOCATER V5.03                                                      06/20/2009  16:51:34  PAGE 4
+
+
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

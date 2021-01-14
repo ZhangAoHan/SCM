@@ -1,0 +1,38 @@
+<html>
+<body>
+<pre>
+<h1>礦ision3 Build Log</h1>
+<h2>Project:</h2>
+E:\Study\Proteus\《单片机C语言程序设计实训100例——基于8051+Proteus仿真》案例压缩包\第 01 篇 基础部分\05 LED模拟交通灯\code\led.uv2
+Project File Date:  07/30/2009
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling led.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TRAFFIC_LIGNT?LED
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  MAIN
+    MODULE:  C:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  MAIN
+    MODULE:  C:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+    ADDRESS: 0010H
+Program Size: data=12.0 xdata=0 code=296
+"led" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling led.c...
+LED.C(64): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling led.c...
+linking...
+Program Size: data=12.0 xdata=0 code=301
+"led" - 0 Error(s), 0 Warning(s).
+</pre>
+</body>
+</html>
